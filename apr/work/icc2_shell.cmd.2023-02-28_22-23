@@ -1,0 +1,14 @@
+#@ # 
+#@ # Running icc2_shell Version Q-2019.12-SP4 for linux64 -- May 26, 2020
+#@ # Date:   Tue Feb 28 22:23:37 2023
+#@ # Run by: reethika@auto.ece.pdx.edu
+#@ 
+
+source /home/reethika/common/Documents/final_prj-team_5-master/apr/work/.synopsys_icc2.setup
+e
+source ../scripts/floorplan-macros2.tcl
+e
+source ../scripts/floorplan-macros2.tcl
+source ../scripts/create_dct_floorplan.tcl
+source ../scripts/create_dct_floorplan2.tcl
+source ../scripts/floorplan-macros2.tcl
