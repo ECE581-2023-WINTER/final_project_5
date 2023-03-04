@@ -1,8 +1,8 @@
 # 
 # IC Compiler II write_def
-# Release      : P-2019.03-SP1-VAL
-# User Name    : bcruik2
-# Date         : Sat Feb 20 16:56:58 2021
+# Release      : Q-2019.12-SP4
+# User Name    : ramadugu
+# Date         : Fri Mar  3 21:43:31 2023
 # 
 VERSION 5.8 ;
 DIVIDERCHAR "/" ;

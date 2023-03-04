@@ -1,0 +1,60 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -capacitance
+Design : fifo1_sram
+Version: Q-2019.12-SP3
+Date   : Fri Mar  3 21:54:48 2023
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: ss0p95v125c   Library: saed32rvt_ss0p95v125c
+Wire Load Model Mode: Inactive.
+
+  Startpoint: rptr_empty/rbin_reg_3_
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rptr_empty/rempty_reg
+            (rising edge-triggered flip-flop clocked by rclk)
+  Path Group: rclk
+  Path Type: max
+
+  Point                                          Cap      Incr       Path
+  --------------------------------------------------------------------------
+  clock rclk (rise edge)                               0.00000    0.00000
+  clock network delay (ideal)                          0.10000    0.10000
+  rptr_empty/rbin_reg_3_/CLK (SDFFARX1_RVT)            0.00000    0.10000 r
+  rptr_empty/rbin_reg_3_/Q (SDFFARX1_RVT)    1.81229   0.20537    0.30537 r
+  rptr_empty/U160/Y (NBUFFX8_RVT)           36.97787   0.07542 *  0.38079 r
+  rptr_empty/raddr[3] (rptr_empty_ADDRSIZE10)          0.00000    0.38079 r
+  rptr_empty/IN6 (rptr_empty_ADDRSIZE10)               0.00000    0.38079 r
+  rptr_empty/U75/Y (NAND4X0_RVT)             1.46883   0.08846 *  0.46925 f
+  rptr_empty/U73/Y (INVX2_RVT)               6.34872   0.05974 *  0.52899 r
+  rptr_empty/U89/Y (AND3X2_RVT)              5.84224   0.10081 *  0.62980 r
+  rptr_empty/U170/Y (NAND2X4_RVT)           12.48913   0.10203 *  0.73183 f
+  rptr_empty/U106/Y (XNOR2X2_RVT)            0.71293   0.09322 *  0.82505 r
+  rptr_empty/U79/Y (NAND2X0_RVT)             0.59295   0.03342 *  0.85847 f
+  rptr_empty/U99/Y (NAND2X4_RVT)            10.00318   0.09782 *  0.95629 r
+  rptr_empty/U157/Y (XNOR2X2_RVT)            0.61236   0.09117 *  1.04746 r
+  rptr_empty/U130/Y (AND3X1_RVT)             0.52375   0.06670 *  1.11417 r
+  rptr_empty/U9/Y (AND3X1_RVT)               1.61756   0.07487 *  1.18904 r
+  rptr_empty/rempty_reg/D (SDFFASX2_RVT)               0.00002 *  1.18906 r
+  data arrival time                                               1.18906
+
+  clock rclk (rise edge)                               1.22000    1.22000
+  clock network delay (ideal)                          0.10000    1.32000
+  clock uncertainty                                   -0.07000    1.25000
+  rptr_empty/rempty_reg/CLK (SDFFASX2_RVT)             0.00000    1.25000 r
+  library setup time                                  -0.12563    1.12437
+  data required time                                              1.12437
+  --------------------------------------------------------------------------
+  data required time                                              1.12437
+  data arrival time                                              -1.18906
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                               -0.06470
+
+
+1

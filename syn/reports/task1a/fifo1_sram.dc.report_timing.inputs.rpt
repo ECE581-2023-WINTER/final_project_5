@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -group INPUTS
+        -max_paths 1
+        -capacitance
+Design : fifo1_sram
+Version: Q-2019.12-SP3
+Date   : Fri Mar  3 21:55:29 2023
+****************************************
+
+Operating Conditions: ss0p95v125c   Library: saed32rvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: wdata_in[0]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_0_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo1_sram         540000                saed32rvt_ss0p95v125c
+
+  Point                           Cap      Incr       Path
+  -----------------------------------------------------------
+  clock wclk2x (rise edge)              0.00000    0.00000
+  clock network delay (ideal)           0.10000    0.10000
+  input external delay                  0.00000    0.10000 r
+  wdata_in[0] (in)           2505.91553
+                                        0.02506    0.12506 r
+  io_r_wdata_in_0_/DOUT (I1025_NS)
+                              0.51122   0.39802    0.52308 r
+  wdata_reg_0_/D (SDFFARX1_RVT)         0.00000    0.52308 r
+  data arrival time                                0.52308
+
+  clock wclk2x (rise edge)              0.59000    0.59000
+  clock network delay (ideal)           0.10000    0.69000
+  clock uncertainty                    -0.07000    0.62000
+  wdata_reg_0_/CLK (SDFFARX1_RVT)       0.00000    0.62000 r
+  library setup time                   -0.16370    0.45630
+  data required time                               0.45630
+  -----------------------------------------------------------
+  data required time                               0.45630
+  data arrival time                               -0.52308
+  -----------------------------------------------------------
+  slack (VIOLATED)                                -0.06679
+
+
+1
