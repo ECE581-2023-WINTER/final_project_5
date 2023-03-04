@@ -1,0 +1,928 @@
+[03/02 12:46:04      0s] 
+[03/02 12:46:04      0s] Cadence Innovus(TM) Implementation System.
+[03/02 12:46:04      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[03/02 12:46:04      0s] 
+[03/02 12:46:04      0s] Version:	v19.16-s053_1, built Mon Aug 31 13:16:01 PDT 2020
+[03/02 12:46:04      0s] Options:	
+[03/02 12:46:04      0s] Date:		Thu Mar  2 12:46:04 2023
+[03/02 12:46:04      0s] Host:		mo.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*32cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+[03/02 12:46:04      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[03/02 12:46:04      0s] 
+[03/02 12:46:04      0s] License:
+[03/02 12:46:04      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[03/02 12:46:04      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[03/02 12:46:24     16s] @(#)CDS: Innovus v19.16-s053_1 (64bit) 08/31/2020 13:16 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/02 12:46:24     16s] @(#)CDS: NanoRoute 19.16-s053_1 NR200827-1939/19_16-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+[03/02 12:46:24     16s] @(#)CDS: AAE 19.16-s019 (64bit) 08/31/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/02 12:46:24     16s] @(#)CDS: CTE 19.16-s019_1 () Aug 22 2020 00:37:42 ( )
+[03/02 12:46:24     16s] @(#)CDS: SYNTECH 19.16-s010_1 () Aug 17 2020 09:10:13 ( )
+[03/02 12:46:24     16s] @(#)CDS: CPE v19.16-s038
+[03/02 12:46:24     16s] @(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/02 12:46:24     16s] @(#)CDS: OA 22.60-s011 Tue Jun 16 12:27:00 2020
+[03/02 12:46:24     16s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[03/02 12:46:24     16s] @(#)CDS: RCDB 11.14.18
+[03/02 12:46:24     16s] @(#)CDS: STYLUS 19.10-s018_1 (06/12/2020 04:43 PDT)
+[03/02 12:46:24     16s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_3242_mo.ece.pdx.edu_ramadugu_E0NDXg.
+
+[03/02 12:46:24     16s] Change the soft stacksize limit to 0.2%RAM (170 mbytes). Set global soft_stack_size_limit to change the value.
+[03/02 12:46:25     17s] Sourcing startup file ./enc.tcl
+[03/02 12:46:25     17s] <CMD> alias fs set top_design fifo1_sram
+[03/02 12:46:25     17s] <CMD> alias f set top_design fifo1
+[03/02 12:46:25     17s] <CMD> alias o set top_design ORCA_TOP
+[03/02 12:46:25     17s] <CMD> alias e set top_design ExampleRocketSystem
+[03/02 12:46:25     17s] <CMD> set_table_style -name report_timing -max_widths { 8,6,23,70} -no_frame_fix_width
+[03/02 12:46:25     17s] **WARN: (TCLCMD-1083):	'-no_frame_fix_width are global controls that affect all of the various timing reports.  The -name option is used to specify a report-specific behavior, and therefore cannot be used with these global options. You should use a separate set_table_style command to specify the desired global options. You can then use additional set_table_style commands to refine the behaviors of specific timing reports.'
+[03/02 12:46:25     17s] <CMD> set_global report_timing_format  {delay arrival slew cell hpin}
+[03/02 12:46:25     17s] 
+[03/02 12:46:25     17s] **INFO:  MMMC transition support version v31-84 
+[03/02 12:46:25     17s] 
+[03/02 12:46:25     17s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[03/02 12:46:25     17s] <CMD> suppressMessage ENCEXT-2799
+[03/02 12:46:25     17s] <CMD> win
+[03/02 12:46:30     18s] <CMD> o
+[03/02 12:46:47     22s] <CMD> defIn ../outputs/ORCA_TOP.floorplan.innovus.macros.def
+[03/02 12:46:47     22s] **ERROR: Design must be in memory before running "defIn"
+[03/02 12:46:47     22s] Design must be in memory before running "defIn"
+[03/02 12:46:58     24s] ### Start verbose source output (echo mode) for '../../ORCA_TOP.design_config.tcl' ...
+[03/02 12:46:58     24s] # set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+# set top_design ORCA_TOP
+# set FCL 1
+# set add_ios 0
+# set pad_design 0
+# set design_size {1000 644 }
+# set design_io_border 10
+# set dc_floorplanning 1
+# set enable_dft  0
+# set innovus_enable_manual_macro_placement 1
+# set split_constraints 0
+# set rtl_list [list ../rtl/$top_design.sv ]
+# set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+# set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+# set synth_corners_slow $slow_corner
+# set synth_corners_fast $fast_corner
+# set slow_metal Cmax.tlup_-40
+# set fast_metal Cmin.tlup_-40
+# set lib_types "$lib_dir/stdcell_hvt/db_nldm $lib_dir/stdcell_lvt/db_nldm $lib_dir/io_std/db_nldm $lib_dir/sram/db_nldm $lib_dir/pll/db_nldm"
+# set ndm_types "$lib_dir/stdcell_lvt/ndm $lib_dir/stdcell_rvt/ndm $lib_dir/stdcell_hvt/ndm $lib_dir/sram/ndm $lib_dir/io_std/ndm  $lib_dir/pll/ndm"
+# set lib_types_target "$lib_dir/stdcell_rvt/db_nldm"
+# set sub_lib_type "saed32?vt_ saed32sram_ saed32io_wb_ saed32pll_"
+# set sub_lib_type_target "saed32rvt_"
+# set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+# set lef_types [list $lib_dir/stdcell_hvt/lef  \
+$lib_dir/stdcell_rvt/lef \
+$lib_dir/stdcell_lvt/lef \
+$lib_dir/sram/lef/ \
+$lib_dir/io_std/lef \
+$lib_dir/pll/lef \
+]
+# set sub_lef_type "saed32nm_?vt_*.lef saed32_sram_*.lef saed32io_std_wb saed32_PLL.lef"
+# set synth_corners $slow_corner
+# set synth_corners_slow $slow_corner
+# set synth_corners_fast $fast_corner
+# set mwlib_types [list $lib_dir/stdcell_hvt/milkyway \
+$lib_dir/stdcell_rvt/milkyway \
+$lib_dir/stdcell_lvt/milkyway  \
+$lib_dir/io_std/milkyway \
+$lib_dir/sram/milkyway $lib_dir/pll/milkyway \
+ ]
+# set sub_mwlib_type "saed32nm_?vt_* SRAM32NM saed32io_wb_* SAED32_PLL_FR*"
+# if { 0 } {
+    set corners ""
+    #Add Worst corners
+    set corners "$corners ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+    #Add Best corners
+    set corners "$corners ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+    #Add Leakage corners
+    set corners "$corners ff0p95v125c f0p95v125c_i1p16v ff0p95v125c_i0p95v ff1p16v125c ff1p16v125c_i1p16v ff1p16v125c ff1p16v125c_i0p95v"
+    set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram_lp"
+    # Get the main standard cells, and also the level shifters.  Plus srams.
+    set sub_lib_type "saed32?vt_ saed32?vt_ulvl_ saed32?vt_dlvl_ saed32sram_"
+}
+# set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+# set sub_block {SDRAM_TOP 
+				BLENDER_0 
+				PCI_TOP 
+				CONTEXT_MEM 
+				RISC_CORE 
+				CLOCKING 
+				BLENDER_1 
+				PARSER 
+				}
+# set sub_block_I {I_SDRAM_TOP I_BLENDER_1  I_BLENDER_0 I_RISC_CORE I_CONTEXT_MEM I_PCI_TOP I_PARSER I_CLOCKING}
+# set macro_block {I_SDRAM_TOP I_PCI_TOP I_RISC_CORE I_CONTEXT_MEM}
+# if {[info exists synopsys_program_name]} {
+        if { $synopsys_program_name == "dc_shell" } {
+           set_host_options -max_cores 4
+        } 
+        if { $synopsys_program_name == "icc2_shell" } {
+           set_host_options -max_cores 4
+        }
+} elseif {[get_db root: .program_short_name] == "innovus"} {
+  setMultiCpuUsage -localCpu 8 
+} elseif {[get_db root: .program_short_name] == "genus"} {
+  set_db / .max_cpus_per_server 8 
+}
+<CMD> setMultiCpuUsage -localCpu 8
+[03/02 12:46:58     24s] ### End verbose source output for '../../ORCA_TOP.design_config.tcl'.
+[03/02 12:46:58     24s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[03/02 12:46:58     24s] <CMD> set search_path {}
+[03/02 12:46:58     24s] <CMD> set init_lef_file {../../cadence_cap_tech/tech.lef saed32nm_lvt_1p9m.lef saed32_PLL.lef saed32nm_hvt_1p9m.lef saed32nm_rvt_1p9m.lef}
+[03/02 12:46:59     24s] <CMD> set init_mmmc_file mmmc.tcl
+[03/02 12:46:59     24s] <CMD> set init_design_netlisttype Verilog
+[03/02 12:46:59     24s] <CMD> set init_verilog ../../syn/outputs/ORCA_TOP.genus.vg
+[03/02 12:46:59     24s] <CMD> set init_top_cell ORCA_TOP
+[03/02 12:46:59     24s] <CMD> set init_pwr_net VDD
+[03/02 12:46:59     24s] <CMD> set init_gnd_net VSS
+[03/02 12:46:59     24s] <CMD> init_design
+[03/02 12:46:59     24s] #% Begin Load MMMC data ... (date=03/02 12:46:59, mem=487.9M)
+[03/02 12:46:59     24s] #% End Load MMMC data ... (date=03/02 12:46:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=488.1M, current mem=488.1M)
+[03/02 12:46:59     24s] 
+[03/02 12:46:59     24s] Loading LEF file ../../cadence_cap_tech/tech.lef ...
+[03/02 12:46:59     24s] **WARN: (IMPLF-105):	The layer 'PO' specified in SAMENET spacing
+[03/02 12:46:59     24s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/02 12:46:59     24s] **WARN: (IMPLF-105):	The layer 'DIFF' specified in SAMENET spacing
+[03/02 12:46:59     24s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/02 12:46:59     24s] **WARN: (IMPLF-105):	The layer 'PO' specified in SAMENET spacing
+[03/02 12:46:59     24s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/02 12:46:59     24s] **WARN: (IMPLF-105):	The layer 'PIMP' specified in SAMENET spacing
+[03/02 12:46:59     24s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/02 12:46:59     24s] Set DBUPerIGU to M2 pitch 152.
+[03/02 12:46:59     25s] 
+[03/02 12:46:59     25s] Loading LEF file saed32nm_lvt_1p9m.lef ...
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'XNOR2X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'XNOR2X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'XNOR3X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'XOR2X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'XOR2X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'XOR3X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'XOR3X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'SDFFX1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'SDFFX2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'SDFFARX1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'SDFFARX2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR2X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR2X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR2X4_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR3X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR3X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR3X4_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR4X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR4X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (IMPLF-58):	MACRO 'OR4X4_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/02 12:46:59     25s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:46:59     25s] Type 'man IMPLF-58' for more detail.
+[03/02 12:46:59     25s] **WARN: (EMS-27):	Message (IMPLF-58) has exceeded the current message display limit of 20.
+[03/02 12:46:59     25s] To increase the message display limit, refer to the product command reference manual.
+[03/02 12:46:59     25s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/02 12:46:59     25s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/02 12:46:59     25s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32nm_lvt_1p9m.lef at line 67466.
+[03/02 12:46:59     25s] 
+[03/02 12:46:59     25s] Loading LEF file saed32_PLL.lef ...
+[03/02 12:46:59     25s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/02 12:46:59     25s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/02 12:46:59     25s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32_PLL.lef at line 372.
+[03/02 12:46:59     25s] 
+[03/02 12:46:59     25s] Loading LEF file saed32nm_hvt_1p9m.lef ...
+[03/02 12:47:00     25s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/02 12:47:00     25s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/02 12:47:00     25s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32nm_hvt_1p9m.lef at line 191962.
+[03/02 12:47:00     25s] 
+[03/02 12:47:00     25s] Loading LEF file saed32nm_rvt_1p9m.lef ...
+[03/02 12:47:00     26s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/02 12:47:00     26s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/02 12:47:00     26s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32nm_rvt_1p9m.lef at line 148040.
+[03/02 12:47:00     26s] **WARN: (IMPLF-61):	208 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data, and certain properties, have been ignored.
+[03/02 12:47:00     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/02 12:47:00     26s] Type 'man IMPLF-61' for more detail.
+[03/02 12:47:00     26s] 
+[03/02 12:47:00     26s] viaInitial starts at Thu Mar  2 12:47:00 2023
+**WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12BAR_C' and 'VIA12SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12LG_C' and 'VIA12SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12BAR' and 'VIA12SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12LG' and 'VIA12SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23BAR_C' and 'VIA23SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23LG_C' and 'VIA23SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23BAR' and 'VIA23SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23LG' and 'VIA23SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34BAR_C' and 'VIA34SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34LG_C' and 'VIA34SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34BAR' and 'VIA34SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34LG' and 'VIA34SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45BAR_C' and 'VIA45SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45LG_C' and 'VIA45SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45BAR' and 'VIA45SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45LG' and 'VIA45SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56BAR_C' and 'VIA56SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56LG_C' and 'VIA56SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56BAR' and 'VIA56SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56LG' and 'VIA56SQ_C'.
+[03/02 12:47:00     26s] Type 'man IMPPP-543' for more detail.
+[03/02 12:47:00     26s] **WARN: (EMS-27):	Message (IMPPP-543) has exceeded the current message display limit of 20.
+[03/02 12:47:00     26s] To increase the message display limit, refer to the product command reference manual.
+[03/02 12:47:00     26s] viaInitial ends at Thu Mar  2 12:47:00 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[03/02 12:47:00     26s] Loading view definition file from mmmc.tcl
+[03/02 12:47:00     26s] Starting library reading in 'Multi-threaded flow' (with '8' threads)
+[03/02 12:47:02     33s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib.
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 84713)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 84815)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 84764)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 120153)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 120204)
+[03/02 12:47:02     33s] Message <TECHLIB-1277> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226791 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226792 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226793 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] Read 294 cells in library saed32hvt_ss0p75vn40c.
+[03/02 12:47:02     33s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib.
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 84613)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 84664)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 84715)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226348 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226349 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226350 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] Read 294 cells in library saed32hvt_ss0p95vn40c.
+[03/02 12:47:02     33s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib.
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 84607)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 84658)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 84709)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 120047)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 120098)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 120149)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226612 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226613 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226614 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/02 12:47:02     33s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[03/02 12:47:02     33s] Read 294 cells in library saed32lvt_ss0p75vn40c.
+[03/02 12:47:02     33s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib.
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 84607)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 84658)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 84709)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 120047)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 120098)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 120149)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226612 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226613 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226614 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT1_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT3_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT2_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT1_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] Read 294 cells in library saed32lvt_ss0p95vn40c.
+[03/02 12:47:02     33s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib.
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 24401 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 24402 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 24403 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib)
+[03/02 12:47:02     33s] Read 35 cells in library saed32sram_ss0p95vn40c.
+[03/02 12:47:02     33s] Library reading multithread flow ended.
+[03/02 12:47:02     33s] Starting library reading in 'Multi-threaded flow' (with '8' threads)
+[03/02 12:47:03     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ff0p95vn40c.lib.
+[03/02 12:47:03     41s] Read 294 cells in library saed32hvt_ff0p95vn40c.
+[03/02 12:47:03     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ff1p16vn40c.lib.
+[03/02 12:47:03     41s] Read 294 cells in library saed32hvt_ff1p16vn40c.
+[03/02 12:47:03     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.lib.
+[03/02 12:47:03     41s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226430 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.lib)
+[03/02 12:47:03     41s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226431 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.lib)
+[03/02 12:47:03     41s] Message <TECHLIB-1161> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[03/02 12:47:03     41s] Read 294 cells in library saed32lvt_ff0p95vn40c.
+[03/02 12:47:03     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff1p16vn40c.lib.
+[03/02 12:47:03     41s] Read 294 cells in library saed32lvt_ff1p16vn40c.
+[03/02 12:47:03     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib.
+[03/02 12:47:03     41s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 24400 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib)
+[03/02 12:47:03     41s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 24401 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib)
+[03/02 12:47:03     41s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 24402 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib)
+[03/02 12:47:03     41s] Read 35 cells in library saed32sram_ff1p16vn40c.
+[03/02 12:47:03     41s] Library reading multithread flow ended.
+[03/02 12:47:03     42s] Ending "PreSetAnalysisView" (total cpu=0:00:15.8, real=0:00:03.0, peak res=965.2M, current mem=553.8M)
+[03/02 12:47:03     42s] *** End library_loading (cpu=0.26min, real=0.05min, mem=114.0M, fe_cpu=0.70min, fe_real=0.98min, fe_mem=913.6M) ***
+[03/02 12:47:03     42s] #% Begin Load netlist data ... (date=03/02 12:47:03, mem=553.8M)
+[03/02 12:47:03     42s] *** Begin netlist parsing (mem=913.6M) ***
+[03/02 12:47:03     42s] Created 623 new cells from 10 timing libraries.
+[03/02 12:47:03     42s] Reading netlist ...
+[03/02 12:47:03     42s] Backslashed names will retain backslash and a trailing blank character.
+[03/02 12:47:04     42s] Reading verilog netlist '../../syn/outputs/ORCA_TOP.genus.vg'
+[03/02 12:47:04     42s] 
+[03/02 12:47:04     42s] *** Memory Usage v#1 (Current mem = 913.605M, initial mem = 289.684M) ***
+[03/02 12:47:04     42s] *** End netlist parsing (cpu=0:00:00.4, real=0:00:01.0, mem=913.6M) ***
+[03/02 12:47:04     42s] #% End Load netlist data ... (date=03/02 12:47:04, total cpu=0:00:00.4, real=0:00:01.0, peak res=586.0M, current mem=586.0M)
+[03/02 12:47:04     42s] Set top cell to ORCA_TOP.
+[03/02 12:47:05     43s] Hooked 2422 DB cells to tlib cells.
+[03/02 12:47:05     43s] Ending "BindLib:" (total cpu=0:00:00.7, real=0:00:01.0, peak res=682.7M, current mem=682.7M)
+[03/02 12:47:05     43s] Starting recursive module instantiation check.
+[03/02 12:47:05     43s] No recursion found.
+[03/02 12:47:05     43s] Building hierarchical netlist for Cell ORCA_TOP ...
+[03/02 12:47:05     43s] *** Netlist is unique.
+[03/02 12:47:05     43s] Setting Std. cell height to 1672 DBU (smallest netlist inst).
+[03/02 12:47:05     43s] ** info: there are 2918 modules.
+[03/02 12:47:05     43s] ** info: there are 35708 stdCell insts.
+[03/02 12:47:05     43s] ** info: there are 40 macros.
+[03/02 12:47:05     43s] 
+[03/02 12:47:05     43s] *** Memory Usage v#1 (Current mem = 954.020M, initial mem = 289.684M) ***
+[03/02 12:47:05     43s] **WARN: (IMPFP-3961):	The techSite 'fillSite' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[03/02 12:47:05     43s] Type 'man IMPFP-3961' for more detail.
+[03/02 12:47:05     43s] **WARN: (IMPFP-3961):	The techSite 'cornerSite' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[03/02 12:47:05     43s] Type 'man IMPFP-3961' for more detail.
+[03/02 12:47:05     43s] **WARN: (IMPFP-3961):	The techSite 'ioSiteEW' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[03/02 12:47:05     43s] Type 'man IMPFP-3961' for more detail.
+[03/02 12:47:05     43s] **WARN: (IMPFP-3961):	The techSite 'ioSiteNS' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[03/02 12:47:05     43s] Type 'man IMPFP-3961' for more detail.
+[03/02 12:47:05     43s] Horizontal Layer M1 offset = 0 (derived)
+[03/02 12:47:05     43s] Vertical Layer M2 offset = 0 (derived)
+[03/02 12:47:05     43s] Generated pitch 0.38 in M9 is different from 2.432 defined in technology file in preferred direction.
+[03/02 12:47:05     43s] Generated pitch 0.152 in M8 is different from 1.216 defined in technology file in preferred direction.
+[03/02 12:47:05     43s] Generated pitch 0.152 in M7 is different from 1.216 defined in technology file in preferred direction.
+[03/02 12:47:05     43s] Generated pitch 0.152 in M6 is different from 0.608 defined in technology file in preferred direction.
+[03/02 12:47:05     43s] Generated pitch 0.152 in M5 is different from 0.608 defined in technology file in preferred direction.
+[03/02 12:47:05     43s] Generated pitch 0.152 in M4 is different from 0.304 defined in technology file in preferred direction.
+[03/02 12:47:05     43s] Generated pitch 0.152 in M3 is different from 0.304 defined in technology file in preferred direction.
+[03/02 12:47:05     43s] Set Default Net Delay as 1000 ps.
+[03/02 12:47:05     43s] Set Default Net Load as 0.5 pF. 
+[03/02 12:47:05     43s] Set Default Input Pin Transition as 0.1 ps.
+[03/02 12:47:05     44s] Extraction setup Started 
+[03/02 12:47:05     44s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[03/02 12:47:05     44s] Reading Capacitance Table File ../../cadence_cap_tech/saed32nm_1p9m_Cmax.cap ...
+[03/02 12:47:05     44s] Process name: saed32nm_1p9m_Cmax.
+[03/02 12:47:05     44s] Reading Capacitance Table File ../../cadence_cap_tech/saed32nm_1p9m_Cmin.cap ...
+[03/02 12:47:05     44s] Process name: saed32nm_1p9m_Cmin.
+[03/02 12:47:05     44s] Importing multi-corner RC tables ... 
+[03/02 12:47:05     44s] Summary of Active RC-Corners : 
+[03/02 12:47:05     44s]  
+[03/02 12:47:05     44s]  Analysis View: test_worst_scenario
+[03/02 12:47:05     44s]     RC-Corner Name        : cmax
+[03/02 12:47:05     44s]     RC-Corner Index       : 0
+[03/02 12:47:05     44s]     RC-Corner Temperature : -40 Celsius
+[03/02 12:47:05     44s]     RC-Corner Cap Table   : '../../cadence_cap_tech/saed32nm_1p9m_Cmax.cap'
+[03/02 12:47:05     44s]     RC-Corner PreRoute Res Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PreRoute Cap Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s]  
+[03/02 12:47:05     44s]  Analysis View: func_worst_scenario
+[03/02 12:47:05     44s]     RC-Corner Name        : cmax
+[03/02 12:47:05     44s]     RC-Corner Index       : 0
+[03/02 12:47:05     44s]     RC-Corner Temperature : -40 Celsius
+[03/02 12:47:05     44s]     RC-Corner Cap Table   : '../../cadence_cap_tech/saed32nm_1p9m_Cmax.cap'
+[03/02 12:47:05     44s]     RC-Corner PreRoute Res Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PreRoute Cap Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s]  
+[03/02 12:47:05     44s]  Analysis View: test_best_scenario
+[03/02 12:47:05     44s]     RC-Corner Name        : cmin
+[03/02 12:47:05     44s]     RC-Corner Index       : 1
+[03/02 12:47:05     44s]     RC-Corner Temperature : -40 Celsius
+[03/02 12:47:05     44s]     RC-Corner Cap Table   : '../../cadence_cap_tech/saed32nm_1p9m_Cmin.cap'
+[03/02 12:47:05     44s]     RC-Corner PreRoute Res Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PreRoute Cap Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s]  
+[03/02 12:47:05     44s]  Analysis View: func_best_scenario
+[03/02 12:47:05     44s]     RC-Corner Name        : cmin
+[03/02 12:47:05     44s]     RC-Corner Index       : 1
+[03/02 12:47:05     44s]     RC-Corner Temperature : -40 Celsius
+[03/02 12:47:05     44s]     RC-Corner Cap Table   : '../../cadence_cap_tech/saed32nm_1p9m_Cmin.cap'
+[03/02 12:47:05     44s]     RC-Corner PreRoute Res Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PreRoute Cap Factor         : 1
+[03/02 12:47:05     44s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[03/02 12:47:05     44s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[03/02 12:47:05     44s] LayerId::1 widthSet size::4
+[03/02 12:47:05     44s] LayerId::2 widthSet size::4
+[03/02 12:47:05     44s] LayerId::3 widthSet size::4
+[03/02 12:47:05     44s] LayerId::4 widthSet size::4
+[03/02 12:47:05     44s] LayerId::5 widthSet size::4
+[03/02 12:47:05     44s] LayerId::6 widthSet size::4
+[03/02 12:47:05     44s] LayerId::7 widthSet size::4
+[03/02 12:47:05     44s] LayerId::8 widthSet size::4
+[03/02 12:47:05     44s] LayerId::9 widthSet size::4
+[03/02 12:47:05     44s] LayerId::10 widthSet size::2
+[03/02 12:47:05     44s] Updating RC grid for preRoute extraction ...
+[03/02 12:47:05     44s] Initializing multi-corner capacitance tables ... 
+[03/02 12:47:05     44s] Initializing multi-corner resistance tables ...
+[03/02 12:47:05     44s] Preroute length aware model : LLS: 2-3 ; HLS: 3-5 ; rDens: 0.000000 ; uaWl: 0.000000 ; uaWlH: 0.000000 ; aWlH: 0.000000 ; Pmax: 0.850000 ; wcR: 0.000000 ; newSi: 0.000000 ; pMod: 82 ; 
+[03/02 12:47:05     44s] *Info: initialize multi-corner CTS.
+[03/02 12:47:07     44s] Ending "SetAnalysisView" (total cpu=0:00:00.5, real=0:00:02.0, peak res=682.7M, current mem=661.4M)
+[03/02 12:47:08     45s] Reading timing constraints file '../../constraints/ORCA_TOP_func_best.sdc' ...
+[03/02 12:47:08     45s] Current (total cpu=0:00:45.1, real=0:01:04, peak res=965.2M, current mem=876.9M)
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../../constraints/ORCA_TOP_func_best.sdc, Line 8).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_PCI_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_func_best.sdc, Line 261).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] Multithreaded Timing Analysis is initialized with 8 threads
+[03/02 12:47:08     45s]  (File ../../constraints/ORCA_TOP_func_best.sdc, Line 272).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_SDRAM_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_func_best.sdc, Line 286).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLK was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_func_best.sdc, Line 289).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLKn was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_func_best.sdc, Line 292).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1015):	The set_timing_derate command is not currently supported as a constraint which can be loaded as part of your SDC file. You can use the set_timing_Derate command interactively or in a Tcl command script. (File ../../constraints/ORCA_TOP_func_best.sdc, Line 786).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1015):	The set_timing_derate command is not currently supported as a constraint which can be loaded as part of your SDC file. You can use the set_timing_Derate command interactively or in a Tcl command script. (File ../../constraints/ORCA_TOP_func_best.sdc, Line 787).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:08     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:08     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:08     45s] INFO (CTE): Reading of timing constraints file ../../constraints/ORCA_TOP_func_best.sdc completed, with 7 WARNING
+[03/02 12:47:08     45s] Ending "Constraint file reading stats" (total cpu=0:00:00.3, real=0:00:00.0, peak res=958.2M, current mem=958.2M)
+[03/02 12:47:08     45s] Current (total cpu=0:00:45.5, real=0:01:04, peak res=965.2M, current mem=958.2M)
+[03/02 12:47:08     45s] Reading timing constraints file '../../constraints/ORCA_TOP_test_best.sdc' ...
+[03/02 12:47:08     45s] Current (total cpu=0:00:45.5, real=0:01:04, peak res=965.2M, current mem=958.2M)
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../../constraints/ORCA_TOP_test_best.sdc, Line 8).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_PCI_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_test_best.sdc, Line 265).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_SDRAM_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_test_best.sdc, Line 290).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLK was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_test_best.sdc, Line 293).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLKn was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_test_best.sdc, Line 296).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1015):	The set_timing_derate command is not currently supported as a constraint which can be loaded as part of your SDC file. You can use the set_timing_Derate command interactively or in a Tcl command script. (File ../../constraints/ORCA_TOP_test_best.sdc, Line 822).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1015):	The set_timing_derate command is not currently supported as a constraint which can be loaded as part of your SDC file. You can use the set_timing_Derate command interactively or in a Tcl command script. (File ../../constraints/ORCA_TOP_test_best.sdc, Line 823).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:08     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:08     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:08     45s] INFO (CTE): Reading of timing constraints file ../../constraints/ORCA_TOP_test_best.sdc completed, with 7 WARNING
+[03/02 12:47:08     45s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=980.9M, current mem=980.9M)
+[03/02 12:47:08     45s] Current (total cpu=0:00:45.7, real=0:01:04, peak res=980.9M, current mem=980.9M)
+[03/02 12:47:08     45s] Reading timing constraints file '../../constraints/ORCA_TOP_func_worst.sdc' ...
+[03/02 12:47:08     45s] Current (total cpu=0:00:45.7, real=0:01:04, peak res=980.9M, current mem=980.9M)
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_PCI_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_func_worst.sdc, Line 263).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_SDRAM_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_func_worst.sdc, Line 288).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLK was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_func_worst.sdc, Line 291).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLKn was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_func_worst.sdc, Line 298).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] INFO (CTE): Reading of timing constraints file ../../constraints/ORCA_TOP_func_worst.sdc completed, with 4 WARNING
+[03/02 12:47:08     45s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=981.4M, current mem=981.4M)
+[03/02 12:47:08     45s] Current (total cpu=0:00:45.8, real=0:01:04, peak res=981.4M, current mem=981.4M)
+[03/02 12:47:08     45s] Reading timing constraints file '../../constraints/ORCA_TOP_test_worst.sdc' ...
+[03/02 12:47:08     45s] Current (total cpu=0:00:45.9, real=0:01:04, peak res=981.4M, current mem=981.4M)
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 8).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1014):	The SDC set_operating_conditions assertion is not supported. Please use the create_delay_corner command to specify the desired operating enviroment. Use the setAnalysisMode command to control single vs. bestCase/worstCase vs. on-chip variation timing analysis. (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 9).
+[03/02 12:47:08     45s] 
+[03/02 12:47:08     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_PCI_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 266).
+[03/02 12:47:08     45s] 
+[03/02 12:47:09     45s] **WARN: (TCLCMD-1142):	Virtual clock 'v_SDRAM_CLK' is being created with no source objects. (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 291).
+[03/02 12:47:09     45s] 
+[03/02 12:47:09     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLK was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 294).
+[03/02 12:47:09     45s] 
+[03/02 12:47:09     45s] **WARN: (TCLCMD-1333):	The combinational generated clock SD_DDR_CLKn was specified without any of -divide_by, -multiply_by, or -edges options which are normally used to define the output waveform. A -divide_by 1 specification has been inferred for this clock. (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 301).
+[03/02 12:47:09     45s] 
+[03/02 12:47:09     45s] **WARN: (TCLCMD-1015):	The set_timing_derate command is not currently supported as a constraint which can be loaded as part of your SDC file. You can use the set_timing_Derate command interactively or in a Tcl command script. (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 831).
+[03/02 12:47:09     45s] 
+[03/02 12:47:09     45s] **WARN: (TCLCMD-1015):	The set_timing_derate command is not currently supported as a constraint which can be loaded as part of your SDC file. You can use the set_timing_Derate command interactively or in a Tcl command script. (File ../../constraints/ORCA_TOP_test_worst.sdc, Line 832).
+[03/02 12:47:09     45s] 
+[03/02 12:47:09     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:09     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:09     45s] **ERROR: (DMMMC-271):	The software does not currently support the SDC set_voltage command. You should use operating conditions to control the default operating voltage and any power domain specific voltages.
+[03/02 12:47:09     45s] INFO (CTE): Reading of timing constraints file ../../constraints/ORCA_TOP_test_worst.sdc completed, with 8 WARNING
+[03/02 12:47:09     45s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:01.0, peak res=981.9M, current mem=981.9M)
+[03/02 12:47:09     45s] Current (total cpu=0:00:46.0, real=0:01:05, peak res=981.9M, current mem=981.9M)
+[03/02 12:47:09     45s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[03/02 12:47:09     45s] Creating Cell Server ...(0, 1, 1, 1)
+[03/02 12:47:09     46s] Summary for sequential cells identification: 
+[03/02 12:47:09     46s]   Identified SBFF number: 92
+[03/02 12:47:09     46s]   Identified MBFF number: 0
+[03/02 12:47:09     46s]   Identified SB Latch number: 0
+[03/02 12:47:09     46s]   Identified MB Latch number: 0
+[03/02 12:47:09     46s]   Not identified SBFF number: 120
+[03/02 12:47:09     46s]   Not identified MBFF number: 0
+[03/02 12:47:09     46s]   Not identified SB Latch number: 0
+[03/02 12:47:09     46s]   Not identified MB Latch number: 0
+[03/02 12:47:09     46s]   Number of sequential cells which are not FFs: 52
+[03/02 12:47:09     46s] Total number of combinational cells: 268
+[03/02 12:47:09     46s] Total number of sequential cells: 264
+[03/02 12:47:09     46s] Total number of tristate cells: 12
+[03/02 12:47:09     46s] Total number of level shifter cells: 0
+[03/02 12:47:09     46s] Total number of power gating cells: 0
+[03/02 12:47:09     46s] Total number of isolation cells: 32
+[03/02 12:47:09     46s] Total number of power switch cells: 0
+[03/02 12:47:09     46s] Total number of pulse generator cells: 0
+[03/02 12:47:09     46s] Total number of always on buffers: 0
+[03/02 12:47:09     46s] Total number of retention cells: 0
+[03/02 12:47:09     46s] List of usable buffers: NBUFFX2_LVT NBUFFX16_LVT NBUFFX32_LVT NBUFFX4_LVT NBUFFX8_LVT
+[03/02 12:47:09     46s] Total number of usable buffers: 5
+[03/02 12:47:09     46s] List of unusable buffers:
+[03/02 12:47:09     46s] Total number of unusable buffers: 0
+[03/02 12:47:09     46s] List of usable inverters: IBUFFX2_LVT IBUFFX16_LVT IBUFFX32_LVT INVX0_LVT IBUFFX4_LVT IBUFFX8_LVT INVX16_LVT INVX1_LVT INVX2_LVT INVX32_LVT INVX4_LVT IBUFFX2_HVT INVX8_LVT IBUFFX16_HVT IBUFFX32_HVT INVX0_HVT IBUFFX4_HVT IBUFFX8_HVT INVX16_HVT INVX1_HVT INVX2_HVT INVX32_HVT INVX4_HVT INVX8_HVT
+[03/02 12:47:09     46s] Total number of usable inverters: 24
+[03/02 12:47:09     46s] List of unusable inverters:
+[03/02 12:47:09     46s] Total number of unusable inverters: 0
+[03/02 12:47:09     46s] List of identified usable delay cells: DELLN1X2_LVT DELLN2X2_LVT DELLN3X2_LVT DELLN1X2_HVT DELLN2X2_HVT DELLN3X2_HVT NBUFFX2_HVT NBUFFX16_HVT NBUFFX32_HVT NBUFFX4_HVT NBUFFX8_HVT
+[03/02 12:47:09     46s] Total number of identified usable delay cells: 11
+[03/02 12:47:09     46s] List of identified unusable delay cells:
+[03/02 12:47:09     46s] Total number of identified unusable delay cells: 0
+[03/02 12:47:09     46s] Creating Cell Server, finished. 
+[03/02 12:47:09     46s] 
+[03/02 12:47:09     46s] Deleting Cell Server ...
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell NOR4X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell SDFFNX1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell SDFFNARX1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell SDFFASX2_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell SDFFASX1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell XNOR3X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell NAND2X0_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell OR3X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell OR2X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell OA221X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell INVX1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell AO21X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell AND2X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell OA222X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell AO221X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell AO22X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell OA21X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell AND3X1_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell NBUFFX2_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (IMPSYC-2):	Timing information is not defined for cell NAND2X2_RVT; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[03/02 12:47:09     46s] Type 'man IMPSYC-2' for more detail.
+[03/02 12:47:09     46s] **WARN: (EMS-27):	Message (IMPSYC-2) has exceeded the current message display limit of 20.
+[03/02 12:47:09     46s] To increase the message display limit, refer to the product command reference manual.
+[03/02 12:47:09     46s] 
+[03/02 12:47:09     46s] *** Summary of all messages that are not suppressed in this session:
+[03/02 12:47:09     46s] Severity  ID               Count  Summary                                  
+[03/02 12:47:09     46s] WARNING   IMPLF-58           208  MACRO '%s' has been found in the databas...
+[03/02 12:47:09     46s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[03/02 12:47:09     46s] WARNING   IMPLF-105            4  The layer '%s' specified in SAMENET spac...
+[03/02 12:47:09     46s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[03/02 12:47:09     46s] WARNING   IMPSYC-2            73  Timing information is not defined for ce...
+[03/02 12:47:09     46s] WARNING   IMPPP-543           28  Inconsistent cut size definition in VIAR...
+[03/02 12:47:09     46s] ERROR     DMMMC-271            9  The software does not currently support ...
+[03/02 12:47:09     46s] WARNING   TCLCMD-1014          1  The SDC set_operating_conditions asserti...
+[03/02 12:47:09     46s] WARNING   TCLCMD-1015          6  The %s command is not currently supporte...
+[03/02 12:47:09     46s] WARNING   TCLCMD-1142          8  Virtual clock '%s' is being created with...
+[03/02 12:47:09     46s] WARNING   TCLCMD-1333          8  The combinational generated clock %s was...
+[03/02 12:47:09     46s] WARNING   TCLCMD-1461          3  Skipped unsupported command: %s          
+[03/02 12:47:09     46s] WARNING   TECHLIB-302         48  No function defined for cell '%s'. The c...
+[03/02 12:47:09     46s] WARNING   TECHLIB-1161        30  The library level attribute %s on line %...
+[03/02 12:47:09     46s] WARNING   TECHLIB-1277        48  The %s '%s' has been defined for %s %s '...
+[03/02 12:47:09     46s] *** Message Summary: 470 warning(s), 9 error(s)
+[03/02 12:47:09     46s] 
+[03/02 12:47:09     46s] ### Start verbose source output (echo mode) for '../../ORCA_TOP.design_options.tcl' ...
+[03/02 12:47:09     46s] # if {[info exists synopsys_program_name]} {
+
+	if { $synopsys_program_name == "dc_shell" } {
+	
+		set auto_insert_level_shifters_on_clocks all
+    	}
+
+      	if { $synopsys_program_name == "icc2_shell" } {
+
+		####### FLOORPLANNING OPTIONS
+		if { [sizeof_collection [get_placement_blockage io_pblockage ] ] ==0 } {
+		  #create_placement_blockage -type hard_macro -boundary {{10.0 10.0} {1000 50}} -name io_pblockage
+		  #create_placement_blockage -type hard_macro -boundary {{10.0 10.0} {800 30}} -name io_pblockage
+		}
+
+		set_individual_pin_constraints -sides 4 -ports [get_attribute [get_ports ] name ] -offset 500 -pin_spacing 1 -allowed_layers [ get_layers { M4 M5 M6 M7 } ]
+		set_individual_pin_constraints -sides 4 -ports [get_attribute [get_ports ] name ]
+		place_pins -self
+		#set_individual_pin_constraints -sides 4 -ports [get_attribute [get_ports ] name ]
+	    #load_upf ../../syn/outputs/ORCA_TOP.dc.upf.place_2020
+
+		if { [ sizeof_collection [get_voltage_areas * ] ] < 2 && $FCL==0} {
+			create_voltage_area -power_domains {PD_RISC_CORE} -power VDDH -ground VSS -cells [get_cells I_RISC_CORE/*] -region {{11 433} {417 649}} -name RISC_CORE_VA
+		#	create_voltage_area  -region {{10.0 433.0480} {418.27 653.72}} -power_domains PD_RISC_CORE
+		}
+
+		
+		if { [sizeof_collection [ get_placement_blockages pb* ] ] == 0 && $FCL==0 } {
+		create_placement_blockage -name pb_PCI -type allow_buffer_only -blocked_percentage 0 -boundary {{12.5400 11.6720} {12.5400 459.1800} {136.7500 459.1800} {136.7500 136.5420} {275.9600 136.5420} {275.9600 11.6720}}
+		create_placement_blockage -name pb_SDRAM -type allow_buffer_only -blocked_percentage 0 -boundary {{729.9360 216.8970} {1007.7480 216.8970} {1007.7480 12.0810} {729.9360 12.0810}}
+		create_placement_blockage -name pb_CONTEXT -type allow_buffer_only -blocked_percentage 0 -boundary {{829.0800 216.8970} {829.0800 505.3040} {537.9270 505.3040} {537.9270 651.7880} {1008.1820 651.7880} {1008.1820 216.8970}}
+		create_placement_blockage -name pb_RISC -type allow_buffer_only -blocked_percentage 0 -boundary {{11.6720 459.1800} {11.6720 650.0060} {303.6600 650.0060} {303.6600 459.1800}}
+		
+		}
+		######PLACE
+
+		set_app_option -name place.coarse.continue_on_missing_scandef -value true
+
+		set_app_option -name place_opt.initial_place.effort -value medium
+		set_app_option -name place_opt.final_place.effort -value medium
+
+
+		#set enable_recovery_removal_arcs true
+		set_app_option -name time.disable_recovery_removal_checks -value false
+		#set timing_enable_multiple_clocks_per_reg true
+		#set timing_remove_clock_reconvergence_pessimism true
+		set_app_option -name timer.remove_clock_reconvergence_pessimism -value true
+
+		#set physopt_enable_via_res_support true
+		#set physopt_hard_keepout_distance 5
+		#set_preferred_routing_direction -direction vertical -l {M2 M4}
+		#set_preferred_routing_direction -direction horizontal -l {M3 M5}
+		set_ignored_layers  -min_routing_layer M2 -max_routing_layer M7
+
+
+		# To optimize DW components (I think only adders right now??) - default is false
+		#set physopt_dw_opto true
+
+		#set_ahfs_options -remove_effort high
+		#set_buffer_opt_strategy -effort medium
+
+
+		###########################  CTS Related
+		create_routing_rule clock_double_spacing -spacings {M1 0.1 M2 0.112 M3 0.112 M4 0.112 M5 0.112 M6 0.112 M7 0.112 M8 0.112}
+		#set_clock_routing_rules -clock [ get_clocks * ] -net_type leaf -rule clock_double_spacing -max_routing_layer M6 -min_routing_layer M3
+		set_clock_routing_rules -clock [ get_clocks * ] -net_type internal -rule clock_double_spacing -max_routing_layer M6 -min_routing_layer M3
+		set_clock_routing_rules -clock [ get_clocks * ] -net_type root -rule clock_double_spacing -max_routing_layer M6 -min_routing_layer M3
+
+		set cts_clks [get_clocks {SDRAM_CLK SYS_2x_CLK SYS_CLK PCI_CLK} ]
+
+		# don't allow X16 or X32.  Maybe just stop X32.  They are extremely high drive and could cause EM problems.
+		set_lib_cell_purpose -include none [get_lib_cell {*/*X32*} ]
+
+		# dont allow INV* for CTS since I think they are unbalanced rise/fall
+		set_lib_cell_purpose -exclude cts [ get_lib_cell */INV* ]
+
+		# potentially try to disallow IBUF (inverter buffers) or NBUF (non-inverting buffers) to see if all inverters or all buffers makes a difference
+		set_lib_cell_purpose -exclude cts [ get_lib_cell */IBUF* ]
+		#set_lib_cell_purpose -exclude cts [ get_lib_cell */NBUF* ]
+
+		# dont allow slower cells on clock trees.  
+		set_lib_cell_purpose -exclude cts [ get_lib_cell { */*HVT */*RVT } ]
+
+		set_max_transition 0.15 -clock_path $cts_clks 
+
+		# Other potential options
+		# set_max_capacitance cap_value -clock_path $cts_clks
+		# set_app_option -name cts.common.max_net_length  -value float
+		# set_app_option -name cts.common.max_fanout  -value <2-1000000>
+		# set_clock_tree_options -target_skew value -clock $cts_clks 
+		# set_clock_tree_options -target_latency value -clock $cts_clks
+
+		#set_host_options -max_cores 1 -num_processes 1 mo.ece.pdx.edu
+		set_app_options -name place_opt.flow.enable_ccd -value false
+		set_app_options -name clock_opt.flow.enable_ccd -value false
+		set_app_options -name route_opt.flow.enable_ccd -value false
+		set_app_options -name ccd.max_postpone -value 0
+		set_app_options -name ccd.max_prepone -value 0
+
+
+		# If design blows up, try turning hold fixing off. 
+		# set_app_option -name clock_opt.flow.skip_hold -value true
+
+		# Dont use delay buffers
+		#set_dont_use [get_lib_cells */DELLN* ]
+		set_lib_cell_purpose -include none [get_lib_cells */DELLN* ]
+		set_lib_cell_purpose -include hold [get_lib_cells */DELLN* ]
+
+		########################## Route related
+		set_app_option -name route_opt.flow.xtalk_reduction -value true
+		set_app_option -name time.si_enable_analysis -value true
+
+   	}
+} elseif {[get_db root: .program_short_name] == "innovus"} {
+	setNanoRouteMode -drouteEndIteration 10
+	set cts_clks [get_clocks {SDRAM_CLK SYS_2x_CLK SYS_CLK PCI_CLK} ]
+
+  setMultiCpuUsage -localCpu 4 
+	#set_max_transition 0.1 -clock_path $cts_clks
+	set_ccopt_property target_max_trans 0.3ns
+
+}
+<CMD> setNanoRouteMode -drouteEndIteration 10
+[03/02 12:47:09     46s] <CMD> setMultiCpuUsage -localCpu 4
+[03/02 12:47:09     46s] <CMD> set_ccopt_property target_max_trans 0.3ns
+[03/02 12:47:09     46s] ### End verbose source output for '../../ORCA_TOP.design_options.tcl'.
+[03/02 12:47:09     46s] ### Start verbose source output (echo mode) for '../scripts/floorplan-innovus.tcl' ...
+[03/02 12:47:09     46s] # defIn "../outputs/${top_design}.floorplan.innovus.macros.def" 
+<CMD> defIn ../outputs/ORCA_TOP.floorplan.innovus.macros.def
+[03/02 12:47:09     46s] **ERROR: (IMPSYUTIL-96):	Cannot open (for read) def file: '../outputs/ORCA_TOP.floorplan.innovus.macros.def'. The reason is: No such file or directory
+Type 'man IMPSYUTIL-96' for more detail.
+[03/02 12:47:09     46s] **ERROR: (IMPDF-8):	Could not open def file '../outputs/ORCA_TOP.floorplan.innovus.macros.def'.
+**ERROR: (IMPSE-110):	File '../scripts/floorplan-innovus.tcl' line 6: errors out.
+### End verbose source output for '../scripts/floorplan-innovus.tcl'.
+[03/02 12:47:09     46s] 
+[03/02 12:50:28     86s] ### Start verbose source output (echo mode) for '../../ORCA_TOP.design_config.tcl' ...
+[03/02 12:50:28     86s] # set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+# set top_design ORCA_TOP
+# set FCL 1
+# set add_ios 0
+# set pad_design 0
+# set design_size {1000 644 }
+# set design_io_border 10
+# set dc_floorplanning 1
+# set enable_dft  0
+# set innovus_enable_manual_macro_placement 1
+# set split_constraints 0
+# set rtl_list [list ../rtl/$top_design.sv ]
+# set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+# set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+# set synth_corners_slow $slow_corner
+# set synth_corners_fast $fast_corner
+# set slow_metal Cmax.tlup_-40
+# set fast_metal Cmin.tlup_-40
+# set lib_types "$lib_dir/stdcell_hvt/db_nldm $lib_dir/stdcell_lvt/db_nldm $lib_dir/io_std/db_nldm $lib_dir/sram/db_nldm $lib_dir/pll/db_nldm"
+# set ndm_types "$lib_dir/stdcell_lvt/ndm $lib_dir/stdcell_rvt/ndm $lib_dir/stdcell_hvt/ndm $lib_dir/sram/ndm $lib_dir/io_std/ndm  $lib_dir/pll/ndm"
+# set lib_types_target "$lib_dir/stdcell_rvt/db_nldm"
+# set sub_lib_type "saed32?vt_ saed32sram_ saed32io_wb_ saed32pll_"
+# set sub_lib_type_target "saed32rvt_"
+# set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+# set lef_types [list $lib_dir/stdcell_hvt/lef  \
+$lib_dir/stdcell_rvt/lef \
+$lib_dir/stdcell_lvt/lef \
+$lib_dir/sram/lef/ \
+$lib_dir/io_std/lef \
+$lib_dir/pll/lef \
+]
+# set sub_lef_type "saed32nm_?vt_*.lef saed32_sram_*.lef saed32io_std_wb saed32_PLL.lef"
+# set synth_corners $slow_corner
+# set synth_corners_slow $slow_corner
+# set synth_corners_fast $fast_corner
+# set mwlib_types [list $lib_dir/stdcell_hvt/milkyway \
+$lib_dir/stdcell_rvt/milkyway \
+$lib_dir/stdcell_lvt/milkyway  \
+$lib_dir/io_std/milkyway \
+$lib_dir/sram/milkyway $lib_dir/pll/milkyway \
+ ]
+# set sub_mwlib_type "saed32nm_?vt_* SRAM32NM saed32io_wb_* SAED32_PLL_FR*"
+# if { 0 } {
+    set corners ""
+    #Add Worst corners
+    set corners "$corners ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+    #Add Best corners
+    set corners "$corners ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+    #Add Leakage corners
+    set corners "$corners ff0p95v125c f0p95v125c_i1p16v ff0p95v125c_i0p95v ff1p16v125c ff1p16v125c_i1p16v ff1p16v125c ff1p16v125c_i0p95v"
+    set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram_lp"
+    # Get the main standard cells, and also the level shifters.  Plus srams.
+    set sub_lib_type "saed32?vt_ saed32?vt_ulvl_ saed32?vt_dlvl_ saed32sram_"
+}
+# set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+# set sub_block {SDRAM_TOP 
+				BLENDER_0 
+				PCI_TOP 
+				CONTEXT_MEM 
+				RISC_CORE 
+				CLOCKING 
+				BLENDER_1 
+				PARSER 
+				}
+# set sub_block_I {I_SDRAM_TOP I_BLENDER_1  I_BLENDER_0 I_RISC_CORE I_CONTEXT_MEM I_PCI_TOP I_PARSER I_CLOCKING}
+# set macro_block {I_SDRAM_TOP I_PCI_TOP I_RISC_CORE I_CONTEXT_MEM}
+# if {[info exists synopsys_program_name]} {
+        if { $synopsys_program_name == "dc_shell" } {
+           set_host_options -max_cores 4
+        } 
+        if { $synopsys_program_name == "icc2_shell" } {
+           set_host_options -max_cores 4
+        }
+} elseif {[get_db root: .program_short_name] == "innovus"} {
+  setMultiCpuUsage -localCpu 8 
+} elseif {[get_db root: .program_short_name] == "genus"} {
+  set_db / .max_cpus_per_server 8 
+}
+<CMD> setMultiCpuUsage -localCpu 8
+[03/02 12:50:28     86s] ### End verbose source output for '../../ORCA_TOP.design_config.tcl'.
+[03/02 12:50:28     86s] invalid command name "delete_obj"
+[03/02 12:50:37     88s] 
+[03/02 12:50:37     88s] *** Memory Usage v#1 (Current mem = 1356.480M, initial mem = 289.684M) ***
+[03/02 12:50:37     88s] 
+[03/02 12:50:37     88s] *** Summary of all messages that are not suppressed in this session:
+[03/02 12:50:37     88s] Severity  ID               Count  Summary                                  
+[03/02 12:50:37     88s] ERROR     IMPDF-8              1  Could not open %sfile '%s'.              
+[03/02 12:50:37     88s] WARNING   IMPLF-58           208  MACRO '%s' has been found in the databas...
+[03/02 12:50:37     88s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[03/02 12:50:37     88s] WARNING   IMPLF-105            4  The layer '%s' specified in SAMENET spac...
+[03/02 12:50:37     88s] ERROR     IMPSE-110            1  File '%s' line %s: %s.                   
+[03/02 12:50:37     88s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[03/02 12:50:37     88s] WARNING   IMPSYC-2            73  Timing information is not defined for ce...
+[03/02 12:50:37     88s] ERROR     IMPSYUTIL-96         1  Cannot open (for %s) %s file: '%s'. The ...
+[03/02 12:50:37     88s] WARNING   IMPPP-543           28  Inconsistent cut size definition in VIAR...
+[03/02 12:50:37     88s] ERROR     DMMMC-271            9  The software does not currently support ...
+[03/02 12:50:37     88s] WARNING   TCLCMD-1014          1  The SDC set_operating_conditions asserti...
+[03/02 12:50:37     88s] WARNING   TCLCMD-1015          6  The %s command is not currently supporte...
+[03/02 12:50:37     88s] WARNING   TCLCMD-1083          1  '%s'                                     
+[03/02 12:50:37     88s] WARNING   TCLCMD-1142          8  Virtual clock '%s' is being created with...
+[03/02 12:50:37     88s] WARNING   TCLCMD-1333          8  The combinational generated clock %s was...
+[03/02 12:50:37     88s] WARNING   TCLCMD-1461          3  Skipped unsupported command: %s          
+[03/02 12:50:37     88s] WARNING   TECHLIB-302         48  No function defined for cell '%s'. The c...
+[03/02 12:50:37     88s] WARNING   TECHLIB-1161        30  The library level attribute %s on line %...
+[03/02 12:50:37     88s] WARNING   TECHLIB-1277        48  The %s '%s' has been defined for %s %s '...
+[03/02 12:50:37     88s] *** Message Summary: 471 warning(s), 12 error(s)
+[03/02 12:50:37     88s] 
+[03/02 12:50:37     88s] --- Ending "Innovus" (totcpu=0:01:28, real=0:04:33, mem=1356.5M) ---
