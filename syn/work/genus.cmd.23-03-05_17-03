@@ -1,0 +1,22 @@
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Sun Mar 05 17:47:43 2023
+# Host: auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*60cpus*60physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Sun Mar 05 17:47:55 2023
+# Host: auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*60cpus*60physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+fs
+source ../scripts/genus-phys.tcl
+gui_show
+report_tming -from wptr_full/wfull_reg/CLK -to wfull -group OUTPUTS
+report_timing -from wptr_full/wfull_reg/CLK -to wfull -group OUTPUTS
+report_timing -from wptr_full/wfull_reg/CLK -to wfull -group OUTPUTS > timing.mtarpt
+report_timing -from wptr_full/wfull_reg/CLK -to wfull -group OUTPUTS -output_format gtd > timing.mtarpt
+report_timing -from rptr_empty/rbin_reg_0_/CLK -to rptr_empty/rempty_reg/D -group rclk -output_format gtd > timing1.mtarpt
+report_timing -from wptr_full/wbin_reg_0_/CLK -to wptr_full/wfull_reg/D -group wclk -output_format gtd > timing2.mtarpt
+report_timing -from wptr_full/wbin_reg_0_/CLK -to wptr_full/wfull_reg/D -group wclk -output_format gtd > timing2.mtarpt
