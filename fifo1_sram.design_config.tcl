@@ -66,6 +66,4 @@ set sub_mwlib_type "saed32nm_?vt_* SRAM32NM saed32io_wb_* SAED32_PLL_FR*"
 #set topdir /u/$env(USER)/PSU_RTL2GDS
 set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
 set FCL 0
-set split_constraints 0
-
-
+set split_constraints 0

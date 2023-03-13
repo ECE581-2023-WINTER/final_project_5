@@ -1,4 +1,4 @@
-set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK
+set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
 
 # Decoder ring for the libraries
 # You will need to follow another example or look in the library directories to understand.
@@ -12,7 +12,7 @@ set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK
 # Example:
 #     saed32hvt_ss0p75v125c.db
 #     |sub_lib  corner    .db
-# The current flow tries to find all sub_lib and all corners in all the search paths.  Any match will be put in the library list.
+# The current flow tries to find all sub_lib and all caorners in all the search paths.  Any match will be put in the library list.
 # Wild cards can be used, but be careful.  Multiple matches can occur in ways you don't want.
 
 # For the target library, the same method is used as the link library except only HVT and RVT lib_types are used.
@@ -32,7 +32,7 @@ set pad_design 0
 set design_size {1000 644 }
 set design_io_border 10
 set dc_floorplanning 1
-set enable_dft 0
+set enable_dft  0
 set innovus_enable_manual_macro_placement 1
 set split_constraints 0
 
@@ -43,16 +43,42 @@ set rtl_list [list ../rtl/$top_design.sv ]
 
 set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
 set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+set synth_corners_slow $slow_corner
+set synth_corners_fast $fast_corner
 set slow_metal Cmax.tlup_-40
 set fast_metal Cmin.tlup_-40
+
+set lib_types "$lib_dir/stdcell_hvt/db_nldm $lib_dir/stdcell_lvt/db_nldm $lib_dir/io_std/db_nldm $lib_dir/sram/db_nldm $lib_dir/pll/db_nldm"
+set ndm_types "$lib_dir/stdcell_lvt/ndm $lib_dir/stdcell_rvt/ndm $lib_dir/stdcell_hvt/ndm $lib_dir/sram/ndm $lib_dir/io_std/ndm  $lib_dir/pll/ndm"
+set lib_types_target "$lib_dir/stdcell_rvt/db_nldm"
+set sub_lib_type "saed32?vt_ saed32sram_ saed32io_wb_ saed32pll_"
+set sub_lib_type_target "saed32rvt_"
+set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+#set synth_corners_target "ss0p95v125c" 
+
+set lef_types [list $lib_dir/stdcell_hvt/lef  \
+$lib_dir/stdcell_rvt/lef \
+$lib_dir/stdcell_lvt/lef \
+$lib_dir/sram/lef/ \
+$lib_dir/io_std/lef \
+$lib_dir/pll/lef \
+]
+set sub_lef_type "saed32nm_?vt_*.lef saed32_sram_*.lef saed32io_std_wb saed32_PLL.lef"
 
 set synth_corners $slow_corner
 set synth_corners_slow $slow_corner
 set synth_corners_fast $fast_corner
+set mwlib_types [list $lib_dir/stdcell_hvt/milkyway \
+$lib_dir/stdcell_rvt/milkyway \
+$lib_dir/stdcell_lvt/milkyway  \
+$lib_dir/io_std/milkyway \
+$lib_dir/sram/milkyway $lib_dir/pll/milkyway \
+ ]
+set sub_mwlib_type "saed32nm_?vt_* SRAM32NM saed32io_wb_* SAED32_PLL_FR*"
 
-set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram"
+#set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram"
 # Get just the main standard cells, srams
-set sub_lib_type "saed32?vt_ saed32sram_ saed32?vt_ulvl_ saed32?vt_dlvl_ "
+#set sub_lib_type "saed32?vt_ saed32sram_ saed32?vt_ulvl_ saed32?vt_dlvl_ "
 
 # Full MCMM Corners
 if { 0 } {
@@ -97,6 +123,5 @@ if {[info exists synopsys_program_name]} {
 } elseif {[get_db root: .program_short_name] == "innovus"} {
   setMultiCpuUsage -localCpu 8 
 } elseif {[get_db root: .program_short_name] == "genus"} {
-  set_db / .max_cpus_per_server 8 
+  set_db / .max_cpus_per_server 8 
 }
-

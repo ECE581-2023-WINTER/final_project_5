@@ -1,0 +1,391 @@
+[03/11 21:18:33      0s] 
+[03/11 21:18:33      0s] Cadence Innovus(TM) Implementation System.
+[03/11 21:18:33      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[03/11 21:18:33      0s] 
+[03/11 21:18:33      0s] Version:	v19.16-s053_1, built Mon Aug 31 13:16:01 PDT 2020
+[03/11 21:18:33      0s] Options:	
+[03/11 21:18:33      0s] Date:		Sat Mar 11 21:18:33 2023
+[03/11 21:18:33      0s] Host:		auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*60cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+[03/11 21:18:33      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[03/11 21:18:33      0s] 
+[03/11 21:18:33      0s] License:
+[03/11 21:18:34      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[03/11 21:18:34      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[03/11 21:18:51     14s] @(#)CDS: Innovus v19.16-s053_1 (64bit) 08/31/2020 13:16 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/11 21:18:51     14s] @(#)CDS: NanoRoute 19.16-s053_1 NR200827-1939/19_16-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+[03/11 21:18:51     14s] @(#)CDS: AAE 19.16-s019 (64bit) 08/31/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/11 21:18:51     14s] @(#)CDS: CTE 19.16-s019_1 () Aug 22 2020 00:37:42 ( )
+[03/11 21:18:51     14s] @(#)CDS: SYNTECH 19.16-s010_1 () Aug 17 2020 09:10:13 ( )
+[03/11 21:18:51     14s] @(#)CDS: CPE v19.16-s038
+[03/11 21:18:51     14s] @(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/11 21:18:51     14s] @(#)CDS: OA 22.60-s011 Tue Jun 16 12:27:00 2020
+[03/11 21:18:51     14s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[03/11 21:18:51     14s] @(#)CDS: RCDB 11.14.18
+[03/11 21:18:51     14s] @(#)CDS: STYLUS 19.10-s018_1 (06/12/2020 04:43 PDT)
+[03/11 21:18:51     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_58542_auto.ece.pdx.edu_reethika_w3jyQE.
+
+[03/11 21:18:51     14s] Change the soft stacksize limit to 0.2%RAM (170 mbytes). Set global soft_stack_size_limit to change the value.
+[03/11 21:18:52     15s] Sourcing startup file ./enc.tcl
+[03/11 21:18:52     15s] <CMD> alias fs set top_design fifo1_sram
+[03/11 21:18:52     15s] <CMD> alias f set top_design fifo1
+[03/11 21:18:52     15s] <CMD> alias o set top_design ORCA_TOP
+[03/11 21:18:52     15s] <CMD> alias e set top_design ExampleRocketSystem
+[03/11 21:18:52     15s] <CMD> set_table_style -name report_timing -max_widths { 8,6,23,70} -no_frame_fix_width
+[03/11 21:18:52     15s] **WARN: (TCLCMD-1083):	'-no_frame_fix_width are global controls that affect all of the various timing reports.  The -name option is used to specify a report-specific behavior, and therefore cannot be used with these global options. You should use a separate set_table_style command to specify the desired global options. You can then use additional set_table_style commands to refine the behaviors of specific timing reports.'
+[03/11 21:18:52     15s] <CMD> set_global report_timing_format  {delay arrival slew cell hpin}
+[03/11 21:18:52     15s] 
+[03/11 21:18:52     15s] **INFO:  MMMC transition support version v31-84 
+[03/11 21:18:52     15s] 
+[03/11 21:18:52     15s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[03/11 21:18:52     15s] <CMD> suppressMessage ENCEXT-2799
+[03/11 21:18:52     15s] <CMD> win
+[03/11 21:18:58     17s] <CMD> o
+[03/11 21:19:23     22s] ### Start verbose source output (echo mode) for '../../ORCA_TOP.design_config.tcl' ...
+[03/11 21:19:23     22s] # set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+# set top_design ORCA_TOP
+# set FCL 1
+# set add_ios 0
+# set pad_design 0
+# set design_size {1000 644 }
+# set design_io_border 10
+# set dc_floorplanning 1
+# set enable_dft  0
+# set innovus_enable_manual_macro_placement 1
+# set split_constraints 0
+# set rtl_list [list ../rtl/$top_design.sv ]
+# set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+# set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+# set synth_corners_slow $slow_corner
+# set synth_corners_fast $fast_corner
+# set slow_metal Cmax.tlup_-40
+# set fast_metal Cmin.tlup_-40
+# set lib_types "$lib_dir/stdcell_hvt/db_nldm $lib_dir/stdcell_lvt/db_nldm $lib_dir/io_std/db_nldm $lib_dir/sram/db_nldm $lib_dir/pll/db_nldm"
+# set ndm_types "$lib_dir/stdcell_lvt/ndm $lib_dir/stdcell_rvt/ndm $lib_dir/stdcell_hvt/ndm $lib_dir/sram/ndm $lib_dir/io_std/ndm  $lib_dir/pll/ndm"
+# set lib_types_target "$lib_dir/stdcell_rvt/db_nldm"
+# set sub_lib_type "saed32?vt_ saed32sram_ saed32io_wb_ saed32pll_"
+# set sub_lib_type_target "saed32rvt_"
+# set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+# set lef_types [list $lib_dir/stdcell_hvt/lef  \
+$lib_dir/stdcell_rvt/lef \
+$lib_dir/stdcell_lvt/lef \
+$lib_dir/sram/lef/ \
+$lib_dir/io_std/lef \
+$lib_dir/pll/lef \
+]
+# set sub_lef_type "saed32nm_?vt_*.lef saed32_sram_*.lef saed32io_std_wb saed32_PLL.lef"
+# set synth_corners $slow_corner
+# set synth_corners_slow $slow_corner
+# set synth_corners_fast $fast_corner
+# set mwlib_types [list $lib_dir/stdcell_hvt/milkyway \
+$lib_dir/stdcell_rvt/milkyway \
+$lib_dir/stdcell_lvt/milkyway  \
+$lib_dir/io_std/milkyway \
+$lib_dir/sram/milkyway $lib_dir/pll/milkyway \
+ ]
+# set sub_mwlib_type "saed32nm_?vt_* SRAM32NM saed32io_wb_* SAED32_PLL_FR*"
+# if { 0 } {
+    set corners ""
+    #Add Worst corners
+    set corners "$corners ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+    #Add Best corners
+    set corners "$corners ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+    #Add Leakage corners
+    set corners "$corners ff0p95v125c f0p95v125c_i1p16v ff0p95v125c_i0p95v ff1p16v125c ff1p16v125c_i1p16v ff1p16v125c ff1p16v125c_i0p95v"
+    set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram_lp"
+    # Get the main standard cells, and also the level shifters.  Plus srams.
+    set sub_lib_type "saed32?vt_ saed32?vt_ulvl_ saed32?vt_dlvl_ saed32sram_"
+}
+# set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+# set sub_block {SDRAM_TOP 
+				BLENDER_0 
+				PCI_TOP 
+				CONTEXT_MEM 
+				RISC_CORE 
+				CLOCKING 
+				BLENDER_1 
+				PARSER 
+				}
+# set sub_block_I {I_SDRAM_TOP I_BLENDER_1  I_BLENDER_0 I_RISC_CORE I_CONTEXT_MEM I_PCI_TOP I_PARSER I_CLOCKING}
+# set macro_block {I_SDRAM_TOP I_PCI_TOP I_RISC_CORE I_CONTEXT_MEM}
+# if {[info exists synopsys_program_name]} {
+        if { $synopsys_program_name == "dc_shell" } {
+           set_host_options -max_cores 4
+        } 
+        if { $synopsys_program_name == "icc2_shell" } {
+           set_host_options -max_cores 4
+        }
+} elseif {[get_db root: .program_short_name] == "innovus"} {
+  setMultiCpuUsage -localCpu 8 
+} elseif {[get_db root: .program_short_name] == "genus"} {
+  set_db / .max_cpus_per_serverÂ 8Â 
+}
+<CMD> setMultiCpuUsage -localCpu 8
+[03/11 21:19:23     22s] ### End verbose source output for '../../ORCA_TOP.design_config.tcl'.
+[03/11 21:19:23     22s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[03/11 21:19:23     22s] <CMD> set search_path {}
+[03/11 21:19:23     22s] <CMD> set init_lef_file {../../cadence_cap_tech/tech.lef saed32nm_lvt_1p9m.lef saed32nm_hvt_1p9m.lef saed32_PLL.lef saed32nm_rvt_1p9m.lef}
+[03/11 21:19:24     22s] <CMD> set init_mmmc_file mmmc.tcl
+[03/11 21:19:24     22s] <CMD> set init_design_netlisttype Verilog
+[03/11 21:19:24     22s] <CMD> set init_verilog ../../syn/outputs/ORCA_TOP.genus.vg
+[03/11 21:19:24     22s] <CMD> set init_top_cell ORCA_TOP
+[03/11 21:19:24     22s] <CMD> set init_pwr_net VDD
+[03/11 21:19:24     22s] <CMD> set init_gnd_net VSS
+[03/11 21:19:24     22s] <CMD> init_design
+[03/11 21:19:24     22s] #% Begin Load MMMC data ... (date=03/11 21:19:24, mem=486.7M)
+[03/11 21:19:24     22s] #% End Load MMMC data ... (date=03/11 21:19:24, total cpu=0:00:00.0, real=0:00:00.0, peak res=486.9M, current mem=486.9M)
+[03/11 21:19:24     22s] 
+[03/11 21:19:24     22s] Loading LEF file ../../cadence_cap_tech/tech.lef ...
+[03/11 21:19:24     22s] **WARN: (IMPLF-105):	The layer 'PO' specified in SAMENET spacing
+[03/11 21:19:24     22s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/11 21:19:24     22s] **WARN: (IMPLF-105):	The layer 'DIFF' specified in SAMENET spacing
+[03/11 21:19:24     22s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/11 21:19:24     22s] **WARN: (IMPLF-105):	The layer 'PO' specified in SAMENET spacing
+[03/11 21:19:24     22s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/11 21:19:24     22s] **WARN: (IMPLF-105):	The layer 'PIMP' specified in SAMENET spacing
+[03/11 21:19:24     22s] rule is neither a routing layer nor a cut layer. The rule is ignored.
+[03/11 21:19:24     22s] Set DBUPerIGU to M2 pitch 152.
+[03/11 21:19:24     23s] 
+[03/11 21:19:24     23s] Loading LEF file saed32nm_lvt_1p9m.lef ...
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'XNOR2X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'XNOR2X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'XNOR3X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'XOR2X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'XOR2X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'XOR3X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'XOR3X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'SDFFX1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'SDFFX2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'SDFFARX1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'SDFFARX2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR2X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR2X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR2X4_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR3X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR3X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR3X4_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR4X1_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR4X2_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (IMPLF-58):	MACRO 'OR4X4_LVT' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[03/11 21:19:24     23s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:24     23s] Type 'man IMPLF-58' for more detail.
+[03/11 21:19:24     23s] **WARN: (EMS-27):	Message (IMPLF-58) has exceeded the current message display limit of 20.
+[03/11 21:19:24     23s] To increase the message display limit, refer to the product command reference manual.
+[03/11 21:19:24     23s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/11 21:19:24     23s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/11 21:19:24     23s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32nm_lvt_1p9m.lef at line 67466.
+[03/11 21:19:24     23s] 
+[03/11 21:19:24     23s] Loading LEF file saed32nm_hvt_1p9m.lef ...
+[03/11 21:19:25     24s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/11 21:19:25     24s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/11 21:19:25     24s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32nm_hvt_1p9m.lef at line 191962.
+[03/11 21:19:25     24s] 
+[03/11 21:19:25     24s] Loading LEF file saed32_PLL.lef ...
+[03/11 21:19:25     24s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/11 21:19:25     24s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/11 21:19:25     24s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32_PLL.lef at line 372.
+[03/11 21:19:25     24s] 
+[03/11 21:19:25     24s] Loading LEF file saed32nm_rvt_1p9m.lef ...
+[03/11 21:19:25     24s] WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+[03/11 21:19:25     24s] Without BUSBITCHARS defined, the LEF file is technically incorrect.
+[03/11 21:19:25     24s] Refer the LEF/DEF 5.5 or earlier Language Referece manual on how to define this statement. See file saed32nm_rvt_1p9m.lef at line 148040.
+[03/11 21:19:25     24s] **WARN: (IMPLF-61):	208 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data, and certain properties, have been ignored.
+[03/11 21:19:25     24s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[03/11 21:19:25     24s] Type 'man IMPLF-61' for more detail.
+[03/11 21:19:25     24s] 
+[03/11 21:19:25     24s] viaInitial starts at Sat Mar 11 21:19:25 2023
+**WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12BAR_C' and 'VIA12SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12LG_C' and 'VIA12SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12BAR' and 'VIA12SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA12LG' and 'VIA12SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23BAR_C' and 'VIA23SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23LG_C' and 'VIA23SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23BAR' and 'VIA23SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA23LG' and 'VIA23SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34BAR_C' and 'VIA34SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34LG_C' and 'VIA34SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34BAR' and 'VIA34SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA34LG' and 'VIA34SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45BAR_C' and 'VIA45SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45LG_C' and 'VIA45SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45BAR' and 'VIA45SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA45LG' and 'VIA45SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56BAR_C' and 'VIA56SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56LG_C' and 'VIA56SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56BAR' and 'VIA56SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (IMPPP-543):	Inconsistent cut size definition in VIARULE 'VIA56LG' and 'VIA56SQ_C'.
+[03/11 21:19:25     24s] Type 'man IMPPP-543' for more detail.
+[03/11 21:19:25     24s] **WARN: (EMS-27):	Message (IMPPP-543) has exceeded the current message display limit of 20.
+[03/11 21:19:25     24s] To increase the message display limit, refer to the product command reference manual.
+[03/11 21:19:25     24s] viaInitial ends at Sat Mar 11 21:19:25 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[03/11 21:19:25     24s] Loading view definition file from mmmc.tcl
+[03/11 21:19:25     24s] Starting library reading in 'Multi-threaded flow' (with '8' threads)
+[03/11 21:19:27     33s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib.
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 84713)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 84764)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 84815)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 120153)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 120255)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 120204)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226791 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226792 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226793 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+[03/11 21:19:27     33s] Read 294 cells in library saed32hvt_ss0p75vn40c.
+[03/11 21:19:27     34s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib.
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 84613)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 84664)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 84715)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226348 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226349 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226350 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT3_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT2_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT1_HVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] Read 294 cells in library saed32hvt_ss0p95vn40c.
+[03/11 21:19:27     34s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib.
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 84607)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 84658)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 84709)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 120047)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib, Line 120098)
+[03/11 21:19:27     34s] Message <TECHLIB-1277> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226612 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226613 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226614 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.lib)
+[03/11 21:19:27     34s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[03/11 21:19:27     34s] Read 294 cells in library saed32lvt_ss0p75vn40c.
+[03/11 21:19:27     34s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib.
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 84607)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 84658)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 84709)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 120047)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 120098)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1277):	The attribute 'fanout_load' has been defined for output pin 'D'. 'fanout_load' cannot be defined at this level and is being ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib, Line 120149)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226612 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226613 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 226614 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT3_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT2_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'PMT1_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT3_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT2_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-302):	No function defined for cell 'NMT1_LVT'. The cell will only be used for analysis. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] Read 294 cells in library saed32lvt_ss0p95vn40c.
+[03/11 21:19:27     34s] Reading worst_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib.
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 24401 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 24402 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 24403 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.lib)
+[03/11 21:19:27     34s] Read 35 cells in library saed32sram_ss0p95vn40c.
+[03/11 21:19:27     34s] Library reading multithread flow ended.
+[03/11 21:19:27     34s] Starting library reading in 'Multi-threaded flow' (with '8' threads)
+[03/11 21:19:28     40s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ff0p95vn40c.lib.
+[03/11 21:19:28     40s] Read 294 cells in library saed32hvt_ff0p95vn40c.
+[03/11 21:19:28     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ff1p16vn40c.lib.
+[03/11 21:19:28     41s] Read 294 cells in library saed32hvt_ff1p16vn40c.
+[03/11 21:19:28     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.lib.
+[03/11 21:19:28     41s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 226430 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.lib)
+[03/11 21:19:28     41s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 226431 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.lib)
+[03/11 21:19:28     41s] Message <TECHLIB-1161> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[03/11 21:19:28     41s] Read 294 cells in library saed32lvt_ff0p95vn40c.
+[03/11 21:19:28     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff1p16vn40c.lib.
+[03/11 21:19:28     41s] Read 294 cells in library saed32lvt_ff1p16vn40c.
+[03/11 21:19:28     41s] Reading best_libs timing library /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib.
+[03/11 21:19:28     41s] **WARN: (TECHLIB-1161):	The library level attribute default_operating_conditions on line 24400 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib)
+[03/11 21:19:28     41s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load on line 24401 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib)
+[03/11 21:19:28     41s] **WARN: (TECHLIB-1161):	The library level attribute default_wire_load_selection on line 24402 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.lib)
+[03/11 21:19:28     41s] Read 35 cells in library saed32sram_ff1p16vn40c.
+[03/11 21:19:28     41s] Library reading multithread flow ended.
+[03/11 21:19:28     41s] Ending "PreSetAnalysisView" (total cpu=0:00:17.4, real=0:00:03.0, peak res=960.4M, current mem=550.7M)
+[03/11 21:19:28     41s] *** End library_loading (cpu=0.29min, real=0.05min, mem=110.0M, fe_cpu=0.70min, fe_real=0.92min, fe_mem=907.4M) ***
+[03/11 21:19:28     41s] **ERROR: (IMPSYT-16038):	The specified file '../../syn/outputs/ORCA_TOP.genus.vg' could not be found. Check your file system, correct the file name.
+[03/11 21:19:28     41s] **ERROR: (IMPIMEX-7008):	No netlist files are found.
+[03/11 21:19:28     41s] 
+[03/11 21:23:25     90s] 
+[03/11 21:23:25     90s] *** Memory Usage v#1 (Current mem = 907.363M, initial mem = 289.684M) ***
+[03/11 21:23:25     90s] 
+[03/11 21:23:25     90s] *** Summary of all messages that are not suppressed in this session:
+[03/11 21:23:25     90s] Severity  ID               Count  Summary                                  
+[03/11 21:23:25     90s] WARNING   IMPLF-58           208  MACRO '%s' has been found in the databas...
+[03/11 21:23:25     90s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[03/11 21:23:25     90s] WARNING   IMPLF-105            4  The layer '%s' specified in SAMENET spac...
+[03/11 21:23:25     90s] ERROR     IMPSYT-16038         1  The specified file '%s' could not be fou...
+[03/11 21:23:25     90s] WARNING   IMPPP-543           28  Inconsistent cut size definition in VIAR...
+[03/11 21:23:25     90s] ERROR     IMPIMEX-7008         1  No netlist files are found.              
+[03/11 21:23:25     90s] WARNING   TCLCMD-1083          1  '%s'                                     
+[03/11 21:23:25     90s] WARNING   TECHLIB-302         48  No function defined for cell '%s'. The c...
+[03/11 21:23:25     90s] WARNING   TECHLIB-1161        30  The library level attribute %s on line %...
+[03/11 21:23:25     90s] WARNING   TECHLIB-1277        48  The %s '%s' has been defined for %s %s '...
+[03/11 21:23:25     90s] *** Message Summary: 368 warning(s), 2 error(s)
+[03/11 21:23:25     90s] 
+[03/11 21:23:25     90s] --- Ending "Innovus" (totcpu=0:01:31, real=0:04:52, mem=907.4M) ---

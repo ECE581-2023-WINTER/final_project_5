@@ -26,6 +26,8 @@ set pad_design 0
 set design_size { 1850 1380  } 
 set design_io_border 10
 set dc_floorplanning 1
+set enable_dft  0
+
 
 set rtl_list [list ../rtl/$top_design.sv ]
 set slow_corner "ss0p75v125c ss0p95v125c_2p25v ss0p95v125c"
