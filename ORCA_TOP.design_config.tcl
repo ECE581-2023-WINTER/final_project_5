@@ -12,7 +12,7 @@ set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
 # Example:
 #     saed32hvt_ss0p75v125c.db
 #     |sub_lib  corner    .db
-# The current flow tries to find all sub_lib and all corners in all the search paths.  Any match will be put in the library list.
+# The current flow tries to find all sub_lib and all caorners in all the search paths.  Any match will be put in the library list.
 # Wild cards can be used, but be careful.  Multiple matches can occur in ways you don't want.
 
 # For the target library, the same method is used as the link library except only HVT and RVT lib_types are used.

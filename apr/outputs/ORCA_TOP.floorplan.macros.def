@@ -1,8 +1,8 @@
 # 
 # IC Compiler II write_def
 # Release      : Q-2019.12-SP4
-# User Name    : bcruik2
-# Date         : Sun May  2 08:27:28 2021
+# User Name    : ramadugu
+# Date         : Sun Mar 12 20:14:18 2023
 # 
 VERSION 5.8 ;
 DIVIDERCHAR "/" ;
@@ -56,13 +56,13 @@ COMPONENTS 40 ;
  - I_PCI_TOP/I_PCI_READ_FIFO_PCI_FIFO_RAM_7 SRAM2RW32x4 + FIXED ( 12540 361347 ) N ;
  - I_PCI_TOP/I_PCI_READ_FIFO_PCI_FIFO_RAM_8 SRAM2RW32x4 + FIXED ( 82145 361347 ) N ;
 END COMPONENTS
-PINS 244 ;
+PINS 240 ;
  - sdram_clk + NET sdram_clk + DIRECTION INPUT + USE SIGNAL
-   + LAYER M6 ( 0 0 ) ( 56 286 )
-   + PLACED ( 870900 0 ) N ;
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 868772 0 ) N ;
  - sys_2x_clk + NET sys_2x_clk + DIRECTION INPUT + USE SIGNAL
-   + LAYER M6 ( 0 0 ) ( 56 286 )
-   + PLACED ( 148596 0 ) N ;
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 155284 0 ) N ;
  - shutdown + NET shutdown + DIRECTION INPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 588180 0 ) N ;
@@ -90,9 +90,9 @@ PINS 244 ;
  - test_so[5] + NET test_so[5] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 589396 0 ) N ;
- - test_so[4] + NET test_so[4] + DIRECTION OUTPUT + USE SIGNAL
+ - test_so[4] + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 495156 0 ) N ;
+   + PLACED ( 490292 0 ) N ;
  - test_so[3] + NET test_so[3] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 590612 0 ) N ;
@@ -218,7 +218,7 @@ PINS 244 ;
    + PLACED ( 564468 0 ) N ;
  - pad_in[2] + NET pad_in[2] + DIRECTION INPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 487252 0 ) N ;
+   + PLACED ( 495156 0 ) N ;
  - pad_in[1] + NET pad_in[1] + DIRECTION INPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 562644 0 ) N ;
@@ -230,7 +230,7 @@ PINS 244 ;
    + PLACED ( 563860 0 ) N ;
  - pad_out[30] + NET pad_out[30] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 479348 0 ) N ;
+   + PLACED ( 469012 0 ) N ;
  - pad_out[29] + NET pad_out[29] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 563252 0 ) N ;
@@ -242,7 +242,7 @@ PINS 244 ;
    + PLACED ( 572980 0 ) N ;
  - pad_out[26] + NET pad_out[26] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 486644 0 ) N ;
+   + PLACED ( 497588 0 ) N ;
  - pad_out[25] + NET pad_out[25] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 557172 0 ) N ;
@@ -323,16 +323,16 @@ PINS 244 ;
    + PLACED ( 475700 0 ) N ;
  - pad_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 529812 0 ) N ;
+   + PLACED ( 529204 0 ) N ;
  - ppar_in + NET ppar_in + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 464756 0 ) N ;
  - ppar_out + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 490292 0 ) N ;
+   + PLACED ( 490900 0 ) N ;
  - ppar_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 529204 0 ) N ;
+   + PLACED ( 528596 0 ) N ;
  - pc_be_in[3] + NET pc_be_in[3] + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 545012 0 ) N ;
@@ -347,64 +347,64 @@ PINS 244 ;
    + PLACED ( 465972 0 ) N ;
  - pc_be_out[3] + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 490900 0 ) N ;
+   + PLACED ( 491508 0 ) N ;
  - pc_be_out[2] + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 528596 0 ) N ;
+   + PLACED ( 527988 0 ) N ;
  - pc_be_out[1] + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 491508 0 ) N ;
+   + PLACED ( 492116 0 ) N ;
  - pc_be_out[0] + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 527988 0 ) N ;
+   + PLACED ( 527380 0 ) N ;
  - pc_be_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 492116 0 ) N ;
+   + PLACED ( 492724 0 ) N ;
  - pframe_n_in + NET pframe_n_in + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 473268 0 ) N ;
  - pframe_n_out + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 527380 0 ) N ;
+   + PLACED ( 526772 0 ) N ;
  - pframe_n_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 492724 0 ) N ;
+   + PLACED ( 493332 0 ) N ;
  - ptrdy_n_in + NET ptrdy_n_in + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 546228 0 ) N ;
  - ptrdy_n_out + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 526772 0 ) N ;
+   + PLACED ( 526164 0 ) N ;
  - ptrdy_n_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 493332 0 ) N ;
+   + PLACED ( 493940 0 ) N ;
  - pirdy_n_in + NET pirdy_n_in + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 467188 0 ) N ;
  - pirdy_n_out + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 526164 0 ) N ;
+   + PLACED ( 525556 0 ) N ;
  - pirdy_n_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 493940 0 ) N ;
+   + PLACED ( 494548 0 ) N ;
  - pdevsel_n_in + NET pdevsel_n_in + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 553524 0 ) N ;
  - pdevsel_n_out + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 525556 0 ) N ;
+   + PLACED ( 524948 0 ) N ;
  - pdevsel_n_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 494548 0 ) N ;
+   + PLACED ( 524340 0 ) N ;
  - pstop_n_in + NET pstop_n_in + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 472052 0 ) N ;
  - pstop_n_out + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 524948 0 ) N ;
+   + PLACED ( 523732 0 ) N ;
  - pstop_n_en + NET VSS + SPECIAL + DIRECTION OUTPUT + USE TIEOFF
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 524340 0 ) N ;
+   + PLACED ( 523124 0 ) N ;
  - pperr_n_in + NET pperr_n_in + DIRECTION INPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 547444 0 ) N ;
@@ -446,7 +446,7 @@ PINS 244 ;
    + PLACED ( 580276 0 ) N ;
  - sd_A[5] + NET sd_A[5] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 497588 0 ) N ;
+   + PLACED ( 495764 0 ) N ;
  - sd_A[4] + NET sd_A[4] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 574196 0 ) N ;
@@ -458,11 +458,11 @@ PINS 244 ;
    + PLACED ( 579060 0 ) N ;
  - sd_A[1] + NET sd_A[1] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 495764 0 ) N ;
+   + PLACED ( 496980 0 ) N ;
  - sd_A[0] + NET sd_A[0] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 575412 0 ) N ;
- - sd_CK + NET sd_CK + DIRECTION OUTPUT + USE SIGNAL
+ - sd_CK + NET sdram_clk + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 730452 0 ) N ;
  - sd_CKn + NET sd_CKn + DIRECTION OUTPUT + USE SIGNAL
@@ -473,7 +473,7 @@ PINS 244 ;
    + PLACED ( 577844 0 ) N ;
  - sd_RW + NET sd_RW + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 496980 0 ) N ;
+   + PLACED ( 496372 0 ) N ;
  - sd_BWS[1] + NET sd_BWS[1] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 576628 0 ) N ;
@@ -672,119 +672,107 @@ PINS 244 ;
  - sd_DQ_out[0] + NET sd_DQ_out[0] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M6 ( 0 0 ) ( 56 286 )
    + PLACED ( 496372 0 ) N ;
- - sd_DQ_en[31] + NET sd_DQ_en[29] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[31] + NET sd_DQ_en[15] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 507316 0 ) N ;
- - sd_DQ_en[30] + NET sd_DQ_en[29] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 513396 0 ) N ;
- - sd_DQ_en[29] + NET sd_DQ_en[29] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 512788 0 ) N ;
- - sd_DQ_en[28] + NET sd_DQ_en[23] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[30] + NET sd_DQ_en[22] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 512180 0 ) N ;
- - sd_DQ_en[27] + NET sd_DQ_en[23] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[29] + NET sd_DQ_en[15] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 499412 0 ) N ;
- - sd_DQ_en[26] + NET sd_DQ_en[23] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 520084 0 ) N ;
- - sd_DQ_en[25] + NET sd_DQ_en[23] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 500020 0 ) N ;
- - sd_DQ_en[24] + NET sd_DQ_en[23] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 519476 0 ) N ;
- - sd_DQ_en[23] + NET sd_DQ_en[23] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 500628 0 ) N ;
- - sd_DQ_en[22] + NET sd_DQ_en[14] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[28] + NET sd_DQ_en[27] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 507924 0 ) N ;
- - sd_DQ_en[21] + NET sd_DQ_en[14] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[27] + NET sd_DQ_en[27] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 518868 0 ) N ;
- - sd_DQ_en[20] + NET sd_DQ_en[14] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 520084 0 ) N ;
+ - sd_DQ_en[26] + NET sd_DQ_en[27] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 501236 0 ) N ;
- - sd_DQ_en[19] + NET sd_DQ_en[19] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 500020 0 ) N ;
+ - sd_DQ_en[25] + NET sd_DQ_en[22] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 519476 0 ) N ;
+ - sd_DQ_en[24] + NET sd_DQ_en[24] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 511572 0 ) N ;
- - sd_DQ_en[18] + NET sd_DQ_en[14] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[23] + NET sd_DQ_en[27] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 518260 0 ) N ;
- - sd_DQ_en[17] + NET sd_DQ_en[19] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 500628 0 ) N ;
+ - sd_DQ_en[22] + NET sd_DQ_en[22] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 501844 0 ) N ;
- - sd_DQ_en[16] + NET sd_DQ_en[14] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 517652 0 ) N ;
- - sd_DQ_en[15] + NET sd_DQ_en[19] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 502452 0 ) N ;
- - sd_DQ_en[14] + NET sd_DQ_en[14] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 517044 0 ) N ;
- - sd_DQ_en[13] + NET sd_DQ_en[19] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 503060 0 ) N ;
- - sd_DQ_en[12] + NET sd_DQ_en[19] + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 516436 0 ) N ;
- - sd_DQ_en[11] + NET sd_DQ_en[6] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 518868 0 ) N ;
+ - sd_DQ_en[21] + NET sd_DQ_en[3] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 508532 0 ) N ;
- - sd_DQ_en[10] + NET sd_DQ_en[6] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[20] + NET sd_DQ_en[22] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 503668 0 ) N ;
- - sd_DQ_en[9] + NET sd_DQ_en[6] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 501236 0 ) N ;
+ - sd_DQ_en[19] + NET sd_DQ_en[15] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 515828 0 ) N ;
- - sd_DQ_en[8] + NET sd_DQ_en[6] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 518260 0 ) N ;
+ - sd_DQ_en[18] + NET sd_DQ_en[24] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 504276 0 ) N ;
- - sd_DQ_en[7] + NET sd_DQ_en[6] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 513396 0 ) N ;
+ - sd_DQ_en[17] + NET sd_DQ_en[3] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 515220 0 ) N ;
- - sd_DQ_en[6] + NET sd_DQ_en[6] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 501844 0 ) N ;
+ - sd_DQ_en[16] + NET sd_DQ_en[27] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 504884 0 ) N ;
- - sd_DQ_en[5] + NET sd_DQ_en[1] + DIRECTION OUTPUT + USE SIGNAL
+   + PLACED ( 517652 0 ) N ;
+ - sd_DQ_en[15] + NET sd_DQ_en[15] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 502452 0 ) N ;
+ - sd_DQ_en[14] + NET sd_DQ_en[15] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 517044 0 ) N ;
+ - sd_DQ_en[13] + NET sd_DQ_en[22] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 503060 0 ) N ;
+ - sd_DQ_en[12] + NET sd_DQ_en[15] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 516436 0 ) N ;
+ - sd_DQ_en[11] + NET sd_DQ_en[7] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 510964 0 ) N ;
- - sd_DQ_en[4] + NET sd_DQ_en[1] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[10] + NET sd_DQ_en[27] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 503668 0 ) N ;
+ - sd_DQ_en[9] + NET sd_DQ_en[22] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 515828 0 ) N ;
+ - sd_DQ_en[8] + NET sd_DQ_en[7] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 504276 0 ) N ;
+ - sd_DQ_en[7] + NET sd_DQ_en[7] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 515220 0 ) N ;
+ - sd_DQ_en[6] + NET sd_DQ_en[7] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 504884 0 ) N ;
+ - sd_DQ_en[5] + NET sd_DQ_en[3] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 514612 0 ) N ;
- - sd_DQ_en[3] + NET sd_DQ_en[1] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[4] + NET sd_DQ_en[3] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 505492 0 ) N ;
- - sd_DQ_en[2] + NET sd_DQ_en[1] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[3] + NET sd_DQ_en[3] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 514004 0 ) N ;
- - sd_DQ_en[1] + NET sd_DQ_en[1] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[2] + NET sd_DQ_en[7] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 506100 0 ) N ;
- - sd_DQ_en[0] + NET sd_DQ_en[19] + DIRECTION OUTPUT + USE SIGNAL
+ - sd_DQ_en[1] + NET sd_DQ_en[24] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 56 286 )
+   + PLACED ( 512788 0 ) N ;
+ - sd_DQ_en[0] + NET sd_DQ_en[3] + DIRECTION OUTPUT + USE SIGNAL
    + LAYER M4 ( 0 0 ) ( 56 286 )
    + PLACED ( 506708 0 ) N ;
- - pll_bypass + NET pll_bypass + DIRECTION INPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 523732 0 ) N ;
- - pll_reset + NET pll_reset + DIRECTION INPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 496372 0 ) N ;
- - test_si7 + NET test_si7 + DIRECTION INPUT + USE SIGNAL
-   + LAYER M4 ( 0 0 ) ( 56 286 )
-   + PLACED ( 523124 0 ) N ;
- - test_so7 + NET test_so7 + DIRECTION OUTPUT + USE SIGNAL
-   + LAYER M6 ( 0 0 ) ( 56 286 )
-   + PLACED ( 977300 0 ) N ;
  - VDD + NET VDD + SPECIAL + DIRECTION INPUT + USE POWER ;
  - VDDH + NET VDDH + SPECIAL + DIRECTION INPUT + USE POWER ;
  - VSS + NET VSS + SPECIAL + DIRECTION INPUT + USE GROUND ;
 END PINS
-PINPROPERTIES 241 ;
+PINPROPERTIES 237 ;
  - PIN sdram_clk
    + PROPERTY ACCESS_DIRECTION "0 bottom" ;
  - PIN sys_2x_clk
@@ -1258,14 +1246,6 @@ PINPROPERTIES 241 ;
  - PIN sd_DQ_en[1]
    + PROPERTY ACCESS_DIRECTION "0 bottom" ;
  - PIN sd_DQ_en[0]
-   + PROPERTY ACCESS_DIRECTION "0 bottom" ;
- - PIN pll_bypass
-   + PROPERTY ACCESS_DIRECTION "0 bottom" ;
- - PIN pll_reset
-   + PROPERTY ACCESS_DIRECTION "0 bottom" ;
- - PIN test_si7
-   + PROPERTY ACCESS_DIRECTION "0 bottom" ;
- - PIN test_so7
    + PROPERTY ACCESS_DIRECTION "0 bottom" ;
 END PINPROPERTIES
 BLOCKAGES 11 ;

@@ -11,6 +11,7 @@
  of a written license agreement with Synopsys, Inc. All other use, reproduction,
             or distribution of this software is strictly prohibited.
 
+Loading user preference file /u/ramadugu/.synopsys_icc2_gui/preferences.tcl
 Warning: No message with tag 'UID-401' exists (MSG-2134)
 Warning: No message with tag 'PSYN-256' exists (MSG-2134)
 Warning: No message with tag 'MWDC-023' exists (MSG-2134)

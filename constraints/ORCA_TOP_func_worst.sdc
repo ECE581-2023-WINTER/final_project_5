@@ -253,6 +253,7 @@ set_load -pin_load 10 [get_ports {sd_DQ_en[0]}]
 set_case_analysis 0 [get_ports test_mode]
 set_case_analysis 0 [get_ports scan_enable]
 #create_voltage_area -name PD_RISC_CORE  -coordinate {582.92 10.032 1003.2 190.608}  -guard_band_x 0  -guard_band_y 0  [get_cells I_RISC_CORE]
+create_voltage_area -name PD_RISC_CORE  -coordinate {725.701 11.619 1008.929 222.973}  -guard_band_x 0  -guard_band_y 0  [get_cells I_RISC_CORE]
 create_clock [get_ports pclk]  -name PCI_CLK  -period 7.5  -waveform {0 3.75}
 set_clock_uncertainty -setup 0.1  [get_clocks PCI_CLK]
 set_clock_uncertainty -hold 0  [get_clocks PCI_CLK]
