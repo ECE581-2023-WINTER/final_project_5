@@ -1,0 +1,9 @@
+#@ # 
+#@ # Running icc2_shell Version Q-2019.12-SP4 for linux64 -- May 26, 2020
+#@ # Date:   Tue Feb 28 23:29:29 2023
+#@ # Run by: ramadugu@mo.ece.pdx.edu
+#@ 
+
+source /home/ramadugu/common/Documents/final_prj-team_5/apr/work/.synopsys_icc2.setup
+e
+source ../scripts/floorplan-macros2.tcl

@@ -1,0 +1,11 @@
+setting auto_restore_mw_cel_lib_setup true
+icc2_shell> o
+setting top_design to: 
+ORCA_TOP
+icc2_shell> exit
+Maximum memory usage for this session: 176.70 MB
+Maximum memory usage for this session including child processes: 176.70 MB
+CPU usage for this session:     14 seconds (  0.00 hours)
+Elapsed time for this session:     37 seconds (  0.01 hours)
+Thank you for using IC Compiler II.
+

@@ -1,0 +1,689 @@
+setting auto_restore_mw_cel_lib_setup true
+Initializing gui preferences from file  /u/ramadugu/.synopsys_dv_prefs.tcl
+dc_shell> o
+setting top_design to: 
+ORCA_TOP
+dc_shell> source ../scripts/dc-restore.tcl
+set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+# Decoder ring for the libraries
+# You will need to follow another example or look in the library directories to understand.
+# lib_types is used for the dc/dct linking variables and ICC2 NDM lcoations.
+# /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm
+# /          $lib_dir                   /lib/ $lib_type /db_nldm
+# link_library, Target_library use the sub_lib_types and corner variables. 
+# For sub_lib_types and corner:
+# Example:
+#     saed32hvt_ss0p75v125c.db
+#     |sub_lib  corner    .db
+# The current flow tries to find all sub_lib and all caorners in all the search paths.  Any match will be put in the library list.
+# Wild cards can be used, but be careful.  Multiple matches can occur in ways you don't want.
+# For the target library, the same method is used as the link library except only HVT and RVT lib_types are used.
+# ICC2 NDM choosing also uses the sub_lib_types so that only the required libraries and extras are not loaded.
+# ORCA
+# The RTL version does not currently have macros
+# The one pulled from a lab does have macros, but no RTL.  Similar to the version with RTL.
+# Below is an effort to get the design pulled from a lap working for ICC2
+# Original lab had sram_lp memories, but the NDMs don't seem to be build correctly for the current libraries.  Converted code to regular SRAMs.
+set top_design ORCA_TOP
+ORCA_TOP
+set FCL 1
+1
+set add_ios 0
+0
+set pad_design 0
+0
+set design_size {1000 644 }
+1000 644 
+set design_io_border 10
+10
+set dc_floorplanning 1
+1
+set enable_dft  0
+0
+set innovus_enable_manual_macro_placement 1
+1
+set split_constraints 0
+0
+# This is the raw RTL without SRAMS
+#set rtl_list [list [glob /pkgs/synopsys/32_28nm/SAED_EDK32.28nm_REF_v_15032018/SAED32_EDK/references/orca/dc/rtl/*.vhd ] ../rtl/MUX21X2.sv ]
+# This is hacked P&R netlist with SRAMs and test and level shifters removed.
+set rtl_list [list ../rtl/$top_design.sv ]
+../rtl/ORCA_TOP.sv
+set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v
+set synth_corners_slow $slow_corner
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set synth_corners_fast $fast_corner
+ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v
+set slow_metal Cmax.tlup_-40
+Cmax.tlup_-40
+set fast_metal Cmin.tlup_-40
+Cmin.tlup_-40
+set lib_types "$lib_dir/stdcell_hvt/db_nldm $lib_dir/stdcell_lvt/db_nldm $lib_dir/io_std/db_nldm $lib_dir/sram/db_nldm $lib_dir/pll/db_nldm"
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/io_std/db_nldm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/pll/db_nldm
+set ndm_types "$lib_dir/stdcell_lvt/ndm $lib_dir/stdcell_rvt/ndm $lib_dir/stdcell_hvt/ndm $lib_dir/sram/ndm $lib_dir/io_std/ndm  $lib_dir/pll/ndm"
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/ndm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/ndm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/ndm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/ndm /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/io_std/ndm  /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/pll/ndm
+set lib_types_target "$lib_dir/stdcell_rvt/db_nldm"
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm
+set sub_lib_type "saed32?vt_ saed32sram_ saed32io_wb_ saed32pll_"
+saed32?vt_ saed32sram_ saed32io_wb_ saed32pll_
+set sub_lib_type_target "saed32rvt_"
+saed32rvt_
+set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+ss0p95vn40c ss0p75vn40c
+#set synth_corners_target "ss0p95v125c" 
+set lef_types [list $lib_dir/stdcell_hvt/lef  $lib_dir/stdcell_rvt/lef $lib_dir/stdcell_lvt/lef $lib_dir/sram/lef/ $lib_dir/io_std/lef $lib_dir/pll/lef ]
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/lef /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/lef /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/lef /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/lef/ /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/io_std/lef /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/pll/lef
+set sub_lef_type "saed32nm_?vt_*.lef saed32_sram_*.lef saed32io_std_wb saed32_PLL.lef"
+saed32nm_?vt_*.lef saed32_sram_*.lef saed32io_std_wb saed32_PLL.lef
+set synth_corners $slow_corner
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set synth_corners_slow $slow_corner
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set synth_corners_fast $fast_corner
+ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v
+set mwlib_types [list $lib_dir/stdcell_hvt/milkyway $lib_dir/stdcell_rvt/milkyway $lib_dir/stdcell_lvt/milkyway  $lib_dir/io_std/milkyway $lib_dir/sram/milkyway $lib_dir/pll/milkyway  ]
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/milkyway /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/milkyway /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/milkyway /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/io_std/milkyway /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/milkyway /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/pll/milkyway
+set sub_mwlib_type "saed32nm_?vt_* SRAM32NM saed32io_wb_* SAED32_PLL_FR*"
+saed32nm_?vt_* SRAM32NM saed32io_wb_* SAED32_PLL_FR*
+#set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram"
+# Get just the main standard cells, srams
+#set sub_lib_type "saed32?vt_ saed32sram_ saed32?vt_ulvl_ saed32?vt_dlvl_ "
+# Full MCMM Corners
+if { 0 } {
+    set corners ""
+    #Add Worst corners
+    set corners "$corners ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+    #Add Best corners
+    set corners "$corners ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+    #Add Leakage corners
+    set corners "$corners ff0p95v125c f0p95v125c_i1p16v ff0p95v125c_i0p95v ff1p16v125c ff1p16v125c_i1p16v ff1p16v125c ff1p16v125c_i0p95v"
+    set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram_lp"
+    # Get the main standard cells, and also the level shifters.  Plus srams.
+    set sub_lib_type "saed32?vt_ saed32?vt_ulvl_ saed32?vt_dlvl_ saed32sram_"
+}
+#set topdir /u/$env(USER)/PSU_RTL2GDS
+set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+/home/ramadugu/common/Documents/final_prj-team_5_master/
+#declaring sub blocks
+set sub_block {SDRAM_TOP 
+                                BLENDER_0 
+                                PCI_TOP 
+                                CONTEXT_MEM 
+                                RISC_CORE 
+                                CLOCKING 
+                                BLENDER_1 
+                                PARSER 
+                                }
+SDRAM_TOP 
+                                BLENDER_0 
+                                PCI_TOP 
+                                CONTEXT_MEM 
+                                RISC_CORE 
+                                CLOCKING 
+                                BLENDER_1 
+                                PARSER 
+                                
+set sub_block_I {I_SDRAM_TOP I_BLENDER_1  I_BLENDER_0 I_RISC_CORE I_CONTEXT_MEM I_PCI_TOP I_PARSER I_CLOCKING}
+I_SDRAM_TOP I_BLENDER_1  I_BLENDER_0 I_RISC_CORE I_CONTEXT_MEM I_PCI_TOP I_PARSER I_CLOCKING
+set macro_block {I_SDRAM_TOP I_PCI_TOP I_RISC_CORE I_CONTEXT_MEM}
+I_SDRAM_TOP I_PCI_TOP I_RISC_CORE I_CONTEXT_MEM
+if {[info exists synopsys_program_name]} {
+        if { $synopsys_program_name == "dc_shell" } {
+           set_host_options -max_cores 4
+        } 
+        if { $synopsys_program_name == "icc2_shell" } {
+           set_host_options -max_cores 4
+        }
+} elseif {[get_db root: .program_short_name] == "innovus"} {
+  setMultiCpuUsage -localCpu 8 
+} elseif {[get_db root: .program_short_name] == "genus"} {
+  set_db / .max_cpus_per_server 8 
+}
+Warning: No designs to list. (UID-275)
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/dw_foundation.sldb'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75vn40c.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_ss0p75vn40c'
+  Loading link library 'saed32hvt_ss0p95vn40c'
+  Loading link library 'saed32lvt_ss0p75vn40c'
+  Loading link library 'saed32lvt_ss0p95vn40c'
+  Loading link library 'saed32sram_ss0p95vn40c'
+  Loading link library 'saed32rvt_ss0p95vn40c'
+  Loading link library 'saed32rvt_ss0p75vn40c'
+  Loading link library 'gtech'
+Reading ddc file '/home/ramadugu/common/Documents/final_prj-team_5_master/syn/outputs/ORCA_TOP.dc.ddc'.
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Loaded 33 designs.
+Current design is 'ORCA_TOP'.
+ORCA_TOP SDRAM_TOP BLENDER_1 BLENDER_0 RISC_CORE CONTEXT_MEM PARSER PCI_TOP CLOCKING SDRAM_IF SNPS_CLOCK_GATE_HIGH_BLENDER_1 SNPS_CLOCK_GATE_HIGH_BLENDER_0 SNPS_CLOCK_GATE_HIGH_STACK_MEM_10 SNPS_CLOCK_GATE_HIGH_STACK_MEM_11 SNPS_CLOCK_GATE_HIGH_STACK_MEM_12 SNPS_CLOCK_GATE_HIGH_STACK_MEM_13 SNPS_CLOCK_GATE_HIGH_STACK_MEM_14 SNPS_CLOCK_GATE_HIGH_STACK_MEM_15 SNPS_CLOCK_GATE_HIGH_STACK_MEM_16 SNPS_CLOCK_GATE_HIGH_STACK_MEM_17 SNPS_CLOCK_GATE_HIGH_STACK_MEM_18 SNPS_CLOCK_GATE_HIGH_STACK_FSM SNPS_CLOCK_GATE_HIGH_PRGRM_CNT SNPS_CLOCK_GATE_HIGH_INSTRN_LAT SNPS_CLOCK_GATE_HIGH_DATA_PATH_0 SNPS_CLOCK_GATE_HIGH_DATA_PATH_1 SNPS_CLOCK_GATE_HIGH_DATA_PATH_2 SNPS_CLOCK_GATE_HIGH_ALU_0 SNPS_CLOCK_GATE_HIGH_CONTEXT_MEM_1 SNPS_CLOCK_GATE_HIGH_CONTEXT_MEM_0 SNPS_CLOCK_GATE_HIGH_PCI_CORE SNPS_CLOCK_GATE_LOW_SDRAM_IF SNPS_CLOCK_GATE_HIGH_SDRAM_IF
+dc_shell> get_cell *
+Error: Primary supply of power domain 'PD_ORCA_TOP' cannot be set to a domain-dependent supply net when supply set handles are enabled. (UPF-541)
+Error: Primary supply of power domain 'PD_RISC_CORE' cannot be set to a domain-dependent supply net when supply set handles are enabled. (UPF-541)
+{I_SDRAM_TOP I_BLENDER_1 I_BLENDER_0 I_RISC_CORE I_CONTEXT_MEM I_PARSER I_PCI_TOP I_CLOCKING R_678 U179 U180 U181 U182 U183 U184 U185 U186 U187 U188 U189 U190 U191 U192 U193 U194 U195 U196 U197 U198 U199 U200 U201 U202 U203 U204 U205 U206 U207 U208 U209 U210 U211 U212 U213 U214 U215 U216 U217 U218 U219 U220 U221 U222 U223 U224 U225 U226 U227 U228 U229 U230 U231 U232 U233 U234 U235 U236 U237 U238 U239 U240 U241 U242 U243 U244 U245 U246 U247 U248 U249 U250 U251 U252 U253 U254 U255 U256 U257 U258 U259 U260 U261 U262 U263 U264 U265 U266 U267 U268 U269 ...}
+dc_shell> sizeof_collection [ get_cells -hier * ]
+49871
+dc_shell> sizeof_collection [ get_cells * ]
+266
+dc_shell> grep -c "\bcell (" /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.lib
+Error: unknown command 'grep' (CMD-005)
+dc_shell> sizeof_collection [ get_cells * -filter ="HVT" ]
+0
+dc_shell> sizeof_collection [ get_cells * -filter ="Vt" ]
+0
+dc_shell> sizeof_collection [ get_cells * -filter ="Hvt" ]
+0
+dc_shell> man get_cells
+2.  Synopsys Commands                                        Command Reference
+                                   get_cells
+
+NAME
+       get_cells
+              Creates  a collection of cells from the current design, relative
+              to the current instance.
+
+SYNTAX
+       collection get_cells
+               [-quiet]
+               [-regexp | -exact]
+               [-nocase]
+               [-filter expression]
+               [-hierarchical]
+               [-rtl]
+               [patterns
+                | -of_objects objects
+                | -within region
+                | -touching region
+                | -intersect region
+                | -at point]
+               [-all]
+
+   Data Types
+       expression     string
+       patterns       list
+       objects        collection
+       region         list
+       point          list
+
+ARGUMENTS
+       -quiet Suppresses warning and error messages if no objects match.  Syn-
+              tax error messages are not suppressed.
+
+       -regexp
+              Views  the patterns argument as a regular expression rather than
+              a simple wildcard pattern.
+
+              This option also modifies the behavior of the =~ and  !~  filter
+              operators to use regular expressions rather than simple wildcard
+              patterns.
+
+              The regular expression matching is similar  to  the  Tcl  regexp
+              command.   When  using  the  -regexp  option, be careful how you
+              quote the patterns argument and filter expression.  Using  rigid
+              quoting  with  curly braces around regular expressions is recom-
+              mended. Note that regular expressions are always anchored;  that
+              is, the expression is assumed to begin matching at the beginning
+              of an object name and end matching at the end of an object name.
+              You  can widen the search by adding ".*" to the beginning or end
+              of the expressions, as needed.
+
+              The -regexp and -exact options are mutually exclusive.  You  can
+              specify only one of these options.
+
+       -exact Considers  wildcards to be plain characters, and does not inter-
+              pret their meaning as wildcards.
+
+       -nocase
+              Makes matches case-insensitive, both for the  patterns  argument
+              and for the ==, =~, and !~ filter operators.
+
+       -filter expression
+              Filters the collection with the specified expression.
+
+              For  each  cell  in  the collection, the expression is evaluated
+              based on the cell's attributes. If the expression  evaluates  to
+              true, the cell is included in the result.
+
+              To  see  the  list  of  cell  attributes that you can use in the
+              expression, use the  list_attributes  -application  -class  cell
+              command.
+
+              For  more  information  about how to use the -filter option, see
+              the filter_collection man page.
+
+       -hierarchical
+              Searches for  cells  level-by-level,  relative  to  the  current
+              instance.   The  name  of  the object at a particular level must
+              match  the  patterns.   For  example,  if  there   is   a   cell
+              block1/adder, a hierarchical search finds it by using "adder".
+
+              By default, the search is not hierarchical.
+
+       -rtl   Creates   a   collection   of  cells  with  the  object_rtl_name
+              attribute.
+
+       patterns
+              Creates a collection of cells whose names  match  the  specified
+              patterns.  Patterns can include the * (asterisk) and ? (question
+              mark) wildcard characters. For more information about using  and
+              escaping  wildcards, see the wildcards man page.  Pattern match-
+              ing is case sensitive unless you use the -nocase option.
+
+              The  patterns,   -of_objects,  -object_id,  -within,  -touching,
+              -intersect,  and  -at  arguments are mutually exclusive; you can
+              specify only one. If you do not specify any of these  arguments,
+              the command uses * (asterisk) as the default pattern.
+
+       -of_objects objects
+              Creates  a  collection  of  cells  connected  to  the  specified
+              objects.  Each object can be a named pin or net, a collection of
+              pins,  a  collection of nets, or a power domain. When the object
+              is a power domain, the cells returned are the root cells of  the
+              power domain.
+
+              The  patterns  and -of_objects arguments are mutually exclusive;
+              you can specify only one. If you do not  specify  any  of  these
+              arguments, the command uses the * (asterisk) as the default pat-
+              tern.
+
+              In addition, you cannot use the -hierarchical  option  with  the
+              -of_objects option.
+
+       -within region
+              Creates a collection that contains all cells that are completely
+              inside the specified region and do  not  overlap  the  boundary.
+              The region boundary can be rectangle or polygon.
+
+              The  format  for specifying a rectangle is {{llx lly} {urx ury}}
+              or {llx lly urx ury}, which specifies the lower-left and  upper-
+              right corners of the rectangle.
+
+              The  format for specifying a polygon is {{x1 y1} {x2 y2} ... {xN
+              yN} {x1 y1}}, where each {x y} pair specifies one point  of  the
+              input  polygon.   A  valid  polygon  must be rectilinear, so the
+              startpoint and endpoint of the polygon are the same point.
+
+              The coordinate unit is specified in the technology  file;  typi-
+              cally the unit is microns.
+
+              The   patterns,  -of_objects,  -object_id,  -within,  -touching,
+              -intersect, and -at arguments are mutually  exclusive;  you  can
+              specify only one.  If you do not specify any of these arguments,
+              the command uses * (asterisk) as the default pattern.
+
+              In addition, you cannot use the -hierarchical  option  with  the
+              -within option.
+
+       -touching region
+              Creates a collection that contains all cells that are inside the
+              specified region, including those  that  overlap  the  boundary.
+              The region boundary can be rectangle or polygon.
+
+              The  format  for specifying a rectangle is {{llx lly} {urx ury}}
+              or {llx lly urx ury}, which specifies the lower-left and  upper-
+              right corners of the rectangle.
+
+              The  format for specifying a polygon is {{x1 y1} {x2 y2} ... {xN
+              yN} {x1 y1}}, where each {x y} pair specifies one point  of  the
+              input  polygon.   A  valid  polygon  must be rectilinear, so the
+              startpoint and endpoint of the polygon are the same point.
+
+              The coordinate unit is specified in the technology  file;  typi-
+              cally the unit is microns.
+
+              The   patterns,  -of_objects,  -object_id,  -within,  -touching,
+              -intersect, and -at arguments are mutually  exclusive;  you  can
+              specify only one.  If you do not specify any of these arguments,
+              the command uses * (asterisk) as the pattern.
+
+              In addition, you cannot use the -hierarchical  option  with  the
+              -touching option.
+
+       -intersect region
+              Creates  a collection that contains all cells that intersect the
+              boundary of the specified region and at least part of  the  cell
+              is  outside  of the specified region. The region boundary can be
+              rectangle or polygon.
+
+              The format for specifying a rectangle is {{llx lly}  {urx  ury}}
+              or  {llx lly urx ury}, which specifies the lower-left and upper-
+              right corners of the rectangle.
+
+              The format for specifying a polygon is {{x1 y1} {x2 y2} ...  {xN
+              yN}  {x1  y1}}, where each {x y} pair specifies one point of the
+              input polygon.  A valid polygon  must  be  rectilinear,  so  the
+              startpoint and endpoint of the polygon are the same point.
+
+              The  coordinate  unit is specified in the technology file; typi-
+              cally the unit is microns.
+
+              The  patterns,  -of_objects,  -object_id,  -within,   -touching,
+              -intersect,  and  -at  arguments are mutually exclusive; you can
+              specify only one.  If you do not specify any of these arguments,
+              the command uses * (asterisk) as the pattern.
+
+              In  addition,  you  cannot use the -hierarchical option with the
+              -intersect option.
+
+       -at point
+              Creates a collection that contains all cells  at  the  specified
+              point.  The format for specifying a point is {x y}.
+
+              The  coordinate  unit is specified in the technology file; typi-
+              cally it is microns.
+
+              The  patterns,  -of_objects,  -object_id,  -within,   -touching,
+              -intersect,  and  -at  arguments are mutually exclusive; you can
+              specify only one.  If you do not specify any of these arguments,
+              the command uses * (asterisk) as the pattern.
+
+              In  addition,  you  cannot use the -hierarchical option with the
+              -at option.
+
+       -all   Includes physical-only cells in the collection.   The  following
+              types of cells are considered physical-only cells:
+
+                Standard cell fillers
+                Pad fillers
+                Corner cells
+                Flip-chip pads (bumps)
+                Chips
+                Cover cells
+                Tap cells
+                Cells that have only power and ground ports
+
+                By  default,  physical-only cells are not included in the col-
+                lection.
+
+DESCRIPTION
+       This command creates a collection of cells  that  match  the  specified
+       criteria.  By default, the command creates the collection of cells from
+       the current design, relative to the current instance.
+
+       If the command cannot find any cells that match the  criteria  and  the
+       current design is not linked, the design automatically links.
+
+       The  command  returns a collection if any cells match the criteria.  If
+       no objects match the criteria, the command returns an empty string.
+
+       You can use this command at the command prompt or you can nest it as an
+       argument  to  another command, such as query_objects.  In addition, you
+       can assign the result to a variable.
+
+       When issued from the command prompt, the command behaves as though  you
+       have called the query_objects command to report the objects in the col-
+       lection.  By default, it displays a maximum of 100  objects.   You  can
+       change  this maximum by using the collection_result_display_limit vari-
+       able.
+
+       For information about collections and the querying of objects, see  the
+       collections man page.
+
+   Multicorner-Multimode Support
+       This command has no dependency on scenario-specific information.
+
+EXAMPLES
+       The  following example queries the cells that begin with "o" and refer-
+       ence an FD2 library cell.  Although the output looks like a list, it is
+       only a display.
+
+         prompt> get_cells "o*" -filter "@ref_name == FD2"
+         {o_reg1 o_reg2 o_reg3 o_reg4}
+
+       The  following  example  queries the cells connected to a collection of
+       pins.
+
+         prompt> set pinsel [get_pins o*/CP]
+         {o_reg1/CP o_reg2/CP}
+
+         prompt> get_cells -of_objects $pinsel
+         {o_reg1 o_reg2}
+
+       The following example queries the cells connected to  a  collection  of
+       nets.
+
+         prompt> set netsel [get_nets tmp]
+         {tmp}
+
+         prompt> get_cells -of_objects $netsel
+         {b c}
+
+       The  following  example  removes the wire load model from the i1 and i2
+       cells.
+
+         prompt> remove_wire_load_model [get_cells {i1 i2}]
+         Removing wire load model from cell 'i1'.
+         Removing wire load model from cell 'i2'.
+         1
+
+SEE ALSO
+       collections(2)
+       filter_collection(2)
+       list_attributes(2)
+       query_objects(2)
+       win_select_objects(2)
+       collection_result_display_limit(3)
+       wildcards(3)
+
+                          Version Q-2019.12-SP3
+            Copyright (c) 2020 Synopsys, Inc. All rights reserved.
+dc_shell> sizeof_collection [ get_cells -all]
+Error: unknown option '-all' (CMD-010)
+dc_shell> sizeof_collection [ get_cells ]
+266
+dc_shell> sizeof_collection [ get_cells *]
+266
+dc_shell> sizeof_collection [ get_cells -all]
+Error: unknown option '-all' (CMD-010)
+dc_shell> man filter_collections
+Error: No manual entry for 'filter_collections' (CMD-025)
+dc_shell> man filter_collection
+2.  Synopsys Commands                                        Command Reference
+                               filter_collection
+
+NAME
+       filter_collection
+              Filters  an  existing collection, resulting in a new collection.
+              The base collection remains unchanged.
+
+SYNTAX
+       collection filter_collection
+               [-regexp]
+               [-nocase]
+               collection1
+               expression
+
+   Data Types
+       collection1     collection
+       expression      string
+
+ARGUMENTS
+       -regexp
+              Specifies that the  =~ and !~ filter  operators  will  use  real
+              regular expressions.  By default, the =~ and !~ filter operators
+              use simple wildcard pattern matching with the * and ? wildcards.
+
+       -nocase
+              Makes the pattern match case-insensitive.
+
+       collection1
+              Specifies  the  base collection to be filtered.  This collection
+              is copied to the result collection.  Objects  are  removed  from
+              the result collection if they are evaluated as false by the con-
+              ditional expression value.  Substitute the collection  you  want
+              for collection1.
+
+       expression
+              Specifies  an expression with which to filter collection1.  Sub-
+              stitute the string you want for expression.
+
+DESCRIPTION
+       Filters an existing collection, resulting in  a  new  collection.   The
+       base collection remains unchanged.  In many cases, application commands
+       that create collections support a -filter option that filters  as  part
+       of  the  collection  process, rather than after the collection has been
+       made.
+
+       This type of filtering is almost always more efficient than  using  the
+       filter_collection command after a collection has been formed.  The fil-
+       ter_collection command is most useful if you plan to  filter  the  same
+       large collection many times using different criteria.
+
+       The  filter_collection command results in either a new collection or an
+       empty string.  A resulting new collection contains the  subset  of  the
+       objects  in the input collection1.  A resulting empty string (the empty
+       collection) indicates that the expression filtered out all elements  of
+       the input collection1.
+
+       The  basic  form of the conditional expression is a series of relations
+       joined together with AND and OR operators.   Parentheses  ()  are  also
+       supported.   The basic relation compares an attribute name with a value
+       through a relational operator.
+
+       For example,
+
+         is_hierarchical == true and area <= 6
+
+       If an attribute is  a  collection  attribute  that  contains  a  single
+       object,  then  you  can query an attribute value from that object using
+       "." to name the attribute on the other object. The "." operator can  be
+       chained. For example.
+
+         owner.is_hierarchical == true and owner.area <= 6
+         shape.net.name==reset
+
+       The  value side of a relation can be a simple string, quoted string, or
+       an attribute name prefixed with "@". For example:
+
+         input_delay<=@output_delay
+         input_delay<=0.24
+         name=="@literal_name"
+
+The relational operators are
+
+  ==   Equal
+  !=   Not equal
+  >    Greater than
+  <    Less than
+  >=   Greater than or equal to
+  <=   Less than or equal to
+  =~   Matches pattern
+  !~   Does not match pattern
+
+The basic relational rules are
+
+ o String attributes can be compared with any operator.
+
+ o Numeric attributes cannot be compared with pattern match operators.
+
+ o Boolean attributes can be compared only with == and !=.  The value  can  be
+  only either true or false.
+
+Existence  relations  determine  if an attribute is defined or not defined for
+the object. For example,
+
+  (sense == setup_clk_rise) and defined(sdf_cond)
+
+The existence operators are
+
+  defined
+  undefined
+  !defined
+
+These operators apply to any attribute as long as it is valid for  the  object
+class.
+
+Collection attributes support a special sizeof(attrName) operator that returns
+the number of objects in the attribute. If the attribute is not set then 0  is
+returned.
+
+The  filter_collection  command has a -regexp option that uses regular expres-
+sions when matching for string attributes.   Regular  expression  matching  is
+done  in  the  same  way as in the Tcl regexp command.  When using the -regexp
+option, take care in the way you quote the  filter  expression.   Using  rigid
+quoting with curly braces around regular expressions is recommended.
+
+Regular expressions are always anchored; that is, the expression is assumed to
+begin matching at the beginning of an object name and end matching at the  end
+of  an  object  name.   You  can widen the search simply by adding ".*" to the
+beginning or end of the expressions as  needed.   You  can  make  the  regular
+expression search case-insensitive by using the -nocase option.
+
+If  the  application  variable  filter_collection_extended_syntax is true then
+mathematical expressions are supported too. All function names  must  be  pre-
+fixed  with  the  '#'  in  order  to disambiguate the function names from sub-
+scripted attribue names (i.e. "#sin(attr)"). In order to use a math expression
+on  the  right  hand side of a comparison, the expression must be contained in
+parenthesis. This is required  for  backward  compatibility  with  the  legacy
+expression syntax as strings on the right do not require quoting.
+
+When extended syntax is on filters can also match against glob style subscript
+patterns (i.e. "input_delay(*)<1.0"). In that case the term evaluates to  true
+if any subscript satisfies the condition.
+
+Additionally  when  extended  syntax  is  on,  a  filter  may  refer to nested
+attributes that may imply multiple objects in a collection (i.e. "pins.capaci-
+tance==0.2").  In  that  case  the  term  returns  true  if any of the objects
+referred to in the have an attribute value satisfying the condition.
+
+EXAMPLES
+       The following example from PrimeTime creates a collection of only hier-
+       archical cells.
+
+         prompt> set a [filter_collection [get_cells *] \
+         "is_hierarchical == true"]
+         {Adder1 Adder2}
+
+       The following example from PrimeTime uses existence operators to create
+       a collection of all nonmoded cell timing_arc  objects  in  the  current
+       design.
+
+         prompt> set b [filter_collection \
+                     [get_timing_arcs -of_objects [get_cells *]] \
+                     "undefined(mode)"]
+
+         The following example finds all cells from {U0(1) U1(1) U0(0) U1(0)}
+         with the index (0). Notice the round brackets used for the index.
+
+         prompt> filter_collection -regexp [get_cells] {full_name =~ "U.*\(0\)"}
+         {U0(0) U1(0)}
+
+       The following example finds all  ports  from  in[18]  to  in[23].   The
+       placement of double quotes and backslashes is necessary to avoid syntax
+       errors.
+
+         prompt> filter_collection [get_ports] -regexp {name=~ "in\[(1[8-9]|2[0-3])\]"}
+         {in[23] in[22] in[21] in[20] in[19] in[18]}
+
+       The following example finds the U2 and  U4  cells,  using  the  -nocase
+       option:
+
+         prompt> filter_collection [get_cells] -regexp -nocase {name =~ u[24]}
+         {U2 U4}
+
+SEE ALSO
+       collections(2)
+       regexp(2)
+       filter_collection_extended_syntax(3)
+
+                          Version Q-2019.12-SP3
+            Copyright (c) 2020 Synopsys, Inc. All rights reserved.
+dc_shell> exit
+
+Memory usage for this session 390 Mbytes.
+Memory usage for this session including child processes 390 Mbytes.
+CPU usage for this session 10 seconds ( 0.00 hours ).
+Elapsed time for this session 997 seconds ( 0.28 hours ).
+
+Thank you...
+

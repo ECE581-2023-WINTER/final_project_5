@@ -1,0 +1,172 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -group OUTPUTS
+        -max_paths 1
+Design : ExampleRocketSystem
+Version: Q-2019.12-SP3
+Date   : Thu Mar  2 17:41:20 2023
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v125c   Library: saed32lvt_ss0p75v125c
+Wire Load Model Mode: Inactive.
+
+  Startpoint: mbus/coupler_to_memory_controller_named_axi4/tl2axi4/u_T_90_reg
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: mem_axi4_0_b_ready
+            (output port clocked by clock)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                              0.00000    0.00000
+  clock network delay (ideal)                          0.90000    0.90000
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/u_T_90_reg/CLK (SDFFX1_RVT)
+                                                       0.00000 #  0.90000 r
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/u_T_90_reg/Q (SDFFX1_RVT)
+                                                       0.18565    1.08565 f
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/U7/Y (OR2X4_RVT)
+                                                       0.11785 *  1.20350 f
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/auto_in_d_bits_opcode[0] (TLToAXI4_1)
+                                                       0.00000    1.20350 f
+  mbus/coupler_to_memory_controller_named_axi4/auto_picker_in_d_bits_opcode[0] (SimpleLazyModule_6)
+                                                       0.00000    1.20350 f
+  mbus/auto_coupler_from_coherence_manager_binder_in_d_bits_opcode[0] (MemoryBus)
+                                                       0.00000    1.20350 f
+  U106/Y (INVX4_RVT)                                   0.07550 *  1.27900 r
+  mbus/IN0 (MemoryBus)                                 0.00000    1.27900 r
+  mbus/coupler_to_memory_controller_named_axi4/IN0 (SimpleLazyModule_6)
+                                                       0.00000    1.27900 r
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/IN0 (TLToAXI4_1)
+                                                       0.00000    1.27900 r
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/U15/Y (AO22X1_RVT)
+                                                       0.12282 *  1.40182 r
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/auto_in_d_bits_source[0] (TLToAXI4_1)
+                                                       0.00000    1.40182 r
+  mbus/coupler_to_memory_controller_named_axi4/widget/auto_out_d_bits_source[0] (TLWidthWidget_4)
+                                                       0.00000    1.40182 r
+  mbus/coupler_to_memory_controller_named_axi4/widget/U1/Y (NBUFFX8_RVT)
+                                                       0.07213 *  1.47395 r
+  mbus/coupler_to_memory_controller_named_axi4/widget/auto_in_d_bits_source[0] (TLWidthWidget_4)
+                                                       0.00000    1.47395 r
+  mbus/coupler_to_memory_controller_named_axi4/buffer/auto_out_d_bits_source[0] (TLBuffer_6)
+                                                       0.00000    1.47395 r
+  mbus/coupler_to_memory_controller_named_axi4/buffer/auto_in_d_bits_source[0] (TLBuffer_6)
+                                                       0.00000    1.47395 r
+  mbus/coupler_to_memory_controller_named_axi4/picker/auto_out_d_bits_source[0] (ProbePicker)
+                                                       0.00000    1.47395 r
+  mbus/coupler_to_memory_controller_named_axi4/picker/auto_in_d_bits_source[0] (ProbePicker)
+                                                       0.00000    1.47395 r
+  mbus/coupler_to_memory_controller_named_axi4/auto_picker_in_d_bits_source[0] (SimpleLazyModule_6)
+                                                       0.00000    1.47395 r
+  mbus/memory_bus_xbar/auto_out_d_bits_source[0] (TLXbar_4)
+                                                       0.00000    1.47395 r
+  mbus/memory_bus_xbar/auto_in_d_bits_source[0] (TLXbar_4)
+                                                       0.00000    1.47395 r
+  mbus/coupler_from_coherence_manager/auto_binder_out_d_bits_source[0] (SimpleLazyModule_7)
+                                                       0.00000    1.47395 r
+  mbus/coupler_from_coherence_manager/binder/auto_out_d_bits_source[0] (BankBinder)
+                                                       0.00000    1.47395 r
+  mbus/coupler_from_coherence_manager/binder/auto_in_d_bits_source[0] (BankBinder)
+                                                       0.00000    1.47395 r
+  mbus/coupler_from_coherence_manager/auto_binder_in_d_bits_source[0] (SimpleLazyModule_7)
+                                                       0.00000    1.47395 r
+  mbus/auto_coupler_from_coherence_manager_binder_in_d_bits_source[0] (MemoryBus)
+                                                       0.00000    1.47395 r
+  shrinker/auto_out_d_bits_source[0] (TLSourceShrinker)
+                                                       0.00000    1.47395 r
+  shrinker/U10/Y (INVX8_RVT)                           0.02673 *  1.50069 f
+  shrinker/U27/Y (OA221X1_RVT)                         0.09497 *  1.59566 f
+  shrinker/U29/Y (OR2X2_RVT)                           0.08364 *  1.67930 f
+  shrinker/auto_in_d_bits_source[6] (TLSourceShrinker)
+                                                       0.00000    1.67930 f
+  ww/auto_out_d_bits_source[6] (TLWidthWidget_8)       0.00000    1.67930 f
+  ww/auto_in_d_bits_source[6] (TLWidthWidget_8)        0.00000    1.67930 f
+  bh/auto_out_d_bits_source[6] (TLBroadcast)           0.00000    1.67930 f
+  bh/U51/Y (INVX2_RVT)                                 0.03484 *  1.71414 r
+  bh/U52/Y (NAND2X0_RVT)                               0.05399 *  1.76813 f
+  bh/U555/Y (AND2X1_RVT)                               0.08669 *  1.85482 f
+  bh/U560/Y (OA221X2_RVT)                              0.17043 *  2.02526 f
+  bh/U160/Y (NBUFFX8_RVT)                              0.10838 *  2.13363 f
+  bh/U1197/Y (AND2X1_RVT)                              0.07737 *  2.21101 f
+  bh/auto_in_d_bits_source[2] (TLBroadcast)            0.00000    2.21101 f
+  sbus/auto_system_bus_xbar_out_d_bits_source[2] (SystemBus)
+                                                       0.00000    2.21101 f
+  sbus/system_bus_xbar/auto_out_2_d_bits_source[2] (TLXbar)
+                                                       0.00000    2.21101 f
+  sbus/system_bus_xbar/U201/Y (NOR2X0_RVT)             0.08501 *  2.29602 r
+  sbus/system_bus_xbar/U734/Y (OA221X1_RVT)            0.06768 *  2.36370 r
+  sbus/system_bus_xbar/U736/Y (OA222X1_RVT)            0.13298 *  2.49668 r
+  sbus/system_bus_xbar/auto_out_2_d_ready (TLXbar)     0.00000    2.49668 r
+  sbus/auto_system_bus_xbar_out_d_ready (SystemBus)    0.00000    2.49668 r
+  bh/auto_in_d_ready (TLBroadcast)                     0.00000    2.49668 r
+  bh/U57/Y (OA221X1_RVT)                               0.08851 *  2.58520 r
+  bh/U58/Y (INVX1_RVT)                                 0.02178 *  2.60697 f
+  bh/U59/Y (NAND2X2_RVT)                               0.10499 *  2.71196 r
+  bh/auto_out_d_ready (TLBroadcast)                    0.00000    2.71196 r
+  U116/Y (NBUFFX8_RVT)                                 0.08478 *  2.79675 r
+  ww/auto_in_d_ready (TLWidthWidget_8)                 0.00000    2.79675 r
+  ww/auto_out_d_ready (TLWidthWidget_8)                0.00000    2.79675 r
+  shrinker/auto_in_d_ready (TLSourceShrinker)          0.00000    2.79675 r
+  shrinker/auto_out_d_ready (TLSourceShrinker)         0.00000    2.79675 r
+  mbus/auto_coupler_from_coherence_manager_binder_in_d_ready (MemoryBus)
+                                                       0.00000    2.79675 r
+  mbus/coupler_from_coherence_manager/auto_binder_in_d_ready (SimpleLazyModule_7)
+                                                       0.00000    2.79675 r
+  mbus/coupler_from_coherence_manager/binder/auto_in_d_ready (BankBinder)
+                                                       0.00000    2.79675 r
+  mbus/coupler_from_coherence_manager/binder/auto_out_d_ready (BankBinder)
+                                                       0.00000    2.79675 r
+  mbus/coupler_from_coherence_manager/auto_binder_out_d_ready (SimpleLazyModule_7)
+                                                       0.00000    2.79675 r
+  mbus/memory_bus_xbar/auto_in_d_ready (TLXbar_4)      0.00000    2.79675 r
+  mbus/memory_bus_xbar/auto_out_d_ready (TLXbar_4)     0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/auto_picker_in_d_ready (SimpleLazyModule_6)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/picker/auto_in_d_ready (ProbePicker)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/picker/auto_out_d_ready (ProbePicker)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/buffer/auto_in_d_ready (TLBuffer_6)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/buffer/auto_out_d_ready (TLBuffer_6)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/widget/auto_in_d_ready (TLWidthWidget_4)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/widget/auto_out_d_ready (TLWidthWidget_4)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/auto_in_d_ready (TLToAXI4_1)
+                                                       0.00000    2.79675 r
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/U36/Y (AND2X2_RVT)
+                                                       0.10743 *  2.90418 r
+  mbus/coupler_to_memory_controller_named_axi4/tl2axi4/auto_out_b_ready (TLToAXI4_1)
+                                                       0.00000    2.90418 r
+  mbus/coupler_to_memory_controller_named_axi4/U50/Y (NBUFFX8_RVT)
+                                                       0.09665 *  3.00083 r
+  mbus/coupler_to_memory_controller_named_axi4/auto_axi4yank_out_b_ready (SimpleLazyModule_6)
+                                                       0.00000    3.00083 r
+  mbus/auto_coupler_to_memory_controller_named_axi4_axi4yank_out_b_ready (MemoryBus)
+                                                       0.00000    3.00083 r
+  mem_axi4_0_b_ready (out)                             0.01636 *  3.01719 r
+  data arrival time                                               3.01719
+
+  clock clock (rise edge)                              3.50000    3.50000
+  clock network delay (ideal)                          0.90000    4.40000
+  clock uncertainty                                   -0.16000    4.24000
+  output external delay                               -0.00160    4.23840
+  data required time                                              4.23840
+  --------------------------------------------------------------------------
+  data required time                                              4.23840
+  data arrival time                                              -3.01719
+  --------------------------------------------------------------------------
+  slack (MET)                                                     1.22121
+
+
+1

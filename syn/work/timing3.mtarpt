@@ -1,0 +1,73 @@
+VERSION {1.0}
+PTDEF {instance} {pin} {cell} {edge} {clock_edge} {clock} {phase}
+BANNER
+  {Module} {fifo1_sram}
+  {Timing} {LATE}
+  {Slew Propagation} {WORST}
+  {PVT Mode} {max}
+  {Tree Type} {binary_tree}
+  {Process} {0.99}
+  {Voltage} {0.95}
+  {Temperature} {125.0}
+  {time unit} {1.000 ns}
+  {capacitance unit} {1.000 pF}
+  {resistance unit} {1.000 kOhm}
+  {TOOL} {Genus(TM) Synthesis Solution v19.12-s121_1}
+  {DATE} {Sun Mar 05 18:20:56 PST 2023}
+END_BANNER
+
+PATH 1
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {wdata_reg_2_} {CLK}
+  ENDPT {wdata_reg_2_} {D} {DFFARX1_RVT} {v} {leading} {wclk2x} {wclk2x(C)(P)}
+  BEGINPT {} {wdata_in[2]} {} {v} {leading} {wclk2x} {wclk2x(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.100}
+    {-} {Setup} {0.075}
+    {+} {Phase Shift} {0.900}
+    {-} {Uncertainty} {0.090}
+    {=} {Required Time} {0.835}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {4.043}
+    {=} {Slack Time} {-3.208}
+  END_SLK_CLC
+  SLK -3.208
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {+} {Input Delay} {-0.900}
+    {+} {Network Insertion Delay} {0.100}
+    {=} {Beginpoint Arrival Time} {-0.800}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {wclk2x} {^} {} {} {} {} {} {} {} {} {-0.800} {-4.008} {} {} {}
+    NET {} {} {} {} {} {wclk2x} {} {0.000} {0.000} {0.000} {2.506r/2.575f} {-0.800} {-4.008} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {wdata_in[2]} {v} {} {} {wdata_in[2]} {} {} {} {5.708} {2.574} {-0.800} {-4.008} {} {1} {}
+    NET {} {} {} {} {} {wdata_in[2]} {} {0.001} {0.000} {5.708} {2.574} {-0.799} {-4.007} {} {} {}
+    INST {io_r_wdata_in_2_} {PADIO} {v} {DOUT} {v} {} {I1025_NS} {1.056} {0.000} {0.161} {} {0.256} {-2.951} {} {1} {}
+    NET {} {} {} {} {} {io_r_wdata_in_2__net} {} {0.000} {0.000} {0.161} {0.002} {0.256} {-2.951} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {+} {Network Insertion Delay} {0.100}
+    {=} {Beginpoint Arrival Time} {0.100}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {wclk2x} {^} {} {} {} {} {} {} {} {} {0.100} {3.308} {} {} {}
+    NET {} {} {} {} {} {wclk2x} {} {0.000} {0.000} {0.000} {2.506r/2.575f} {0.100} {3.308} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 1
+

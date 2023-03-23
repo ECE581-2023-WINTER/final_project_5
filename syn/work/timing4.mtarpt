@@ -1,0 +1,110 @@
+VERSION {1.0}
+PTDEF {instance} {pin} {cell} {edge} {clock_edge} {clock} {phase}
+BANNER
+  {Module} {ExampleRocketSystem}
+  {Timing} {LATE}
+  {Slew Propagation} {WORST}
+  {PVT Mode} {max}
+  {Tree Type} {binary_tree}
+  {Process} {0.99}
+  {Voltage} {0.75}
+  {Temperature} {125.0}
+  {time unit} {1.000 ns}
+  {capacitance unit} {1.000 pF}
+  {resistance unit} {1.000 kOhm}
+  {TOOL} {Genus(TM) Synthesis Solution v19.12-s121_1}
+  {DATE} {Sun Mar 12 23:57:36 PDT 2023}
+END_BANNER
+
+PATH 1
+  VIEW default
+  CHECK_TYPE {External Delay Assertion}
+  REF {} {}
+  ENDPT {} {mem_axi4_0_b_ready} {} {^} {leading} {clock} {clock(C)(P)}
+  BEGINPT {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/value_1_reg_0_} {Q} {SDFFX1_LVT} {^} {leading} {clock} {clock(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.900}
+    {-} {External Delay} {0.002}
+    {+} {Phase Shift} {3.500}
+    {-} {Uncertainty} {0.160}
+    {=} {Required Time} {4.238}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {2.6090000000000004}
+    {=} {Slack Time} {1.629}
+  END_SLK_CLC
+  SLK 1.629
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {+} {Input Delay} {0.002}
+    {+} {Network Insertion Delay} {0.900}
+    {=} {Beginpoint Arrival Time} {0.902}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clock} {^} {} {} {} {} {} {} {} {} {0.902} {2.531} {} {} {}
+    NET {} {} {} {} {} {clock} {} {0.000} {0.000} {0.000} {17.515} {0.902} {2.531} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/value_1_reg_0_} {CLK} {^} {Q} {^} {} {SDFFX1_LVT} {0.247} {0.000} {0.072} {} {1.147} {2.777} {} {6} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/value_1_0_} {} {0.001} {0.000} {0.072} {0.006} {1.148} {2.777} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/g9824} {A2} {^} {Y} {^} {} {OR2X1_RVT} {0.070} {0.000} {0.033} {} {1.218} {2.847} {} {2} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/n_136} {} {0.000} {0.000} {0.033} {0.002} {1.218} {2.847} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/g9769} {A2} {^} {Y} {v} {} {NOR2X4_RVT} {0.142} {0.000} {0.080} {} {1.360} {2.990} {} {51} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/n_131} {} {0.007} {0.000} {0.080} {0.129} {1.367} {2.997} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/plcgopbuf_st9937} {A} {v} {Y} {^} {} {INVX0_RVT} {0.051} {0.000} {0.050} {} {1.418} {3.047} {} {1} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/n_712} {} {0.011} {0.000} {0.050} {0.026} {1.429} {3.058} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/plcgopbuf_st9951} {A} {^} {Y} {v} {} {INVX2_LVT} {0.069} {0.000} {0.085} {} {1.497} {3.127} {} {29} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/n_699} {} {0.006} {0.000} {0.085} {0.074} {1.504} {3.133} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/g9440} {A1} {v} {Y} {v} {} {AO221X1_RVT} {0.124} {0.000} {0.032} {} {1.628} {3.257} {} {1} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/n_404} {} {0.000} {0.000} {0.032} {0.001} {1.628} {3.257} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/g9361} {A3} {v} {Y} {v} {} {OR3X1_LVT} {0.069} {0.000} {0.033} {} {1.696} {3.326} {} {1} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/io_deq_bits_user[4]} {} {0.001} {0.000} {0.033} {0.002} {1.697} {3.326} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/g8660} {A1} {v} {Y} {v} {} {AO221X1_RVT} {0.097} {0.000} {0.032} {} {1.794} {3.424} {} {1} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/auto_in_r_bits_user[4]} {} {0.006} {0.000} {0.032} {0.016} {1.800} {3.429} {} {} {}
+    INST {sbus/coupler_to_port_named_mmio_port_axi4/tl2axi4/g3616} {A2} {v} {Y} {v} {} {MUX21X1_RVT} {0.091} {0.000} {0.046} {} {1.891} {3.520} {} {2} {}
+    NET {} {} {} {} {} {sbus/coupler_to_port_named_mmio_port_axi4/tl2axi4/auto_in_d_bits_source[4]} {} {0.002} {0.000} {0.046} {0.005} {1.893} {3.522} {} {} {}
+    INST {sbus/system_bus_xbar/g25415} {A} {v} {Y} {^} {} {INVX1_RVT} {0.037} {0.000} {0.035} {} {1.929} {3.559} {} {3} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/n_352} {} {0.000} {0.000} {0.035} {0.002} {1.929} {3.559} {} {} {}
+    INST {sbus/system_bus_xbar/g24989} {A3} {^} {Y} {^} {} {OR3X1_LVT} {0.076} {0.000} {0.046} {} {2.005} {3.635} {} {2} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/n_762} {} {0.001} {0.000} {0.046} {0.003} {2.006} {3.635} {} {} {}
+    INST {sbus/system_bus_xbar/g20423} {A3} {^} {Y} {^} {} {OR3X1_LVT} {0.076} {0.000} {0.041} {} {2.081} {3.711} {} {2} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/n_708} {} {0.001} {0.000} {0.041} {0.002} {2.082} {3.711} {} {} {}
+    INST {sbus/system_bus_xbar/g25217} {A1} {^} {Y} {v} {} {NAND2X0_RVT} {0.050} {0.000} {0.058} {} {2.132} {3.761} {} {2} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/_T_717_3_} {} {0.000} {0.000} {0.058} {0.002} {2.132} {3.762} {} {} {}
+    INST {sbus/system_bus_xbar/g25216} {A} {v} {Y} {^} {} {INVX1_RVT} {0.028} {0.000} {0.031} {} {2.161} {3.790} {} {1} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/n_339} {} {0.000} {0.000} {0.031} {0.001} {2.161} {3.790} {} {} {}
+    INST {sbus/system_bus_xbar/g25214} {A1} {^} {Y} {^} {} {MUX21X1_RVT} {0.082} {0.000} {0.035} {} {2.243} {3.872} {} {1} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/n_341} {} {0.000} {0.000} {0.035} {0.001} {2.243} {3.872} {} {} {}
+    INST {sbus/system_bus_xbar/g25213} {A1} {^} {Y} {v} {} {NAND2X0_RVT} {0.034} {0.000} {0.043} {} {2.277} {3.906} {} {1} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/n_342} {} {0.000} {0.000} {0.043} {0.001} {2.277} {3.907} {} {} {}
+    INST {sbus/system_bus_xbar/g25438} {A2} {v} {Y} {^} {} {OAI22X1_RVT} {0.105} {0.000} {0.037} {} {2.382} {4.012} {} {5} {}
+    NET {} {} {} {} {} {sbus/system_bus_xbar/auto_out_2_d_ready} {} {0.001} {0.000} {0.037} {0.009} {2.383} {4.013} {} {} {}
+    INST {bh/g14254} {A2} {^} {Y} {v} {} {NAND2X0_LVT} {0.044} {0.000} {0.051} {} {2.428} {4.057} {} {2} {}
+    NET {} {} {} {} {} {bh/n_723} {} {0.001} {0.000} {0.051} {0.002} {2.428} {4.058} {} {} {}
+    INST {bh/g21093} {A1} {v} {Y} {^} {} {NAND2X0_LVT} {0.107} {0.000} {0.129} {} {2.535} {4.165} {} {6} {}
+    NET {} {} {} {} {} {bh/auto_out_d_ready} {} {0.006} {0.000} {0.129} {0.032} {2.542} {4.171} {} {} {}
+    INST {mbus/coupler_to_memory_controller_named_axi4/tl2axi4/g1548} {A1} {^} {Y} {^} {} {AND2X1_RVT} {0.061} {0.000} {0.033} {} {2.603} {4.232} {} {2} {}
+    NET {} {} {} {} {} {mbus/coupler_to_memory_controller_named_axi4/tl2axi4/auto_out_b_ready} {} {0.006} {0.000} {0.033} {0.016} {2.609} {4.238} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {+} {Input Delay} {0.002}
+    {+} {Network Insertion Delay} {0.900}
+    {=} {Beginpoint Arrival Time} {0.902}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clock} {^} {} {} {} {} {} {} {} {} {0.902} {-0.727} {} {} {}
+    NET {} {} {} {} {} {clock} {} {0.000} {0.000} {0.000} {17.515} {0.902} {-0.727} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 1
+

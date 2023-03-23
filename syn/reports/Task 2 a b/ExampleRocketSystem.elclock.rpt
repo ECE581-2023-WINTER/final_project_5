@@ -1,0 +1,117 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -group clock
+        -max_paths 1
+Design : ExampleRocketSystem
+Version: Q-2019.12-SP3
+Date   : Wed Mar  1 13:58:11 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v125c   Library: saed32lvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: tile/frontend/icache/s2_tag_hit_2_reg
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: tile/frontend/fq/u_T_2_2_btb_bht_history_reg_0_
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ExampleRocketSystem
+                     2000000               saed32rvt_ss0p95v125c
+  ICache             540000                saed32rvt_ss0p95v125c
+  Frontend           540000                saed32rvt_ss0p95v125c
+  RocketTile         2000000               saed32rvt_ss0p95v125c
+  Rocket             140000                saed32rvt_ss0p95v125c
+  RVCExpander        8000                  saed32rvt_ss0p95v125c
+  IBuf               8000                  saed32rvt_ss0p95v125c
+  ShiftQueue         8000                  saed32rvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                              0.00000    0.00000
+  clock network delay (ideal)                          0.90000    0.90000
+  tile/frontend/icache/s2_tag_hit_2_reg/CLK (SDFFX1_RVT)
+                                                       0.00000 #  0.90000 r
+  tile/frontend/icache/s2_tag_hit_2_reg/Q (SDFFX1_RVT)
+                                                       0.20249    1.10249 f
+  tile/frontend/icache/U32/Y (NBUFFX4_RVT)             0.08044    1.18293 f
+  tile/frontend/icache/U557/Y (NAND2X0_RVT)            0.04671    1.22965 r
+  tile/frontend/icache/U558/Y (NAND4X0_RVT)            0.06482    1.29447 f
+  tile/frontend/icache/U559/Y (NBUFFX2_RVT)            0.07717    1.37164 f
+  tile/frontend/icache/io_resp_bits_data[0] (ICache)   0.00000    1.37164 f
+  tile/frontend/fq/io_enq_bits_data[0] (ShiftQueue)    0.00000    1.37164 f
+  tile/frontend/fq/U139/Y (MUX21X1_RVT)                0.09754    1.46917 f
+  tile/frontend/fq/io_deq_bits_data[0] (ShiftQueue)    0.00000    1.46917 f
+  tile/frontend/io_cpu_resp_bits_data[0] (Frontend)    0.00000    1.46917 f
+  tile/core/io_imem_resp_bits_data[0] (Rocket)         0.00000    1.46917 f
+  tile/core/ibuf/io_imem_bits_data[0] (IBuf)           0.00000    1.46917 f
+  tile/core/ibuf/U93/Y (AO222X1_RVT)                   0.07884    1.54801 f
+  tile/core/ibuf/RVCExpander/io_in[0] (RVCExpander)    0.00000    1.54801 f
+  tile/core/ibuf/RVCExpander/U30/Y (INVX0_RVT)         0.04621    1.59423 r
+  tile/core/ibuf/RVCExpander/U94/Y (AND2X1_RVT)        0.07978    1.67401 r
+  tile/core/ibuf/RVCExpander/U26/Y (NAND2X0_RVT)       0.07722    1.75122 f
+  tile/core/ibuf/RVCExpander/U13/Y (INVX0_RVT)         0.05966    1.81088 r
+  tile/core/ibuf/RVCExpander/U4/Y (NAND2X1_RVT)        0.09690    1.90778 f
+  tile/core/ibuf/RVCExpander/U7/Y (INVX1_RVT)          0.04310    1.95088 r
+  tile/core/ibuf/RVCExpander/U122/Y (NAND2X0_RVT)      0.07271    2.02359 f
+  tile/core/ibuf/RVCExpander/U157/Y (NAND2X0_RVT)      0.08223    2.10582 r
+  tile/core/ibuf/RVCExpander/U20/Y (NAND3X0_RVT)       0.08015    2.18598 f
+  tile/core/ibuf/RVCExpander/U262/Y (AO22X1_RVT)       0.11191    2.29789 f
+  tile/core/ibuf/RVCExpander/U264/Y (OA222X1_RVT)      0.10998    2.40787 f
+  tile/core/ibuf/RVCExpander/U267/Y (AO22X1_RVT)       0.08600    2.49387 f
+  tile/core/ibuf/RVCExpander/io_out_bits[9] (RVCExpander)
+                                                       0.00000    2.49387 f
+  tile/core/ibuf/io_inst_0_bits_inst_bits[9] (IBuf)    0.00000    2.49387 f
+  tile/core/U1095/Y (NOR4X1_RVT)                       0.13028    2.62414 r
+  tile/core/U1099/Y (NAND4X0_RVT)                      0.04779    2.67193 f
+  tile/core/U1100/Y (NOR3X0_RVT)                       0.10604    2.77797 r
+  tile/core/U204/Y (NAND3X0_RVT)                       0.05682    2.83479 f
+  tile/core/U1110/Y (AND3X1_RVT)                       0.08988    2.92468 f
+  tile/core/U1113/Y (NAND2X0_RVT)                      0.05589    2.98057 r
+  tile/core/U1114/Y (NAND2X0_RVT)                      0.03937    3.01993 f
+  tile/core/U214/Y (NAND3X0_RVT)                       0.04037    3.06030 r
+  tile/core/U1122/Y (NAND2X0_RVT)                      0.03511    3.09541 f
+  tile/core/U1190/Y (AND4X1_RVT)                       0.08040    3.17581 f
+  tile/core/U1191/Y (AND2X1_RVT)                       0.05612    3.23193 f
+  tile/core/U1390/Y (AND4X1_RVT)                       0.09281    3.32475 f
+  tile/core/ibuf/io_inst_0_ready (IBuf)                0.00000    3.32475 f
+  tile/core/ibuf/U84/Y (AND2X1_RVT)                    0.06376    3.38851 f
+  tile/core/ibuf/U6/Y (AND2X1_RVT)                     0.07770    3.46621 f
+  tile/core/ibuf/io_imem_ready (IBuf)                  0.00000    3.46621 f
+  tile/core/io_imem_resp_ready (Rocket)                0.00000    3.46621 f
+  tile/frontend/io_cpu_resp_ready (Frontend)           0.00000    3.46621 f
+  tile/frontend/fq/io_deq_ready (ShiftQueue)           0.00000    3.46621 f
+  tile/frontend/fq/U15/Y (INVX0_RVT)                   0.04092    3.50713 r
+  tile/frontend/fq/U59/Y (AND2X1_RVT)                  0.06902    3.57615 r
+  tile/frontend/fq/U330/Y (AO22X1_RVT)                 0.07013    3.64628 r
+  tile/frontend/fq/U3/Y (AO21X1_RVT)                   0.08179    3.72807 r
+  tile/frontend/fq/U331/Y (AND2X4_RVT)                 0.14970    3.87778 r
+  tile/frontend/fq/U57/Y (NBUFFX2_RVT)                 0.10369    3.98146 r
+  tile/frontend/fq/U406/Y (AO222X1_RVT)                0.14319    4.12466 r
+  tile/frontend/fq/u_T_2_2_btb_bht_history_reg_0_/D (SDFFX1_RVT)
+                                                       0.00000    4.12466 r
+  data arrival time                                               4.12466
+
+  clock clock (rise edge)                              3.50000    3.50000
+  clock network delay (ideal)                          0.90000    4.40000
+  clock uncertainty                                   -0.16000    4.24000
+  tile/frontend/fq/u_T_2_2_btb_bht_history_reg_0_/CLK (SDFFX1_RVT)
+                                                       0.00000    4.24000 r
+  library setup time                                  -0.11430    4.12570
+  data required time                                              4.12570
+  --------------------------------------------------------------------------
+  data required time                                              4.12570
+  data arrival time                                              -4.12466
+  --------------------------------------------------------------------------
+  slack (MET)                                                     0.00105
+
+
+1

@@ -1,0 +1,57 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -group OUTPUTS
+        -max_paths 1
+        -capacitance
+Design : fifo1_sram
+Version: Q-2019.12-SP3
+Date   : Fri Mar  3 21:56:09 2023
+****************************************
+
+Operating Conditions: ss0p95v125c   Library: saed32rvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: fifomem/genblk1_2__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[0] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo1_sram         540000                saed32rvt_ss0p95v125c
+  fifomem_DATASIZE8_ADDRSIZE10
+                     70000                 saed32rvt_ss0p95v125c
+
+  Point                                          Cap      Incr       Path
+  --------------------------------------------------------------------------
+  clock rclk (rise edge)                               0.00000    0.00000
+  clock network delay (ideal)                          0.10000    0.10000
+  fifomem/genblk1_2__U/CE2 (SRAM2RW128x8)              0.00000    0.10000 r
+  fifomem/genblk1_2__U/O2[0] (SRAM2RW128x8)  0.57462   0.09045    0.19045 f
+  fifomem/U6/Y (NAND4X0_RVT)                 0.77876   0.04936    0.23981 r
+  fifomem/U5/Y (INVX1_RVT)                   0.53674   0.02006    0.25987 f
+  fifomem/U26/Y (AND2X1_RVT)                 1.41992   0.05810    0.31797 f
+  fifomem/rdata[0] (fifomem_DATASIZE8_ADDRSIZE10)      0.00000    0.31797 f
+  U16/Y (NBUFFX8_RVT)                       21.85018   0.05987    0.37785 f
+  io_l_rdata_0_/PADIO (D8I1025_NS)          1433.81055
+                                                       1.38263    1.76047 f
+  rdata[0] (out)                                       0.00000    1.76047 f
+  data arrival time                                               1.76047
+
+  clock rclk (rise edge)                               1.22000    1.22000
+  clock network delay (ideal)                          0.10000    1.32000
+  clock uncertainty                                   -0.07000    1.25000
+  output external delay                                0.50000    1.75000
+  data required time                                              1.75000
+  --------------------------------------------------------------------------
+  data required time                                              1.75000
+  data arrival time                                              -1.76047
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                               -0.01047
+
+
+1

@@ -1,0 +1,145 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -group INPUTS
+        -max_paths 1
+Design : ExampleRocketSystem
+Version: Q-2019.12-SP3
+Date   : Thu Mar  2 17:38:28 2023
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v125c   Library: saed32lvt_ss0p75v125c
+Wire Load Model Mode: Inactive.
+
+  Startpoint: l2_frontend_bus_axi4_0_aw_bits_size[0]
+              (input port clocked by clock)
+  Endpoint: fbus/coupler_from_port_named_slave_port_axi4/axi4frag/u_T_128_reg_31_
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                              0.00000    0.00000
+  clock network delay (ideal)                          0.90000    0.90000
+  input external delay                                 0.00160    0.90160 f
+  l2_frontend_bus_axi4_0_aw_bits_size[0] (in)          0.00000    0.90160 f
+  fbus/auto_coupler_from_port_named_slave_port_axi4_axi4index_in_aw_bits_size[0] (FrontBus)
+                                                       0.00000    0.90160 f
+  fbus/coupler_from_port_named_slave_port_axi4/auto_axi4index_in_aw_bits_size[0] (SimpleLazyModule_5)
+                                                       0.00000    0.90160 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4index/auto_in_aw_bits_size[0] (AXI4IdIndexer_1)
+                                                       0.00000    0.90160 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4index/auto_out_aw_bits_size[0] (AXI4IdIndexer_1)
+                                                       0.00000    0.90160 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/auto_in_aw_bits_size[0] (AXI4Fragmenter)
+                                                       0.00000    0.90160 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/Queue_1/io_enq_bits_size[0] (Queue_30_0)
+                                                       0.00000    0.90160 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/Queue_1/U106/Y (MUX21X1_RVT)
+                                                       0.09469 *  0.99629 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/Queue_1/io_deq_bits_size[0] (Queue_30_0)
+                                                       0.00000    0.99629 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U753/Y (NBUFFX4_RVT)
+                                                       0.08941 *  1.08569 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U56/Y (AND2X1_RVT)
+                                                       0.07157 *  1.15726 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U59/Y (AND3X1_RVT)
+                                                       0.08244 *  1.23970 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U88/Y (AND2X1_RVT)
+                                                       0.07055 *  1.31026 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U89/Y (AND2X1_RVT)
+                                                       0.06090 *  1.37115 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U100/Y (OA21X1_RVT)
+                                                       0.10366 *  1.47481 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U145/Y (INVX1_RVT)
+                                                       0.03480 *  1.50961 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U146/Y (AND2X1_RVT)
+                                                       0.07118 *  1.58079 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U147/Y (AO21X1_RVT)
+                                                       0.07016 *  1.65096 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U520/Y (OR2X1_RVT)
+                                                       0.05706 *  1.70802 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U501/Y (AO22X1_RVT)
+                                                       0.07284 *  1.78086 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U535/CO (FADDX1_RVT)
+                                                       0.10548 *  1.88634 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U493/Y (OA21X1_RVT)
+                                                       0.08395 *  1.97029 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U489/Y (AO22X1_RVT)
+                                                       0.07984 *  2.05013 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U158/Y (AO22X1_RVT)
+                                                       0.08580 *  2.13592 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U485/Y (OA21X1_RVT)
+                                                       0.08278 *  2.21870 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U412/Y (AO22X1_RVT)
+                                                       0.07878 *  2.29748 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U160/Y (AO22X1_RVT)
+                                                       0.07942 *  2.37690 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U404/Y (AND2X1_RVT)
+                                                       0.06139 *  2.43828 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U401/Y (AND2X1_RVT)
+                                                       0.06004 *  2.49832 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U163/Y (AND2X1_RVT)
+                                                       0.05921 *  2.55753 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U164/Y (AND2X1_RVT)
+                                                       0.05863 *  2.61617 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U407/Y (AND2X1_RVT)
+                                                       0.05388 *  2.67004 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U619/C1 (HADDX1_RVT)
+                                                       0.07053 *  2.74058 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U405/Y (AND2X1_RVT)
+                                                       0.05536 *  2.79594 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U615/C1 (HADDX1_RVT)
+                                                       0.06800 *  2.86394 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U613/C1 (HADDX1_RVT)
+                                                       0.06757 *  2.93151 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U611/C1 (HADDX1_RVT)
+                                                       0.06735 *  2.99886 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U609/C1 (HADDX1_RVT)
+                                                       0.07165 *  3.07051 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U406/Y (AND2X1_RVT)
+                                                       0.05588 *  3.12639 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U605/C1 (HADDX1_RVT)
+                                                       0.06815 *  3.19454 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U500/C1 (HADDX1_RVT)
+                                                       0.06901 *  3.26355 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U603/C1 (HADDX1_RVT)
+                                                       0.07113 *  3.33468 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U505/C1 (HADDX1_RVT)
+                                                       0.06734 *  3.40201 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U601/C1 (HADDX1_RVT)
+                                                       0.06982 *  3.47184 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U598/C1 (HADDX1_RVT)
+                                                       0.06933 *  3.54117 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U503/C1 (HADDX1_RVT)
+                                                       0.07013 *  3.61130 r
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U165/Y (XOR2X1_RVT)
+                                                       0.11715 *  3.72845 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/U178/Y (AO21X1_RVT)
+                                                       0.07612 *  3.80457 f
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/u_T_128_reg_31_/D (SDFFX1_RVT)
+                                                       0.00000 *  3.80457 f
+  data arrival time                                               3.80457
+
+  clock clock (rise edge)                              3.50000    3.50000
+  clock network delay (ideal)                          0.90000    4.40000
+  clock uncertainty                                   -0.16000    4.24000
+  fbus/coupler_from_port_named_slave_port_axi4/axi4frag/u_T_128_reg_31_/CLK (SDFFX1_RVT)
+                                                       0.00000    4.24000 r
+  library setup time                                  -0.09066    4.14934
+  data required time                                              4.14934
+  --------------------------------------------------------------------------
+  data required time                                              4.14934
+  data arrival time                                              -3.80457
+  --------------------------------------------------------------------------
+  slack (MET)                                                     0.34477
+
+
+1

@@ -1,0 +1,20 @@
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Sun Mar 12 16:39:33 2023
+# Host: auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*60cpus*60physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Sun Mar 12 16:39:42 2023
+# Host: auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*60cpus*60physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+e
+source ../scripts/genus-phys.tcl
+report_timing -group INPUTS > Epinputs.genus.rpt
+report_timing -from sbus/coupler_to_port_named_mmio_port_axi4/axi4deint/Queue/value_1_reg_0_/CLK -to mem_axi4_0_b_ready -group OUTPUTS > Epoutputs.genus.rpt
+report_timing -from tile/frontend/icache/s2_tag_hit_1_reg/CLK -to tile/core/ex_reg_rs_msb_1_reg_58_/D -group clock > Epclk.genus.rpt
+report_timing -from l2_frontend_bus_axi4_0_aw_bits_burst[1] -to fbus/coupler_from_port_named_slave_port_axi4/axi4frag/_T_257_reg_8_/SETB -group INPUTS > Epinputs.genus.rpt
+report_timing -group INPUTS > Epinputs.genus.rpt
+exit

@@ -1,0 +1,55 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 19.12-s121_1, built Tue Dec 03 15:07:17 PST 2019
+Options: 
+Date:    Wed Mar 22 15:30:12 2023
+Host:    mo.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*32cpus*32physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB) (87477784KB)
+PID:     13626
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+
+Finished loading tool scripts (12 seconds elapsed).
+
+WARNING: This version of the tool is 1204 days old.
+@genus:root: 1> pwd
+/home/ramadugu/common/Documents/final_prj-team_5_master/constraints
+@genus:root: 2> read_power_intent -1801 filename.upf
+Error: specify a unique top module name with -module
+@genus:root: 3> 
+@genus:root: 3> read_power_intent -1801 ORCA_TOP.upf
+Error: specify a unique top module name with -module
+@genus:root: 4> o
+ambiguous command name "o": open optimize_iso_ls
+@genus:root: 5> set top_design ORCA_TOP
+ORCA_TOP
+@genus:root: 6> read_power_intent -1801 ORCA_TOP.upf
+Error: specify a unique top module name with -module
+@genus:root: 7> read_power_intent
+Error   : A required argument was not specified. [TUI-202] [parse_options]
+        : An argument of type '<string>+' was not specified.
+        : Rerun the command specifying all required arguments.
+  read_power_intent: reads in power intent files 
+
+Usage: read_power_intent [-module <string>] [-1801] [-cpf] [-version <string>]
+           <string>+
+
+    [-module <string>]:
+        name of top module of this power intent file 
+    [-1801]:
+        file is a 1801 file 
+    [-cpf]:
+        file is a CPF file 
+    [-version <string>]:
+        version of power intent file 
+    <string>+:
+        the list of power intent files 
+@genus:root: 8> read_power_intent -1801 ORCA_TOP.upf
+Error: specify a unique top module name with -module
+@genus:root: 9> exit
+Normal exit.

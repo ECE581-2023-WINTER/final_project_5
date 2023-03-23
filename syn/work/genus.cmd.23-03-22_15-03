@@ -1,0 +1,40 @@
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Wed Mar 22 15:32:59 2023
+# Host: mo.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*32cpus*32physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Wed Mar 22 15:33:08 2023
+# Host: mo.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*32cpus*32physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+pwd
+o
+cd ../../constraints/
+read_power_intent -1801 ORCA_TOP.upf
+read_power_intent -1801 ORCA_TOP.upf -module ORCA_TOP
+commit_power_intent
+modify_power_domain_attr <power domain> -box_list
+what_is
+get_object_type power_domain
+modify_power_domain_attr <obj_type> -box_list
+man modify_power_domain_attr <obj_type> -box_list
+man modify_power_domain_attr <power domain> -box_list
+man modify_power_domain_attr <power_domain> -box_list
+modify_power_domain_attr <PD_ORCA_TOP > -box_list
+modify_power_domain_attr <PD_ORCA_TOP> -box_list
+modify_power_domain_attr <PD_RISC_CORE> -box_list
+man modify_power_domain_attr <PD_RISC_CORE> -box_list
+man modify_power_domain_attr <ORCA_TOP> -box_list
+modify_power_domain_attr <ORCA_TOP> -box_list
+modify_power_domain_attr <PD_RISC_CORE> -box_list
+modify_power_domain_attr <PD_RISC_CORE> -box_list
+modify_power_domain_attr
+modify_power_domain_attr -box_list
+man  modify_power_domain_attr -box_list
+cd ../syn/work/
+o
+source ../scripts/genus.tcl
+exit

@@ -1,0 +1,26 @@
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Wed Mar 22 15:54:57 2023
+# Host: mo.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*32cpus*32physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+pwd
+help *power*
+read_power_intent -1801 ORCA_TOP.upf
+read_power_intent -1801 ORCA_TOP.upf -module ORCA_TOP
+commit_power_intent
+man modify_power_domain_attr 1801 -box_list
+modify_power_domain_attr 1801 -box_list
+what_is
+get_object_type power_domain
+get_object_type powerdomain
+get_object_type power domain
+modify_power_domain_attr  <power domain> -box_list
+modify_power_domain_attr  <power_domain> -box_list {11.553 562.778 305.144 457.725}
+modify_power_domain_attr  <PD_RISC_CORE> -box_list {11.553 562.778 305.144 457.725}
+pwd
+cd ../syn/work/
+o
+pwd
+set top_design ORCA_TOP
+source ../scripts/genus-phys.tcl

@@ -1,0 +1,124 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : fifo1_sram
+Version: Q-2019.12-SP3
+Date   : Fri Mar 17 19:41:04 2023
+****************************************
+
+
+   max_delay/setup ('INPUTS' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   wptr_full/wfull_reg/D        1.09           1.27 r        -0.18  (VIOLATED)
+   rptr_empty/rempty_reg/D      1.12           1.30 r        -0.18  (VIOLATED)
+   wdata_reg_0_/D               0.45           0.53 r        -0.08  (VIOLATED)
+   wdata_reg_1_/D               0.45           0.53 r        -0.08  (VIOLATED)
+   wdata_reg_6_/D               0.45           0.53 r        -0.08  (VIOLATED)
+   wdata_reg_4_/D               0.46           0.53 r        -0.07  (VIOLATED)
+   wdata_reg_5_/D               0.46           0.53 r        -0.07  (VIOLATED)
+   wdata_reg_3_/D               0.46           0.53 r        -0.07  (VIOLATED)
+   wdata_reg_2_/D               0.46           0.53 r        -0.07  (VIOLATED)
+   wdata_reg_7_/D               0.50           0.55 f        -0.05  (VIOLATED)
+   wptr_full/wptr_reg_1_/D      1.08           1.10 r        -0.01  (VIOLATED)
+   wptr_full/wptr_reg_4_/D      1.08           1.09 r        -0.01  (VIOLATED)
+
+
+   max_delay/setup ('OUTPUTS' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   rdata[4]                     1.75           2.04 f        -0.29  (VIOLATED)
+   rdata[6]                     1.75           2.04 f        -0.29  (VIOLATED)
+   rdata[7]                     1.75           2.03 f        -0.28  (VIOLATED)
+   rdata[3]                     1.75           2.02 f        -0.27  (VIOLATED)
+   rdata[0]                     1.75           2.01 f        -0.26  (VIOLATED)
+   rdata[5]                     1.75           2.01 f        -0.26  (VIOLATED)
+   rdata[1]                     1.75           2.00 r        -0.25  (VIOLATED)
+   rdata[2]                     1.75           1.96 f        -0.21  (VIOLATED)
+   rempty                       1.75           1.90 f        -0.15  (VIOLATED)
+   wfull                        1.71           1.85 f        -0.14  (VIOLATED)
+
+
+   max_delay/setup ('rclk' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   rptr_empty/rempty_reg/D      1.12           1.21 r        -0.09  (VIOLATED)
+
+
+   max_delay/setup ('wclk' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   wptr_full/wfull_reg/D        1.09           1.19 r        -0.10  (VIOLATED)
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   wfull                        0.50           0.89          -0.39  (VIOLATED)
+       PORT :  wfull            0.50           0.89          -0.39  (VIOLATED)
+   rempty                       0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rempty           0.50           0.89          -0.39  (VIOLATED)
+   rdata[6]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[6]         0.50           0.89          -0.39  (VIOLATED)
+   rdata[2]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[2]         0.50           0.89          -0.39  (VIOLATED)
+   rdata[0]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[0]         0.50           0.89          -0.39  (VIOLATED)
+   rdata[5]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[5]         0.50           0.89          -0.39  (VIOLATED)
+   rdata[1]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[1]         0.50           0.89          -0.39  (VIOLATED)
+   rdata[3]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[3]         0.50           0.89          -0.39  (VIOLATED)
+   rdata[7]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[7]         0.50           0.89          -0.39  (VIOLATED)
+   rdata[4]                     0.50           0.89          -0.39  (VIOLATED)
+       PORT :  rdata[4]         0.50           0.89          -0.39  (VIOLATED)
+   n62                          0.21           0.22          -0.02  (VIOLATED)
+       PIN :   U14/Y            0.21           0.22          -0.02  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      11                 -3.95  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   n62                         32.00          97.96         -65.96  (VIOLATED)
+   n59                         64.00          99.77         -35.77  (VIOLATED)
+   n61                         64.00          98.27         -34.27  (VIOLATED)
+   n58                         64.00          89.16         -25.16  (VIOLATED)
+   waddr[3]                    64.00          83.14         -19.14  (VIOLATED)
+   n60                         64.00          78.02         -14.02  (VIOLATED)
+   wq2_rptr[0]                 16.00          18.38          -2.38  (VIOLATED)
+   n38                         16.00          17.64          -1.64  (VIOLATED)
+   rptr_empty/n84              16.00          17.08          -1.08  (VIOLATED)
+   fifomem/n27                 16.00          16.81          -0.81  (VIOLATED)
+   wptr_full/n375              16.00          16.43          -0.43  (VIOLATED)
+   raddr[7]                    16.00          16.38          -0.38  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      12               -201.03  
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   fifo1_sram                   0.00       1312393600.00  -1312393600.00
+                                                                    (VIOLATED)
+
+
+1

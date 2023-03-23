@@ -1,0 +1,1132 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -derate
+        -input_pins
+        -nets
+        -slack_lesser_than 0.0000
+        -max_paths 10000
+        -transition_time
+        -crosstalk_delta
+        -capacitance
+Design : fifo1_sram
+Version: Q-2019.12-SP3
+Date   : Fri Mar 17 19:41:04 2023
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: ss0p95v125c   Library: saed32rvt_ss0p95v125c
+Wire Load Model Mode: Inactive.
+
+  Startpoint: winc (input port clocked by wclk)
+  Endpoint: wptr_full/wfull_reg
+            (rising edge-triggered flip-flop clocked by wclk)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock wclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  input external delay                                                                                     0.0000     0.1000 r
+  winc (in)                                                                 0.0251                         0.0251     0.1251 r
+  winc (net)                                    1     2505.9116                                            0.0000     0.1251 r
+  io_b_winc/PADIO (I1025_NS)                                      0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_b_winc/DOUT (I1025_NS)                                                 0.2230                         0.4393     0.5644 r
+  io_b_winc_net (net)                          15      66.1085                                             0.0000     0.5644 r
+  wptr_full/winc (wptr_full_ADDRSIZE10)                                                                    0.0000     0.5644 r
+  wptr_full/winc (net)                                 66.1085                                             0.0000     0.5644 r
+  wptr_full/U99/A2 (AND2X1_RVT)                                   0.0000    0.2230    0.0000               0.0128 *   0.5772 r
+  wptr_full/U99/Y (AND2X1_RVT)                                              0.0366                         0.0724     0.6496 r
+  wptr_full/n81 (net)                           1       0.6573                                             0.0000     0.6496 r
+  wptr_full/U98/A1 (AND2X2_RVT)                                   0.0000    0.0366    0.0000               0.0000 *   0.6496 r
+  wptr_full/U98/Y (AND2X2_RVT)                                              0.0436                         0.0760     0.7255 r
+  wptr_full/n36 (net)                           2       4.6121                                             0.0000     0.7255 r
+  wptr_full/U126/A2 (OR2X2_RVT)                                   0.0000    0.0436    0.0000               0.0002 *   0.7257 r
+  wptr_full/U126/Y (OR2X2_RVT)                                              0.0459                         0.0781     0.8038 r
+  wptr_full/n38 (net)                           3       6.2445                                             0.0000     0.8038 r
+  wptr_full/U168/A1 (AND2X2_RVT)                                  0.0000    0.0459    0.0000               0.0002 *   0.8040 r
+  wptr_full/U168/Y (AND2X2_RVT)                                             0.0421                         0.0769     0.8809 r
+  wptr_full/n120 (net)                          1       4.0919                                             0.0000     0.8809 r
+  wptr_full/U148/A1 (MUX21X2_RVT)                                 0.0000    0.0421    0.0000               0.0002 *   0.8811 r
+  wptr_full/U148/Y (MUX21X2_RVT)                                            0.0435                         0.0973     0.9784 r
+  wptr_full/n130 (net)                          2       2.3727                                             0.0000     0.9784 r
+  wptr_full/U136/A1 (XNOR2X2_RVT)                                 0.0000    0.0435    0.0000               0.0000 *   0.9784 r
+  wptr_full/U136/Y (XNOR2X2_RVT)                                            0.0485                         0.1048     1.0832 f
+  wptr_full/n315 (net)                          1       5.4404                                             0.0000     1.0832 f
+  wptr_full/U97/A (INVX8_RVT)                                     0.0000    0.0485    0.0000               0.0000 *   1.0832 f
+  wptr_full/U97/Y (INVX8_RVT)                                               0.0343                         0.0345     1.1177 r
+  wptr_full/n346 (net)                          1      15.2709                                             0.0000     1.1177 r
+  wptr_full/U92/A2 (AND2X1_RVT)                                   0.0000    0.0343    0.0000               0.0021 *   1.1198 r
+  wptr_full/U92/Y (AND2X1_RVT)                                              0.0278                         0.0580     1.1778 r
+  wptr_full/n74 (net)                           1       1.3037                                             0.0000     1.1778 r
+  wptr_full/U9/A4 (AND4X1_RVT)                                    0.0000    0.0278    0.0000               0.0000 *   1.1778 r
+  wptr_full/U9/Y (AND4X1_RVT)                                               0.0388                         0.0925     1.2703 r
+  wptr_full/wfull_val (net)                     1       0.9456                                             0.0000     1.2703 r
+  wptr_full/wfull_reg/D (SDFFARX1_RVT)                            0.0000    0.0388    0.0000               0.0000 *   1.2703 r
+  data arrival time                                                                                                   1.2703
+
+  clock wclk (rise edge)                                                                                   1.1800     1.1800
+  clock network delay (ideal)                                                                              0.1000     1.2800
+  clock uncertainty                                                                                       -0.0700     1.2100
+  wptr_full/wfull_reg/CLK (SDFFARX1_RVT)                                                                   0.0000     1.2100 r
+  library setup time                                                                                      -0.1221     1.0879
+  data required time                                                                                                  1.0879
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.0879
+  data arrival time                                                                                                  -1.2703
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.1824
+
+
+  Startpoint: rinc (input port clocked by rclk)
+  Endpoint: rptr_empty/rempty_reg
+            (rising edge-triggered flip-flop clocked by rclk)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  input external delay                                                                                     0.0000     0.1000 r
+  rinc (in)                                                                 0.0251                         0.0251     0.1251 r
+  rinc (net)                                    1     2505.9116                                            0.0000     0.1251 r
+  io_b_rinc/PADIO (I1025_NS)                                      0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_b_rinc/DOUT (I1025_NS)                                                 0.2179                         0.4349     0.5600 r
+  io_b_rinc_net (net)                          10      57.9499                                             0.0000     0.5600 r
+  rptr_empty/rinc (rptr_empty_ADDRSIZE10)                                                                  0.0000     0.5600 r
+  rptr_empty/rinc (net)                                57.9499                                             0.0000     0.5600 r
+  rptr_empty/U127/A1 (AND3X1_RVT)                                 0.0000    0.2179    0.0000               0.0124 *   0.5724 r
+  rptr_empty/U127/Y (AND3X1_RVT)                                            0.0527                         0.0824     0.6548 r
+  rptr_empty/n156 (net)                         1       1.4843                                             0.0000     0.6548 r
+  rptr_empty/U117/A (NBUFFX8_RVT)                                 0.0000    0.0527    0.0000               0.0000 *   0.6548 r
+  rptr_empty/U117/Y (NBUFFX8_RVT)                                           0.0303                         0.0597     0.7145 r
+  rptr_empty/n155 (net)                         1      10.6205                                             0.0000     0.7145 r
+  rptr_empty/U126/A (INVX16_RVT)                                  0.0000    0.0303    0.0000               0.0000 *   0.7145 r
+  rptr_empty/U126/Y (INVX16_RVT)                                            0.0248                         0.0230     0.7375 f
+  rptr_empty/n26 (net)                          5      22.5878                                             0.0000     0.7375 f
+  rptr_empty/U110/A2 (OR2X2_RVT)                                  0.0000    0.0248    0.0000               0.0031 *   0.7405 f
+  rptr_empty/U110/Y (OR2X2_RVT)                                             0.0263                         0.0552     0.7958 f
+  rptr_empty/n18 (net)                          2       1.8779                                             0.0000     0.7958 f
+  rptr_empty/U33/A1 (AND2X2_RVT)                                  0.0000    0.0263    0.0000               0.0000 *   0.7958 f
+  rptr_empty/U33/Y (AND2X2_RVT)                                             0.0576                         0.0861     0.8819 f
+  rptr_empty/n92 (net)                          3       8.6903                                             0.0000     0.8819 f
+  rptr_empty/U166/A (NBUFFX8_RVT)                                 0.0000    0.0576    0.0000               0.0000 *   0.8819 f
+  rptr_empty/U166/Y (NBUFFX8_RVT)                                           0.0335                         0.0678     0.9497 f
+  rptr_empty/n207 (net)                         3      15.2031                                             0.0000     0.9497 f
+  rptr_empty/U145/A1 (AO22X1_RVT)                                 0.0000    0.0335    0.0000               0.0009 *   0.9506 f
+  rptr_empty/U145/Y (AO22X1_RVT)                                            0.0326                         0.0800     1.0306 f
+  rptr_empty/n183 (net)                         1       1.7097                                             0.0000     1.0306 f
+  rptr_empty/U114/A1 (XNOR2X2_RVT)                                0.0000    0.0326    0.0000               0.0000 *   1.0306 f
+  rptr_empty/U114/Y (XNOR2X2_RVT)                                           0.0326                         0.0893     1.1200 r
+  rptr_empty/n140 (net)                         1       0.7536                                             0.0000     1.1200 r
+  rptr_empty/U112/A1 (AND2X1_RVT)                                 0.0000    0.0326    0.0000               0.0000 *   1.1200 r
+  rptr_empty/U112/Y (AND2X1_RVT)                                            0.0222                         0.0491     1.1691 r
+  rptr_empty/n161 (net)                         1       0.5745                                             0.0000     1.1691 r
+  rptr_empty/U10/A2 (AND3X1_RVT)                                  0.0000    0.0222    0.0000               0.0000 *   1.1691 r
+  rptr_empty/U10/Y (AND3X1_RVT)                                             0.0279                         0.0637     1.2327 r
+  rptr_empty/n108 (net)                         1       0.5897                                             0.0000     1.2327 r
+  rptr_empty/U9/A1 (AND3X1_RVT)                                   0.0000    0.0279    0.0000               0.0000 *   1.2327 r
+  rptr_empty/U9/Y (AND3X1_RVT)                                              0.0362                         0.0676     1.3003 r
+  rptr_empty/rempty_val (net)                   1       1.6176                                             0.0000     1.3003 r
+  rptr_empty/rempty_reg/D (SDFFASX2_RVT)                          0.0000    0.0362    0.0000               0.0000 *   1.3003 r
+  data arrival time                                                                                                   1.3003
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  rptr_empty/rempty_reg/CLK (SDFFASX2_RVT)                                                                 0.0000     1.2500 r
+  library setup time                                                                                      -0.1256     1.1244
+  data required time                                                                                                  1.1244
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.1244
+  data arrival time                                                                                                  -1.3003
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.1759
+
+
+  Startpoint: wdata_in[0]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_0_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[0] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[0] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_0_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_0_/DOUT (I1025_NS)                           0.1834                         0.4022     0.5272 r
+  n10 (net)                      1       6.5608                                             0.0000     0.5272 r
+  wdata_reg_0_/D (SDFFARX2_RVT)                    0.0000    0.1834    0.0000               0.0004 *   0.5276 r
+  data arrival time                                                                                    0.5276
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_0_/CLK (SDFFARX2_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1714     0.4486
+  data required time                                                                                   0.4486
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.4486
+  data arrival time                                                                                   -0.5276
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0790
+
+
+  Startpoint: wdata_in[1]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_1_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[1] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[1] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_1_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_1_/DOUT (I1025_NS)                           0.1826                         0.4014     0.5264 r
+  n12 (net)                      1       5.3697                                             0.0000     0.5264 r
+  wdata_reg_1_/D (SDFFARX2_RVT)                    0.0000    0.1826    0.0000               0.0003 *   0.5267 r
+  data arrival time                                                                                    0.5267
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_1_/CLK (SDFFARX2_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1711     0.4489
+  data required time                                                                                   0.4489
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.4489
+  data arrival time                                                                                   -0.5267
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0778
+
+
+  Startpoint: wdata_in[6]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_6_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[6] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[6] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_6_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_6_/DOUT (I1025_NS)                           0.1824                         0.4012     0.5263 r
+  n22 (net)                      1       5.1433                                             0.0000     0.5263 r
+  wdata_reg_6_/D (SDFFARX2_RVT)                    0.0000    0.1824    0.0000               0.0002 *   0.5265 r
+  data arrival time                                                                                    0.5265
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_6_/CLK (SDFFARX2_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1711     0.4489
+  data required time                                                                                   0.4489
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.4489
+  data arrival time                                                                                   -0.5265
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0776
+
+
+  Startpoint: wdata_in[4]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_4_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[4] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[4] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_4_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_4_/DOUT (I1025_NS)                           0.1831                         0.4019     0.5269 r
+  n18 (net)                      1       6.0869                                             0.0000     0.5269 r
+  wdata_reg_4_/D (SDFFARX1_RVT)                    0.0000    0.1831    0.0000               0.0003 *   0.5273 r
+  data arrival time                                                                                    0.5273
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_4_/CLK (SDFFARX1_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1646     0.4554
+  data required time                                                                                   0.4554
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.4554
+  data arrival time                                                                                   -0.5273
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0719
+
+
+  Startpoint: wdata_in[5]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_5_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[5] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[5] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_5_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_5_/DOUT (I1025_NS)                           0.1819                         0.4007     0.5258 r
+  n20 (net)                      1       4.4173                                             0.0000     0.5258 r
+  wdata_reg_5_/D (SDFFARX1_RVT)                    0.0000    0.1819    0.0000               0.0002 *   0.5260 r
+  data arrival time                                                                                    0.5260
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_5_/CLK (SDFFARX1_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1643     0.4557
+  data required time                                                                                   0.4557
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.4557
+  data arrival time                                                                                   -0.5260
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0703
+
+
+  Startpoint: wdata_in[3]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_3_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[3] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[3] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_3_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_3_/DOUT (I1025_NS)                           0.1819                         0.4006     0.5257 r
+  n16 (net)                      1       4.3270                                             0.0000     0.5257 r
+  wdata_reg_3_/D (SDFFARX1_RVT)                    0.0000    0.1819    0.0000               0.0002 *   0.5259 r
+  data arrival time                                                                                    0.5259
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_3_/CLK (SDFFARX1_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1643     0.4557
+  data required time                                                                                   0.4557
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.4557
+  data arrival time                                                                                   -0.5259
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0702
+
+
+  Startpoint: wdata_in[2]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_2_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[2] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[2] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_2_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_2_/DOUT (I1025_NS)                           0.1815                         0.4003     0.5253 r
+  n14 (net)                      1       3.7549                                             0.0000     0.5253 r
+  wdata_reg_2_/D (SDFFARX1_RVT)                    0.0000    0.1815    0.0000               0.0001 *   0.5254 r
+  data arrival time                                                                                    0.5254
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_2_/CLK (SDFFARX1_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1642     0.4558
+  data required time                                                                                   0.4558
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.4558
+  data arrival time                                                                                   -0.5254
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0697
+
+
+  Startpoint: wdata_in[7]
+              (input port clocked by wclk2x)
+  Endpoint: wdata_reg_7_
+            (rising edge-triggered flip-flop clocked by wclk2x)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                        Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  --------------------------------------------------------------------------------------------------------------
+  clock wclk2x (rise edge)                                                                  0.0000     0.0000
+  clock network delay (ideal)                                                               0.1000     0.1000
+  input external delay                                                                      0.0000     0.1000 r
+  wdata_in[7] (in)                                           0.0251                         0.0251     0.1251 r
+  wdata_in[7] (net)              1     2505.9116                                            0.0000     0.1251 r
+  io_r_wdata_in_7_/PADIO (I1025_NS)                0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_r_wdata_in_7_/DOUT (I1025_NS)                           0.1813                         0.4001     0.5252 r
+  io_r_wdata_in_7__net (net)     1       3.5489                                             0.0000     0.5252 r
+  U27/A (INVX4_RVT)                                0.0000    0.1813    0.0000               0.0001 *   0.5252 r
+  U27/Y (INVX4_RVT)                                          0.0700                         0.0237     0.5490 f
+  n24 (net)                      1       3.9901                                             0.0000     0.5490 f
+  wdata_reg_7_/D (SDFFASX2_RVT)                    0.0000    0.0700    0.0000               0.0001 *   0.5491 f
+  data arrival time                                                                                    0.5491
+
+  clock wclk2x (rise edge)                                                                  0.5900     0.5900
+  clock network delay (ideal)                                                               0.1000     0.6900
+  clock uncertainty                                                                        -0.0700     0.6200
+  wdata_reg_7_/CLK (SDFFASX2_RVT)                                                           0.0000     0.6200 r
+  library setup time                                                                       -0.1196     0.5004
+  data required time                                                                                   0.5004
+  --------------------------------------------------------------------------------------------------------------
+  data required time                                                                                   0.5004
+  data arrival time                                                                                   -0.5491
+  --------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                    -0.0487
+
+
+  Startpoint: winc (input port clocked by wclk)
+  Endpoint: wptr_full/wptr_reg_1_
+            (rising edge-triggered flip-flop clocked by wclk)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock wclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  input external delay                                                                                     0.0000     0.1000 r
+  winc (in)                                                                 0.0251                         0.0251     0.1251 r
+  winc (net)                                    1     2505.9116                                            0.0000     0.1251 r
+  io_b_winc/PADIO (I1025_NS)                                      0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_b_winc/DOUT (I1025_NS)                                                 0.2230                         0.4393     0.5644 r
+  io_b_winc_net (net)                          15      66.1085                                             0.0000     0.5644 r
+  wptr_full/winc (wptr_full_ADDRSIZE10)                                                                    0.0000     0.5644 r
+  wptr_full/winc (net)                                 66.1085                                             0.0000     0.5644 r
+  wptr_full/U30/A2 (NAND2X4_RVT)                                  0.0000    0.2230    0.0000               0.0136 *   0.5780 r
+  wptr_full/U30/Y (NAND2X4_RVT)                                             0.0363                         0.1148     0.6928 f
+  wptr_full/n25 (net)                           3       6.9265                                             0.0000     0.6928 f
+  wptr_full/U119/A1 (NAND2X0_RVT)                                 0.0000    0.0363    0.0000               0.0000 *   0.6928 f
+  wptr_full/U119/Y (NAND2X0_RVT)                                            0.0650                         0.0501     0.7429 r
+  wptr_full/n307 (net)                          2       1.2114                                             0.0000     0.7429 r
+  wptr_full/U134/A1 (AND2X4_RVT)                                  0.0000    0.0650    0.0000               0.0000 *   0.7429 r
+  wptr_full/U134/Y (AND2X4_RVT)                                             0.0567                         0.1017     0.8446 r
+  wptr_full/n298 (net)                          2       9.7586                                             0.0000     0.8446 r
+  wptr_full/U179/A (NBUFFX2_RVT)                                  0.0000    0.0567    0.0000               0.0000 *   0.8446 r
+  wptr_full/U179/Y (NBUFFX2_RVT)                                            0.0662                         0.0867     0.9313 r
+  wptr_full/n343 (net)                          3      11.7328                                             0.0000     0.9313 r
+  wptr_full/U129/A3 (AO22X1_RVT)                                  0.0000    0.0662    0.0000               0.0006 *   0.9319 r
+  wptr_full/U129/Y (AO22X1_RVT)                                             0.0399                         0.0792     1.0111 r
+  wptr_full/n381 (net)                          1       1.4952                                             0.0000     1.0111 r
+  wptr_full/U19/A (NBUFFX8_RVT)                                   0.0000    0.0399    0.0000               0.0000 *   1.0111 r
+  wptr_full/U19/Y (NBUFFX8_RVT)                                             0.0533                         0.0752     1.0863 r
+  wptr_full/n127 (net)                          1      36.8004                                             0.0000     1.0863 r
+  wptr_full/wptr_reg_1_/D (SDFFARX1_RVT)                          0.0000    0.0543    0.0000               0.0118 *   1.0981 r
+  data arrival time                                                                                                   1.0981
+
+  clock wclk (rise edge)                                                                                   1.1800     1.1800
+  clock network delay (ideal)                                                                              0.1000     1.2800
+  clock uncertainty                                                                                       -0.0700     1.2100
+  wptr_full/wptr_reg_1_/CLK (SDFFARX1_RVT)                                                                 0.0000     1.2100 r
+  library setup time                                                                                      -0.1267     1.0833
+  data required time                                                                                                  1.0833
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.0833
+  data arrival time                                                                                                  -1.0981
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.0148
+
+
+  Startpoint: winc (input port clocked by wclk)
+  Endpoint: wptr_full/wptr_reg_4_
+            (rising edge-triggered flip-flop clocked by wclk)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock wclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  input external delay                                                                                     0.0000     0.1000 r
+  winc (in)                                                                 0.0251                         0.0251     0.1251 r
+  winc (net)                                    1     2505.9116                                            0.0000     0.1251 r
+  io_b_winc/PADIO (I1025_NS)                                      0.0000    0.0251    0.0000               0.0000 *   0.1251 r
+  io_b_winc/DOUT (I1025_NS)                                                 0.2230                         0.4393     0.5644 r
+  io_b_winc_net (net)                          15      66.1085                                             0.0000     0.5644 r
+  wptr_full/winc (wptr_full_ADDRSIZE10)                                                                    0.0000     0.5644 r
+  wptr_full/winc (net)                                 66.1085                                             0.0000     0.5644 r
+  wptr_full/U99/A2 (AND2X1_RVT)                                   0.0000    0.2230    0.0000               0.0128 *   0.5772 r
+  wptr_full/U99/Y (AND2X1_RVT)                                              0.0366                         0.0724     0.6496 r
+  wptr_full/n81 (net)                           1       0.6573                                             0.0000     0.6496 r
+  wptr_full/U98/A1 (AND2X2_RVT)                                   0.0000    0.0366    0.0000               0.0000 *   0.6496 r
+  wptr_full/U98/Y (AND2X2_RVT)                                              0.0436                         0.0760     0.7255 r
+  wptr_full/n36 (net)                           2       4.6121                                             0.0000     0.7255 r
+  wptr_full/U126/A2 (OR2X2_RVT)                                   0.0000    0.0436    0.0000               0.0002 *   0.7257 r
+  wptr_full/U126/Y (OR2X2_RVT)                                              0.0459                         0.0781     0.8038 r
+  wptr_full/n38 (net)                           3       6.2445                                             0.0000     0.8038 r
+  wptr_full/U120/A1 (AND2X1_RVT)                                  0.0000    0.0459    0.0000               0.0002 *   0.8040 r
+  wptr_full/U120/Y (AND2X1_RVT)                                             0.0379                         0.0653     0.8693 r
+  wptr_full/n280 (net)                          3       2.4654                                             0.0000     0.8693 r
+  wptr_full/U96/A2 (AO22X1_RVT)                                   0.0000    0.0379    0.0000               0.0000 *   0.8693 r
+  wptr_full/U96/Y (AO22X1_RVT)                                              0.0387                         0.0917     0.9611 r
+  wptr_full/n367 (net)                          1       1.4829                                             0.0000     0.9611 r
+  wptr_full/U187/A (NBUFFX8_RVT)                                  0.0000    0.0387    0.0000               0.0000 *   0.9611 r
+  wptr_full/U187/Y (NBUFFX8_RVT)                                            0.0389                         0.0641     1.0251 r
+  wptr_full/n134 (net)                          2      21.7913                                             0.0000     1.0251 r
+  wptr_full/U170/A (NBUFFX4_RVT)                                  0.0000    0.0389    0.0000               0.0000 *   1.0252 r
+  wptr_full/U170/Y (NBUFFX4_RVT)                                            0.0394                         0.0651     1.0903 r
+  wptr_full/n317 (net)                          1      10.1997                                             0.0000     1.0903 r
+  wptr_full/wptr_reg_4_/D (SDFFARX2_RVT)                          0.0000    0.0394    0.0000               0.0009 *   1.0912 r
+  data arrival time                                                                                                   1.0912
+
+  clock wclk (rise edge)                                                                                   1.1800     1.1800
+  clock network delay (ideal)                                                                              0.1000     1.2800
+  clock uncertainty                                                                                       -0.0700     1.2100
+  wptr_full/wptr_reg_4_/CLK (SDFFARX2_RVT)                                                                 0.0000     1.2100 r
+  library setup time                                                                                      -0.1302     1.0798
+  data required time                                                                                                  1.0798
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.0798
+  data arrival time                                                                                                  -1.0912
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.0114
+
+
+  Startpoint: fifomem/genblk1_7__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[4] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_7__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_7__U/O2[4] (SRAM2RW128x8)                                 0.1732                         0.2093     0.3093 f
+  fifomem/n68 (net)                             1      18.3417                                             0.0000     0.3093 f
+  fifomem/U8/A2 (NAND4X0_RVT)                                     0.0000    0.1732    0.0000               0.0030 *   0.3122 f
+  fifomem/U8/Y (NAND4X0_RVT)                                                0.1012                         0.1065     0.4187 r
+  fifomem/n168 (net)                            1       1.4786                                             0.0000     0.4187 r
+  fifomem/U115/A (INVX2_RVT)                                      0.0000    0.1012    0.0000               0.0000 *   0.4187 r
+  fifomem/U115/Y (INVX2_RVT)                                                0.0510                         0.0311     0.4498 f
+  fifomem/n169 (net)                            1       2.7219                                             0.0000     0.4498 f
+  fifomem/U108/A (INVX4_RVT)                                      0.0000    0.0510    0.0000               0.0000 *   0.4498 f
+  fifomem/U108/Y (INVX4_RVT)                                                0.0480                         0.0493     0.4991 r
+  fifomem/n4 (net)                              1      15.3964                                             0.0000     0.4991 r
+  fifomem/U96/A2 (OR2X2_RVT)                                      0.0000    0.0480    0.0000               0.0021 *   0.5013 r
+  fifomem/U96/Y (OR2X2_RVT)                                                 0.0376                         0.0681     0.5693 r
+  fifomem/n144 (net)                            1       2.7856                                             0.0000     0.5693 r
+  fifomem/U95/A (INVX4_RVT)                                       0.0000    0.0376    0.0000               0.0000 *   0.5693 r
+  fifomem/U95/Y (INVX4_RVT)                                                 0.0241                         0.0202     0.5895 f
+  fifomem/n180 (net)                            1       3.3689                                             0.0000     0.5895 f
+  fifomem/U118/A (NBUFFX32_RVT)                                   0.0000    0.0241    0.0000               0.0000 *   0.5895 f
+  fifomem/U118/Y (NBUFFX32_RVT)                                             0.0295                         0.0551     0.6446 f
+  fifomem/rdata[4] (net)                        1      41.0038                                             0.0000     0.6446 f
+  fifomem/rdata[4] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.6446 f
+  io_l_rdata_4__net (net)                              41.0038                                             0.0000     0.6446 f
+  io_l_rdata_4_/DIN (D8I1025_NS)                                  0.0000    0.0330    0.0000               0.0139 *   0.6585 f
+  io_l_rdata_4_/PADIO (D8I1025_NS)                                          0.8927                         1.3812     2.0397 f
+  rdata[4] (net)                                1     1433.8068                                            0.0000     2.0397 f
+  rdata[4] (out)                                                  0.0000    0.8927    0.0000               0.0000 *   2.0397 f
+  data arrival time                                                                                                   2.0397
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -2.0397
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2897
+
+
+  Startpoint: fifomem/genblk1_7__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[6] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_7__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_7__U/O2[6] (SRAM2RW128x8)                                 0.1247                         0.1706     0.2706 f
+  fifomem/n161 (net)                            1      12.1890                                             0.0000     0.2706 f
+  fifomem/U109/A (NBUFFX8_RVT)                                    0.0000    0.1247    0.0000               0.0014 *   0.2720 f
+  fifomem/U109/Y (NBUFFX8_RVT)                                              0.0420                         0.0847     0.3566 f
+  fifomem/n84 (net)                             1      11.6798                                             0.0000     0.3566 f
+  fifomem/U26/A2 (NAND4X0_RVT)                                    0.0000    0.0420    0.0000               0.0012 *   0.3579 f
+  fifomem/U26/Y (NAND4X0_RVT)                                               0.0695                         0.0566     0.4144 r
+  fifomem/n185 (net)                            1       1.5239                                             0.0000     0.4144 r
+  fifomem/U16/A (INVX2_RVT)                                       0.0000    0.0695    0.0000               0.0000 *   0.4144 r
+  fifomem/U16/Y (INVX2_RVT)                                                 0.0500                         0.0418     0.4563 f
+  fifomem/n186 (net)                            1       5.3115                                             0.0000     0.4563 f
+  fifomem/U113/A (INVX8_RVT)                                      0.0000    0.0500    0.0000               0.0000 *   0.4563 f
+  fifomem/U113/Y (INVX8_RVT)                                                0.0439                         0.0446     0.5009 r
+  fifomem/n16 (net)                             1      27.0428                                             0.0000     0.5009 r
+  fifomem/U94/A2 (OR2X2_RVT)                                      0.0000    0.0439    0.0000               0.0064 *   0.5073 r
+  fifomem/U94/Y (OR2X2_RVT)                                                 0.0352                         0.0666     0.5739 r
+  fifomem/n143 (net)                            1       2.7856                                             0.0000     0.5739 r
+  fifomem/U93/A (INVX4_RVT)                                       0.0000    0.0352    0.0000               0.0000 *   0.5739 r
+  fifomem/U93/Y (INVX4_RVT)                                                 0.0232                         0.0200     0.5938 f
+  fifomem/n176 (net)                            1       3.3689                                             0.0000     0.5938 f
+  fifomem/U116/A (NBUFFX32_RVT)                                   0.0000    0.0232    0.0000               0.0000 *   0.5938 f
+  fifomem/U116/Y (NBUFFX32_RVT)                                             0.0283                         0.0535     0.6473 f
+  fifomem/rdata[6] (net)                        1      35.8779                                             0.0000     0.6473 f
+  fifomem/rdata[6] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.6473 f
+  io_l_rdata_6__net (net)                              35.8779                                             0.0000     0.6473 f
+  io_l_rdata_6_/DIN (D8I1025_NS)                                  0.0000    0.0298    0.0000               0.0095 *   0.6568 f
+  io_l_rdata_6_/PADIO (D8I1025_NS)                                          0.8932                         1.3800     2.0369 f
+  rdata[6] (net)                                1     1433.8068                                            0.0000     2.0369 f
+  rdata[6] (out)                                                  0.0000    0.8932    0.0000               0.0000 *   2.0369 f
+  data arrival time                                                                                                   2.0369
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -2.0369
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2869
+
+
+  Startpoint: fifomem/genblk1_7__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[7] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_7__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_7__U/O2[7] (SRAM2RW128x8)                                 0.1040                         0.1541     0.2541 f
+  fifomem/n160 (net)                            1       9.5661                                             0.0000     0.2541 f
+  fifomem/U10/A (INVX4_RVT)                                       0.0000    0.1040    0.0000               0.0009 *   0.2550 f
+  fifomem/U10/Y (INVX4_RVT)                                                 0.0645                         0.0600     0.3149 r
+  fifomem/n142 (net)                            1      12.0382                                             0.0000     0.3149 r
+  fifomem/U91/A (INVX8_RVT)                                       0.0000    0.0645    0.0000               0.0013 *   0.3162 r
+  fifomem/U91/Y (INVX8_RVT)                                                 0.0382                         0.0286     0.3448 f
+  fifomem/n92 (net)                             1      11.5525                                             0.0000     0.3448 f
+  fifomem/U5/A2 (NAND4X0_RVT)                                     0.0000    0.0382    0.0000               0.0012 *   0.3460 f
+  fifomem/U5/Y (NAND4X0_RVT)                                                0.0752                         0.0543     0.4003 r
+  fifomem/n187 (net)                            1       1.4948                                             0.0000     0.4003 r
+  fifomem/U12/A (INVX2_RVT)                                       0.0000    0.0752    0.0000               0.0000 *   0.4003 r
+  fifomem/U12/Y (INVX2_RVT)                                                 0.0521                         0.0425     0.4428 f
+  fifomem/n188 (net)                            1       5.3115                                             0.0000     0.4428 f
+  fifomem/U112/A (INVX8_RVT)                                      0.0000    0.0521    0.0000               0.0000 *   0.4428 f
+  fifomem/U112/Y (INVX8_RVT)                                                0.0470                         0.0480     0.4907 r
+  fifomem/n2 (net)                              1      30.1443                                             0.0000     0.4907 r
+  fifomem/U98/A2 (OR2X2_RVT)                                      0.0000    0.0474    0.0000               0.0080 *   0.4987 r
+  fifomem/U98/Y (OR2X2_RVT)                                                 0.0335                         0.0678     0.5666 r
+  fifomem/n145 (net)                            1       2.7856                                             0.0000     0.5666 r
+  fifomem/U97/A (INVX4_RVT)                                       0.0000    0.0335    0.0000               0.0000 *   0.5666 r
+  fifomem/U97/Y (INVX4_RVT)                                                 0.0226                         0.0198     0.5864 f
+  fifomem/n178 (net)                            1       3.3689                                             0.0000     0.5864 f
+  fifomem/U117/A (NBUFFX32_RVT)                                   0.0000    0.0226    0.0000               0.0000 *   0.5864 f
+  fifomem/U117/Y (NBUFFX32_RVT)                                             0.0291                         0.0541     0.6404 f
+  fifomem/rdata[7] (net)                        1      39.3912                                             0.0000     0.6404 f
+  fifomem/rdata[7] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.6404 f
+  io_l_rdata_7__net (net)                              39.3912                                             0.0000     0.6404 f
+  io_l_rdata_7_/DIN (D8I1025_NS)                                  0.0000    0.0318    0.0000               0.0125 *   0.6529 f
+  io_l_rdata_7_/PADIO (D8I1025_NS)                                          0.8929                         1.3808     2.0336 f
+  rdata[7] (net)                                1     1433.8068                                            0.0000     2.0336 f
+  rdata[7] (out)                                                  0.0000    0.8929    0.0000               0.0000 *   2.0336 f
+  data arrival time                                                                                                   2.0336
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -2.0336
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2836
+
+
+  Startpoint: fifomem/genblk1_6__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[3] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_6__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_6__U/O2[3] (SRAM2RW128x8)                                 0.0413                         0.0998     0.1998 f
+  fifomem/n59 (net)                             1       1.5205                                             0.0000     0.1998 f
+  fifomem/U40/A (NBUFFX8_RVT)                                     0.0000    0.0413    0.0000               0.0000 *   0.1998 f
+  fifomem/U40/Y (NBUFFX8_RVT)                                               0.0738                         0.0910     0.2908 f
+  fifomem/n23 (net)                             1      55.8853                                             0.0000     0.2908 f
+  fifomem/U110/A1 (AND2X1_RVT)                                    0.0000    0.0784    0.0000               0.0271 *   0.3178 f
+  fifomem/U110/Y (AND2X1_RVT)                                               0.0271                         0.0704     0.3883 f
+  fifomem/n156 (net)                            1       0.6364                                             0.0000     0.3883 f
+  fifomem/U92/A2 (NAND2X4_RVT)                                    0.0000    0.0271    0.0000               0.0000 *   0.3883 f
+  fifomem/U92/Y (NAND2X4_RVT)                                               0.0355                         0.0953     0.4836 r
+  fifomem/n12 (net)                             1       7.9605                                             0.0000     0.4836 r
+  fifomem/U13/A2 (NOR2X2_RVT)                                     0.0000    0.0355    0.0000               0.0006 *   0.4842 r
+  fifomem/U13/Y (NOR2X2_RVT)                                                0.0323                         0.0874     0.5715 f
+  fifomem/n182 (net)                            1       3.4210                                             0.0000     0.5715 f
+  fifomem/U120/A (NBUFFX32_RVT)                                   0.0000    0.0323    0.0000               0.0000 *   0.5715 f
+  fifomem/U120/Y (NBUFFX32_RVT)                                             0.0287                         0.0580     0.6295 f
+  fifomem/rdata[3] (net)                        1      36.7067                                             0.0000     0.6295 f
+  fifomem/rdata[3] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.6295 f
+  io_l_rdata_3__net (net)                              36.7067                                             0.0000     0.6295 f
+  io_l_rdata_3_/DIN (D8I1025_NS)                                  0.0000    0.0304    0.0000               0.0102 *   0.6397 f
+  io_l_rdata_3_/PADIO (D8I1025_NS)                                          0.8931                         1.3802     2.0199 f
+  rdata[3] (net)                                1     1433.8068                                            0.0000     2.0199 f
+  rdata[3] (out)                                                  0.0000    0.8931    0.0000               0.0000 *   2.0199 f
+  data arrival time                                                                                                   2.0199
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -2.0199
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2699
+
+
+  Startpoint: fifomem/genblk1_0__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[0] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_0__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_0__U/O2[0] (SRAM2RW128x8)                                 0.1196                         0.1665     0.2665 f
+  fifomem/n29 (net)                             1      11.5432                                             0.0000     0.2665 f
+  fifomem/U90/A3 (AND4X1_RVT)                                     0.0000    0.1196    0.0000               0.0012 *   0.2677 f
+  fifomem/U90/Y (AND4X1_RVT)                                                0.0865                         0.1842     0.4519 f
+  fifomem/n148 (net)                            1       6.8535                                             0.0000     0.4519 f
+  fifomem/U99/A1 (AND3X1_RVT)                                     0.0000    0.0865    0.0000               0.0004 *   0.4523 f
+  fifomem/U99/Y (AND3X1_RVT)                                                0.0364                         0.0946     0.5469 f
+  fifomem/n170 (net)                            1       1.4743                                             0.0000     0.5469 f
+  fifomem/U77/A (NBUFFX8_RVT)                                     0.0000    0.0364    0.0000               0.0000 *   0.5469 f
+  fifomem/U77/Y (NBUFFX8_RVT)                                               0.0479                         0.0717     0.6186 f
+  fifomem/rdata[0] (net)                        1      32.2028                                             0.0000     0.6186 f
+  fifomem/rdata[0] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.6186 f
+  io_l_rdata_0__net (net)                              32.2028                                             0.0000     0.6186 f
+  io_l_rdata_0_/DIN (D8I1025_NS)                                  0.0000    0.0479    0.0000               0.0067 *   0.6253 f
+  io_l_rdata_0_/PADIO (D8I1025_NS)                                          0.8902                         1.3865     2.0118 f
+  rdata[0] (net)                                1     1433.8068                                            0.0000     2.0118 f
+  rdata[0] (out)                                                  0.0000    0.8902    0.0000               0.0000 *   2.0118 f
+  data arrival time                                                                                                   2.0118
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -2.0118
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2618
+
+
+  Startpoint: fifomem/genblk1_1__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[5] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_1__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_1__U/O2[5] (SRAM2RW128x8)                                 0.1352                         0.1789     0.2789 f
+  fifomem/n149 (net)                            1      13.5163                                             0.0000     0.2789 f
+  fifomem/U19/A (NBUFFX8_RVT)                                     0.0000    0.1352    0.0000               0.0017 *   0.2806 f
+  fifomem/U19/Y (NBUFFX8_RVT)                                               0.0497                         0.0951     0.3757 f
+  fifomem/n70 (net)                             1      19.7176                                             0.0000     0.3757 f
+  fifomem/U24/A4 (NAND4X0_RVT)                                    0.0000    0.0497    0.0000               0.0034 *   0.3792 f
+  fifomem/U24/Y (NAND4X0_RVT)                                               0.1066                         0.0760     0.4552 r
+  fifomem/n13 (net)                             1       2.4157                                             0.0000     0.4552 r
+  fifomem/U25/A2 (NOR2X2_RVT)                                     0.0000    0.1066    0.0000               0.0001 *   0.4552 r
+  fifomem/U25/Y (NOR2X2_RVT)                                                0.0320                         0.1063     0.5615 f
+  fifomem/n181 (net)                            1       3.4621                                             0.0000     0.5615 f
+  fifomem/U119/A (NBUFFX32_RVT)                                   0.0000    0.0320    0.0000               0.0000 *   0.5616 f
+  fifomem/U119/Y (NBUFFX32_RVT)                                             0.0286                         0.0577     0.6193 f
+  fifomem/rdata[5] (net)                        1      36.2209                                             0.0000     0.6193 f
+  fifomem/rdata[5] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.6193 f
+  io_l_rdata_5__net (net)                              36.2209                                             0.0000     0.6193 f
+  io_l_rdata_5_/DIN (D8I1025_NS)                                  0.0000    0.0301    0.0000               0.0098 *   0.6291 f
+  io_l_rdata_5_/PADIO (D8I1025_NS)                                          0.8932                         1.3802     2.0092 f
+  rdata[5] (net)                                1     1433.8068                                            0.0000     2.0092 f
+  rdata[5] (out)                                                  0.0000    0.8932    0.0000               0.0000 *   2.0092 f
+  data arrival time                                                                                                   2.0092
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -2.0092
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2592
+
+
+  Startpoint: fifomem/genblk1_0__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[1] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_0__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_0__U/O2[1] (SRAM2RW128x8)                                 0.1308                         0.1754     0.2754 r
+  fifomem/n37 (net)                             1      12.9583                                             0.0000     0.2754 r
+  fifomem/U15/A3 (NAND4X0_RVT)                                    0.0000    0.1308    0.0000               0.0015 *   0.2769 r
+  fifomem/U15/Y (NAND4X0_RVT)                                               0.2197                         0.1902     0.4671 f
+  fifomem/n7 (net)                              1       5.5956                                             0.0000     0.4671 f
+  fifomem/U14/A (INVX1_RVT)                                       0.0000    0.2197    0.0000               0.0003 *   0.4674 f
+  fifomem/U14/Y (INVX1_RVT)                                                 0.0859                         0.0512     0.5187 r
+  fifomem/n152 (net)                            1       0.5631                                             0.0000     0.5187 r
+  fifomem/U102/A1 (AND3X1_RVT)                                    0.0000    0.0859    0.0000               0.0000 *   0.5187 r
+  fifomem/U102/Y (AND3X1_RVT)                                               0.0394                         0.0768     0.5955 r
+  fifomem/n174 (net)                            1       1.4843                                             0.0000     0.5955 r
+  fifomem/U78/A (NBUFFX8_RVT)                                     0.0000    0.0394    0.0000               0.0000 *   0.5955 r
+  fifomem/U78/Y (NBUFFX8_RVT)                                               0.0476                         0.0711     0.6666 r
+  fifomem/rdata[1] (net)                        1      31.0351                                             0.0000     0.6666 r
+  fifomem/rdata[1] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.6666 r
+  io_l_rdata_1__net (net)                              31.0351                                             0.0000     0.6666 r
+  io_l_rdata_1_/DIN (D8I1025_NS)                                  0.0000    0.0476    0.0000               0.0060 *   0.6726 r
+  io_l_rdata_1_/PADIO (D8I1025_NS)                                          0.8932                         1.3241     1.9967 r
+  rdata[1] (net)                                1     1433.8068                                            0.0000     1.9967 r
+  rdata[1] (out)                                                  0.0000    0.8932    0.0000               0.0000 *   1.9967 r
+  data arrival time                                                                                                   1.9967
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -1.9967
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2467
+
+
+  Startpoint: fifomem/genblk1_0__U
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rdata[2] (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  fifomem/genblk1_0__U/CE2 (SRAM2RW128x8)                         0.0000    0.1000    0.0000               0.0000     0.1000 r
+  fifomem/genblk1_0__U/O2[2] (SRAM2RW128x8)                                 0.1216                         0.1681     0.2681 f
+  fifomem/n45 (net)                             1      11.7930                                             0.0000     0.2681 f
+  fifomem/U18/A3 (NAND4X0_RVT)                                    0.0000    0.1216    0.0000               0.0012 *   0.2693 f
+  fifomem/U18/Y (NAND4X0_RVT)                                               0.1125                         0.1241     0.3935 r
+  fifomem/n9 (net)                              1       3.7153                                             0.0000     0.3935 r
+  fifomem/U17/A (INVX1_RVT)                                       0.0000    0.1125    0.0000               0.0001 *   0.3936 r
+  fifomem/U17/Y (INVX1_RVT)                                                 0.0474                         0.0214     0.4150 f
+  fifomem/n155 (net)                            1       0.5646                                             0.0000     0.4150 f
+  fifomem/U105/A1 (AND3X1_RVT)                                    0.0000    0.0474    0.0000               0.0000 *   0.4150 f
+  fifomem/U105/Y (AND3X1_RVT)                                               0.0349                         0.0766     0.4916 f
+  fifomem/n171 (net)                            1       1.4743                                             0.0000     0.4916 f
+  fifomem/U79/A (NBUFFX8_RVT)                                     0.0000    0.0349    0.0000               0.0000 *   0.4916 f
+  fifomem/U79/Y (NBUFFX8_RVT)                                               0.0481                         0.0713     0.5629 f
+  fifomem/rdata[2] (net)                        1      32.5059                                             0.0000     0.5629 f
+  fifomem/rdata[2] (fifomem_DATASIZE8_ADDRSIZE10)                                                          0.0000     0.5629 f
+  io_l_rdata_2__net (net)                              32.5059                                             0.0000     0.5629 f
+  io_l_rdata_2_/DIN (D8I1025_NS)                                  0.0000    0.0481    0.0000               0.0069 *   0.5698 f
+  io_l_rdata_2_/PADIO (D8I1025_NS)                                          0.8902                         1.3866     1.9564 f
+  rdata[2] (net)                                1     1433.8068                                            0.0000     1.9564 f
+  rdata[2] (out)                                                  0.0000    0.8902    0.0000               0.0000 *   1.9564 f
+  data arrival time                                                                                                   1.9564
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -1.9564
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.2064
+
+
+  Startpoint: rptr_empty/rempty_reg
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rempty (output port clocked by rclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  rptr_empty/rempty_reg/CLK (SDFFASX2_RVT)                        0.0000    0.1000    0.0000               0.0000     0.1000 r
+  rptr_empty/rempty_reg/QN (SDFFASX2_RVT)                                   0.0932                         0.2172     0.3172 r
+  rptr_empty/n234 (net)                         2       8.5301                                             0.0000     0.3172 r
+  rptr_empty/U6/A (NBUFFX2_RVT)                                   0.0000    0.0932    0.0000               0.0005 *   0.3178 r
+  rptr_empty/U6/Y (NBUFFX2_RVT)                                             0.0383                         0.0702     0.3880 r
+  rptr_empty/n233 (net)                         1       3.4069                                             0.0000     0.3880 r
+  rptr_empty/U161/A (NBUFFX32_RVT)                                0.0000    0.0383    0.0000               0.0000 *   0.3880 r
+  rptr_empty/U161/Y (NBUFFX32_RVT)                                          0.0325                         0.0628     0.4508 r
+  rptr_empty/rempty_BAR (net)                   2      40.8278                                             0.0000     0.4508 r
+  rptr_empty/rempty_BAR (rptr_empty_ADDRSIZE10)                                                            0.0000     0.4508 r
+  io_t_rempty_net (net)                                40.8278                                             0.0000     0.4508 r
+  U35/A (INVX4_RVT)                                               0.0000    0.0334    0.0000               0.0083 *   0.4591 r
+  U35/Y (INVX4_RVT)                                                         0.0580                         0.0494     0.5085 f
+  n34 (net)                                     1      21.9157                                             0.0000     0.5085 f
+  io_t_rempty/DIN (D8I1025_NS)                                    0.0000    0.0580    0.0000               0.0000 *   0.5085 f
+  io_t_rempty/PADIO (D8I1025_NS)                                            0.8885                         1.3901     1.8987 f
+  rempty (net)                                  1     1433.8068                                            0.0000     1.8987 f
+  rempty (out)                                                    0.0000    0.8885    0.0000               0.0000 *   1.8987 f
+  data arrival time                                                                                                   1.8987
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  output external delay                                                                                    0.5000     1.7500
+  data required time                                                                                                  1.7500
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7500
+  data arrival time                                                                                                  -1.8987
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.1487
+
+
+  Startpoint: wptr_full/wfull_reg
+              (rising edge-triggered flip-flop clocked by wclk)
+  Endpoint: wfull (output port clocked by wclk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock wclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  wptr_full/wfull_reg/CLK (SDFFARX1_RVT)                          0.0000    0.1000    0.0000               0.0000     0.1000 r
+  wptr_full/wfull_reg/QN (SDFFARX1_RVT)                                     0.0494                         0.1571     0.2571 r
+  wptr_full/n374 (net)                          1       1.8020                                             0.0000     0.2571 r
+  wptr_full/U181/A (NBUFFX8_RVT)                                  0.0000    0.0494    0.0000               0.0000 *   0.2571 r
+  wptr_full/U181/Y (NBUFFX8_RVT)                                            0.0363                         0.0647     0.3218 r
+  wptr_full/n391 (net)                          3      17.9156                                             0.0000     0.3218 r
+  wptr_full/U194/A (NBUFFX8_RVT)                                  0.0000    0.0363    0.0000               0.0006 *   0.3224 r
+  wptr_full/U194/Y (NBUFFX8_RVT)                                            0.0518                         0.0732     0.3956 r
+  wptr_full/wfull_BAR (net)                     2      35.5336                                             0.0000     0.3956 r
+  wptr_full/wfull_BAR (wptr_full_ADDRSIZE10)                                                               0.0000     0.3956 r
+  io_t_wfull_net (net)                                 35.5336                                             0.0000     0.3956 r
+  U36/A (INVX4_RVT)                                               0.0000    0.0518    0.0000               0.0067 *   0.4023 r
+  U36/Y (INVX4_RVT)                                                         0.0632                         0.0558     0.4581 f
+  n35 (net)                                     1      21.9241                                             0.0000     0.4581 f
+  io_t_wfull/DIN (D8I1025_NS)                                     0.0000    0.0632    0.0000               0.0000 *   0.4582 f
+  io_t_wfull/PADIO (D8I1025_NS)                                             0.8877                         1.3920     1.8502 f
+  wfull (net)                                   1     1433.8068                                            0.0000     1.8502 f
+  wfull (out)                                                     0.0000    0.8877    0.0000               0.0000 *   1.8502 f
+  data arrival time                                                                                                   1.8502
+
+  clock wclk (rise edge)                                                                                   1.1800     1.1800
+  clock network delay (ideal)                                                                              0.1000     1.2800
+  clock uncertainty                                                                                       -0.0700     1.2100
+  output external delay                                                                                    0.5000     1.7100
+  data required time                                                                                                  1.7100
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.7100
+  data arrival time                                                                                                  -1.8502
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.1402
+
+
+  Startpoint: rptr_empty/rempty_reg
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rptr_empty/rempty_reg
+            (rising edge-triggered flip-flop clocked by rclk)
+  Path Group: rclk
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock rclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  rptr_empty/rempty_reg/CLK (SDFFASX2_RVT)                        0.0000    0.1000    0.0000               0.0000     0.1000 r
+  rptr_empty/rempty_reg/QN (SDFFASX2_RVT)                                   0.0932                         0.2172     0.3172 r
+  rptr_empty/n234 (net)                         2       8.5301                                             0.0000     0.3172 r
+  rptr_empty/U11/A (NBUFFX8_RVT)                                  0.0000    0.0932    0.0000               0.0006 *   0.3179 r
+  rptr_empty/U11/Y (NBUFFX8_RVT)                                            0.0469                         0.0798     0.3977 r
+  rptr_empty/n109 (net)                         3      24.2173                                             0.0000     0.3977 r
+  rptr_empty/U144/A3 (AND3X1_RVT)                                 0.0000    0.0469    0.0000               0.0034 *   0.4011 r
+  rptr_empty/U144/Y (AND3X1_RVT)                                            0.0440                         0.0864     0.4876 r
+  rptr_empty/n23 (net)                          2       2.5868                                             0.0000     0.4876 r
+  rptr_empty/U127/A2 (AND3X1_RVT)                                 0.0000    0.0440    0.0000               0.0000 *   0.4876 r
+  rptr_empty/U127/Y (AND3X1_RVT)                                            0.0527                         0.0773     0.5649 r
+  rptr_empty/n156 (net)                         1       1.4843                                             0.0000     0.5649 r
+  rptr_empty/U117/A (NBUFFX8_RVT)                                 0.0000    0.0527    0.0000               0.0000 *   0.5649 r
+  rptr_empty/U117/Y (NBUFFX8_RVT)                                           0.0303                         0.0597     0.6246 r
+  rptr_empty/n155 (net)                         1      10.6205                                             0.0000     0.6246 r
+  rptr_empty/U126/A (INVX16_RVT)                                  0.0000    0.0303    0.0000               0.0000 *   0.6246 r
+  rptr_empty/U126/Y (INVX16_RVT)                                            0.0248                         0.0230     0.6476 f
+  rptr_empty/n26 (net)                          5      22.5878                                             0.0000     0.6476 f
+  rptr_empty/U110/A2 (OR2X2_RVT)                                  0.0000    0.0248    0.0000               0.0031 *   0.6507 f
+  rptr_empty/U110/Y (OR2X2_RVT)                                             0.0263                         0.0552     0.7059 f
+  rptr_empty/n18 (net)                          2       1.8779                                             0.0000     0.7059 f
+  rptr_empty/U33/A1 (AND2X2_RVT)                                  0.0000    0.0263    0.0000               0.0000 *   0.7059 f
+  rptr_empty/U33/Y (AND2X2_RVT)                                             0.0576                         0.0861     0.7920 f
+  rptr_empty/n92 (net)                          3       8.6903                                             0.0000     0.7920 f
+  rptr_empty/U166/A (NBUFFX8_RVT)                                 0.0000    0.0576    0.0000               0.0000 *   0.7920 f
+  rptr_empty/U166/Y (NBUFFX8_RVT)                                           0.0335                         0.0678     0.8599 f
+  rptr_empty/n207 (net)                         3      15.2031                                             0.0000     0.8599 f
+  rptr_empty/U145/A1 (AO22X1_RVT)                                 0.0000    0.0335    0.0000               0.0009 *   0.8608 f
+  rptr_empty/U145/Y (AO22X1_RVT)                                            0.0326                         0.0800     0.9408 f
+  rptr_empty/n183 (net)                         1       1.7097                                             0.0000     0.9408 f
+  rptr_empty/U114/A1 (XNOR2X2_RVT)                                0.0000    0.0326    0.0000               0.0000 *   0.9408 f
+  rptr_empty/U114/Y (XNOR2X2_RVT)                                           0.0326                         0.0893     1.0301 r
+  rptr_empty/n140 (net)                         1       0.7536                                             0.0000     1.0301 r
+  rptr_empty/U112/A1 (AND2X1_RVT)                                 0.0000    0.0326    0.0000               0.0000 *   1.0301 r
+  rptr_empty/U112/Y (AND2X1_RVT)                                            0.0222                         0.0491     1.0792 r
+  rptr_empty/n161 (net)                         1       0.5745                                             0.0000     1.0792 r
+  rptr_empty/U10/A2 (AND3X1_RVT)                                  0.0000    0.0222    0.0000               0.0000 *   1.0792 r
+  rptr_empty/U10/Y (AND3X1_RVT)                                             0.0279                         0.0637     1.1429 r
+  rptr_empty/n108 (net)                         1       0.5897                                             0.0000     1.1429 r
+  rptr_empty/U9/A1 (AND3X1_RVT)                                   0.0000    0.0279    0.0000               0.0000 *   1.1429 r
+  rptr_empty/U9/Y (AND3X1_RVT)                                              0.0362                         0.0676     1.2104 r
+  rptr_empty/rempty_val (net)                   1       1.6176                                             0.0000     1.2104 r
+  rptr_empty/rempty_reg/D (SDFFASX2_RVT)                          0.0000    0.0362    0.0000               0.0000 *   1.2105 r
+  data arrival time                                                                                                   1.2105
+
+  clock rclk (rise edge)                                                                                   1.2200     1.2200
+  clock network delay (ideal)                                                                              0.1000     1.3200
+  clock uncertainty                                                                                       -0.0700     1.2500
+  rptr_empty/rempty_reg/CLK (SDFFASX2_RVT)                                                                 0.0000     1.2500 r
+  library setup time                                                                                      -0.1256     1.1244
+  data required time                                                                                                  1.1244
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.1244
+  data arrival time                                                                                                  -1.2105
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.0861
+
+
+  Startpoint: wptr_full/wbin_reg_0_
+              (rising edge-triggered flip-flop clocked by wclk)
+  Endpoint: wptr_full/wfull_reg
+            (rising edge-triggered flip-flop clocked by wclk)
+  Path Group: wclk
+  Path Type: max
+
+  Point                                       Fanout       Cap     DTran     Trans     Delta     Derate      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------------
+  clock wclk (rise edge)                                                                                   0.0000     0.0000
+  clock network delay (ideal)                                                                              0.1000     0.1000
+  wptr_full/wbin_reg_0_/CLK (SDFFARX1_RVT)                        0.0000    0.1000    0.0000               0.0000     0.1000 r
+  wptr_full/wbin_reg_0_/Q (SDFFARX1_RVT)                                    0.0548                         0.2129     0.3129 f
+  wptr_full/n394 (net)                          2       4.1289                                             0.0000     0.3129 f
+  wptr_full/U5/A1 (AND3X1_RVT)                                    0.0000    0.0548    0.0000               0.0001 *   0.3130 f
+  wptr_full/U5/Y (AND3X1_RVT)                                               0.0470                         0.0915     0.4045 f
+  wptr_full/n15 (net)                           1       3.0734                                             0.0000     0.4045 f
+  wptr_full/U192/A (NBUFFX8_RVT)                                  0.0000    0.0470    0.0000               0.0001 *   0.4046 f
+  wptr_full/U192/Y (NBUFFX8_RVT)                                            0.0436                         0.0724     0.4770 f
+  wptr_full/n385 (net)                          8      27.0930                                             0.0000     0.4770 f
+  wptr_full/U18/A2 (AND3X1_RVT)                                   0.0000    0.0436    0.0000               0.0020 *   0.4790 f
+  wptr_full/U18/Y (AND3X1_RVT)                                              0.0283                         0.0725     0.5515 f
+  wptr_full/n56 (net)                           1       0.5982                                             0.0000     0.5515 f
+  wptr_full/U15/A2 (AND2X1_RVT)                                   0.0000    0.0283    0.0000               0.0000 *   0.5515 f
+  wptr_full/U15/Y (AND2X1_RVT)                                              0.0519                         0.0615     0.6130 f
+  wptr_full/n290 (net)                          3       1.8048                                             0.0000     0.6130 f
+  wptr_full/U13/A1 (NAND2X4_RVT)                                  0.0000    0.0519    0.0000               0.0000 *   0.6130 f
+  wptr_full/U13/Y (NAND2X4_RVT)                                             0.0475                         0.1119     0.7249 r
+  wptr_full/n276 (net)                          2      14.2152                                             0.0000     0.7249 r
+  wptr_full/U141/A1 (XNOR2X2_RVT)                                 0.0000    0.0475    0.0000               0.0014 *   0.7263 r
+  wptr_full/U141/Y (XNOR2X2_RVT)                                            0.0350                         0.0967     0.8230 r
+  wptr_full/n129 (net)                          2       1.2995                                             0.0000     0.8230 r
+  wptr_full/U107/A2 (MUX21X2_RVT)                                 0.0000    0.0350    0.0000               0.0000 *   0.8230 r
+  wptr_full/U107/Y (MUX21X2_RVT)                                            0.0456                         0.0966     0.9196 r
+  wptr_full/n121 (net)                          1       2.8435                                             0.0000     0.9196 r
+  wptr_full/U106/A (INVX4_RVT)                                    0.0000    0.0456    0.0000               0.0000 *   0.9196 r
+  wptr_full/U106/Y (INVX4_RVT)                                              0.0305                         0.0254     0.9450 f
+  wptr_full/n216 (net)                          1       5.3156                                             0.0000     0.9450 f
+  wptr_full/U125/A (INVX8_RVT)                                    0.0000    0.0305    0.0000               0.0000 *   0.9450 f
+  wptr_full/U125/Y (INVX8_RVT)                                              0.0255                         0.0274     0.9724 r
+  wptr_full/n132 (net)                          1      13.8277                                             0.0000     0.9724 r
+  wptr_full/U180/A1 (XNOR2X2_RVT)                                 0.0000    0.0255    0.0000               0.0018 *   0.9742 r
+  wptr_full/U180/Y (XNOR2X2_RVT)                                            0.0361                         0.0913     1.0655 r
+  wptr_full/n344 (net)                          1       1.5587                                             0.0000     1.0655 r
+  wptr_full/U10/A1 (AND2X1_RVT)                                   0.0000    0.0361    0.0000               0.0000 *   1.0656 r
+  wptr_full/U10/Y (AND2X1_RVT)                                              0.0226                         0.0499     1.1154 r
+  wptr_full/n55 (net)                           1       0.5730                                             0.0000     1.1154 r
+  wptr_full/U9/A1 (AND4X1_RVT)                                    0.0000    0.0226    0.0000               0.0000 *   1.1154 r
+  wptr_full/U9/Y (AND4X1_RVT)                                               0.0388                         0.0755     1.1909 r
+  wptr_full/wfull_val (net)                     1       0.9456                                             0.0000     1.1909 r
+  wptr_full/wfull_reg/D (SDFFARX1_RVT)                            0.0000    0.0388    0.0000               0.0000 *   1.1909 r
+  data arrival time                                                                                                   1.1909
+
+  clock wclk (rise edge)                                                                                   1.1800     1.1800
+  clock network delay (ideal)                                                                              0.1000     1.2800
+  clock uncertainty                                                                                       -0.0700     1.2100
+  wptr_full/wfull_reg/CLK (SDFFARX1_RVT)                                                                   0.0000     1.2100 r
+  library setup time                                                                                      -0.1221     1.0879
+  data required time                                                                                                  1.0879
+  -----------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                  1.0879
+  data arrival time                                                                                                  -1.1909
+  -----------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                   -0.1030
+
+
+1
